@@ -2,6 +2,7 @@ export default {
   breakpoints: ['40em', '52em', '64em'],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   space: [
+    0,
     'var(--spacing-xxs)',
     'var(--spacing-xs)',
     'var(--spacing-s)',
@@ -11,8 +12,8 @@ export default {
     'var(--spacing-xxl)',
   ],
   fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'inherit',
+    body: 'var(--font-primary)',
+    heading: 'var(--font-)',
     monospace: 'Menlo, monospace',
   },
   fontWeights: {
@@ -28,12 +29,13 @@ export default {
     small: '0 0 4px rgba(0, 0, 0, .125)',
     large: '0 0 24px rgba(0, 0, 0, .125)',
   },
-  variants: {},
-  text: {},
-  buttons: {
-    primary: {
-      color: 'white',
-      bg: 'primary',
+  variants: {
+    nav: {
+      textDecoration: 'none',
+      color: 'var(--color-text-secondary)',
+      '&:hover': {
+        color: 'var(--color-primary)',
+      },
     },
   },
 }

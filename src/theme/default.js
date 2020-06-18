@@ -10,7 +10,7 @@ export default css`
   --font-family-mono: 'League Mono', 'Fira Mono', monospace;
 
   /* colors */
-  --color-text: hsl(222deg, 22%, 5%);
+  --color-text: #0d0c22;
   --color-text-secondary: #6e6d7a;
   --color-background: hsl(0deg, 0%, 100%);
   --color-blurred-background: hsla(0deg, 0%, 100%, 0.85);
@@ -69,6 +69,9 @@ export default css`
   --color-secondary-lighter: #e2fffd;
 
   --color-success: #136f63;
+
+  --color-sputnik-pink: #edd7df;
+  --color-sputnik-pink-dark: #c5819a;
 
   --prefers-dark: false;
   --scrollbar-width: 12px;
