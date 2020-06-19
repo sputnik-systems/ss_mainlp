@@ -11,7 +11,7 @@ const icon = {
     pathLength: 1,
     fill: 'rgba(0, 0, 0, 0)',
 
-    // fill: 'rgba(0, 0, 0, 1)',
+    fill: 'rgba(0, 0, 0, 1)',
     stroke: 'black',
   },
 }

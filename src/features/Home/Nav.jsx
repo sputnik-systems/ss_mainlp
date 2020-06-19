@@ -4,6 +4,7 @@ import Nav from 'components/Nav'
 import { ReactComponent as Logo } from 'assets/logoInline.svg'
 import Image from 'components/Image'
 import Link from 'components/Link'
+import MotionLogo from './MotionLogo'
 
 const Body = styled(Nav)`
   background: var(--color-blurred-background);
@@ -19,7 +20,7 @@ export default function HomeNav({ ...props }) {
       height="64px"
       left={
         <>
-          <Logo
+          <MotionLogo
             style={{
               marginLeft: 'var(--spacing-xs)',
               height: '100%',
@@ -29,10 +30,10 @@ export default function HomeNav({ ...props }) {
       }
       right={
         <>
-          <Link variant="nav" p="2">
+          <Link variant="nav" p="3">
             Для партнеров и бизнеса
           </Link>
-          <Link variant="nav" p="2">
+          <Link variant="nav" p="3">
             Безопасность и комфорт
           </Link>
         </>

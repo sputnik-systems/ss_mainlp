@@ -8,8 +8,9 @@ const ifH1 = css`
   font-size: 80px;
   letter-spacing: -3px;
   line-height: 1;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-demi);
   text-align: center;
+  font-family: var(--font-family);
 `
 
 export default styled('p')`
@@ -22,5 +23,3 @@ export default styled('p')`
   margin:0;
   ${space};
 `
-
-// export default Text

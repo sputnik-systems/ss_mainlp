@@ -41,7 +41,7 @@ export default styled.button`
 
   &::before {
     content: ' ';
-    background: var(--color-muted-background);
+    background: var(--color-subtle-background);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -53,10 +53,10 @@ export default styled.button`
   &:hover {
     &::before {
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(var(--hover-scale));
     }
     & > svg {
-      color: var(--color-text);
+      color: var(--color-primary);
     }
   }
 `

@@ -15,7 +15,7 @@ export default function Navbar({ ...props }) {
       left={<LangSwitcher />}
       right={
         <>
-          <Link p="2" variant="nav" href="tel://88005553535">
+          <Link p="3" variant="nav" href="tel://88005553535">
             8 800 555 35 35
           </Link>
           <IconButton>

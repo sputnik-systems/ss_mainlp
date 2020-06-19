@@ -19,7 +19,7 @@ export default {
   fontWeights: {
     body: 400,
     heading: 700,
-    bold: 700,
+    bold: 'var(--font-weight-bold)',
   },
   lineHeights: {
     body: 1.5,
@@ -29,13 +29,9 @@ export default {
     small: '0 0 4px rgba(0, 0, 0, .125)',
     large: '0 0 24px rgba(0, 0, 0, .125)',
   },
-  variants: {
-    nav: {
-      textDecoration: 'none',
-      color: 'var(--color-text-secondary)',
-      '&:hover': {
-        color: 'var(--color-primary)',
-      },
-    },
+  variants: {},
+  colors: {
+    textSecondary: 'var(--color-text-secondary)',
+    text: 'var(--color-text)',
   },
 }

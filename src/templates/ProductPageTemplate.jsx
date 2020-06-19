@@ -3,10 +3,13 @@ import styled from 'styled-components'
 import Grid from 'components/Grid'
 
 const Page = styled.main`
-  min-height: 400vh;
+  /* min-height: 400vh; */
   position: relative;
   z-index: 2;
   background: var(--color-background);
+  box-shadow: 0 50px 50px -50px rgba(0, 0, 0, 0.1);
+
+  /* padding-bottom: calc(var(--spacing-xxl) * 2); */
 `
 
 const BgLines = styled.div`
@@ -43,7 +46,7 @@ const BgLines = styled.div`
 
 export default function ProductPageTemplate({ children, nav, ...props }) {
   return (
-    <Page as="main">
+    <Page as="main" {...props}>
       <BgLines>
         <div className="line line-1" />
         <div className="line line-2" />
@@ -51,7 +54,9 @@ export default function ProductPageTemplate({ children, nav, ...props }) {
         <div className="line line-4" />
       </BgLines>
       {nav}
-      <Grid style={{ gridAutoRows: 'max-content' }}>{children}</Grid>
+      <Grid pt="6" style={{ gridAutoRows: 'max-content' }}>
+        {children}
+      </Grid>
     </Page>
   )
 }

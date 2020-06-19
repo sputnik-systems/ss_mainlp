@@ -4,7 +4,7 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 export default function ParallaxItem({
   children,
   buffer = 300,
-  end = -100,
+  end = -50,
   style,
   ...props
 }) {

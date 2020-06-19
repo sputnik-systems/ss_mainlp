@@ -3,8 +3,10 @@ import { css } from 'styled-components'
 export default css`
   /* main */
   --font-size: 18px;
-  --font-weight-bold: 600;
-  --font-weight-medium: 400;
+  --font-weight-bold: 700;
+  --font-weight-medium: 600;
+  --font-weight-demi: 500;
+  --font-weight-regular: 400;
   --font-weight-light: 300;
   --font-family: 'Futura PT', Futura, -apple-system, sans-serif;
   --font-family-mono: 'League Mono', 'Fira Mono', monospace;
@@ -38,7 +40,8 @@ export default css`
   --color-gray-700: hsl(225deg, 12%, 40%);
   --color-gray-900: hsl(225deg, 25%, 20%);
   --color-gray-1000: hsl(225deg, 15%, 15%);
-  --color-subtle-background: #f7f6fb;
+  --color-subtle-background: #f2f2f3;
+  /* --color-subtle-background: #fafafa; */
   --color-subtle-background-darker: #e2e1e8;
   --color-subtle-floating: hsl(0deg, 0%, 100%);
   --color-homepage-light: hsl(204deg, 67%, 85%);
@@ -93,4 +96,7 @@ export default css`
   --size-mobile: 420px;
 
   --shadow-main: 0 0 15px rgba(0, 0, 0, 0.07);
+  /* 
+   main: '0 3px 15px 2px rgba(0, 0, 0, 0.05)',
+  strong: 'rgba(0, 0, 0, 0.2) 0px 35px 50px -30px', */
 `
