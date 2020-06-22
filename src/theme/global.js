@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components'
 import defaultTheme from './default'
+import darkTheme from './dark'
 
 const global = css`
   *,
@@ -48,6 +49,11 @@ const GlobalStyle = createGlobalStyle`
     --hover-scale: 1.05;
     --scale-active: 0.96;
     --hover-transition: all 0.25s ease;
+    --default-transition: all 0.25s ease;
+  }
+
+  body[data-theme='dark'] {
+    ${darkTheme};
   }
 
   ${global};

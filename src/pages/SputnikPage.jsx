@@ -15,10 +15,12 @@ import { ReactComponent as IntercomLogo } from 'assets/intercomLogo.svg'
 import Container from 'components/Container'
 import Video from 'components/Video'
 import FeedbackWrapper from 'features/Feedback/FeedbackWrapper'
+import VideoSection from 'features/Sputnik/VideoSection'
 
 const styles = {
   fullBlock: { gridColumn: '1/17' },
   leftBlock: { gridColumn: '1/9' },
+  smallLeftBlock: { gridColumn: '1/8' },
   rightBlock: { gridColumn: '10/17' },
   bigRightBlock: { gridColumn: '9/17' },
   center: { gridColumn: '2/16' },
@@ -98,26 +100,8 @@ export default function SputnikPage({ ...props }) {
         <FeedbackWrapper />
       </Grid>
 
-      <Grid style={styles.fullBlock} contained backgroundColor="background">
-        <Flex
-          style={{ ...styles.leftBlock }}
-          backgroundColor="text"
-          height="60vh"
-        />
-        <Flex
-          backgroundColor="text"
-          flexDirection="column"
-          style={styles.rightBlock}
-        />
-        {/* 
-        <Flex
-          style={{ ...styles.rightBlock }}
-          backgroundColor="text"
-          height="60vh"
-        /> */}
-      </Grid>
-
-      <Grid style={styles.fullBlock} contained backgroundColor="background">
+      <VideoSection styles={styles} />
+      {/* <Grid style={styles.fullBlock} contained backgroundColor="background">
         <Text color="textSecondary" style={styles.fullBlock}>
           My wife and I now have peace of mind when we leave our kids at home to
           do a quick errand. Installation was easy. No more worries when we are
@@ -126,30 +110,22 @@ export default function SputnikPage({ ...props }) {
         <Text color="textSecondary" style={{ gridColumn: '14/17' }}>
           Joseph8 (verified customer)
         </Text>
-      </Grid>
+      </Grid> */}
 
+      <Container style={styles.fullBlock}>
+        <Text variant="h1" textAlign="center">
+          Управляется через бесплатное мобильное приложение
+        </Text>
+        <Text variant="h4" textAlign="center" color="textSecondary">
+          Вы можете принимать видеозвонки от гостей, а также открывать домофон
+          тогда, когда вам это необходимо.
+        </Text>
+      </Container>
       <Flex
-        style={{ gridColumn: '2/8' }}
-        backgroundColor="text"
+        style={styles.fullBlock}
+        backgroundColor="subtleBackground"
         height="60vh"
       />
-      <Text variant="h1" textAlign="left" style={{ gridColumn: '9/15' }}>
-        Снимает четкое видео днем и ночью
-      </Text>
-      <Text color="textSecondary" style={{ gridColumn: '9/15' }}>
-        Видеокамера в домофоне снимает с Full HD разрешением и хранит видеоархив
-        на сервере. Записи из видеоархива впоследствии отлично помогают
-        обнаружить как вандалов, так и злоумышленников, промышляющих кражами в
-        подъездах и квартирах.
-      </Text>
-
-      <Text variant="h1" textAlign="center" style={{ gridColumn: '4/14' }}>
-        Управляется через бесплатное мобильное приложение
-      </Text>
-      <Text color="textSecondary" style={{ gridColumn: '5/14' }}>
-        Вы можете принимать видеозвонки от гостей, а также открывать домофон
-        тогда, когда вам это необходимо.
-      </Text>
     </ProductPageTemplate>
   )
 }

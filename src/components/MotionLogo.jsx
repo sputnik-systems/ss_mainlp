@@ -4,15 +4,13 @@ import { motion } from 'framer-motion'
 const icon = {
   hidden: {
     pathLength: 0,
-    fill: 'rgba(0, 0, 0, 0)',
-    stroke: 'black',
+    fill: 'transparent', // TODO: change to rgba with 0 opacity
+    stroke: 'var(--color-primary)',
   },
   visible: {
     pathLength: 1,
-    fill: 'rgba(0, 0, 0, 0)',
-
-    fill: 'rgba(0, 0, 0, 1)',
-    stroke: 'black',
+    fill: 'var(--color-text)',
+    stroke: 'var(--color-primary)',
   },
 }
 

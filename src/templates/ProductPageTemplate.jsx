@@ -8,6 +8,7 @@ const Page = styled.main`
   z-index: 2;
   background: var(--color-background);
   box-shadow: 0 50px 50px -50px rgba(0, 0, 0, 0.1);
+  transition: var(--default-transition);
 
   /* padding-bottom: calc(var(--spacing-xxl) * 2); */
 `
