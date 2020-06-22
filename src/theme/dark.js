@@ -47,5 +47,7 @@ export default css`
   --prefers-dark: true;
 
   --color-primary: hsl(49, 98%, 60%);
+  --color-primary-lighter: hsl(49, 98%, 80%);
+  --color-primary-darker: hsl(49, 98%, 50%);
   --color-primary-contrast: hsl(0, 0%, 0%);
 `

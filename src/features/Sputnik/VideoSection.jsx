@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Grid from 'components/Grid'
 import Text from 'components/Text'
@@ -11,6 +11,7 @@ import styled from 'styled-components'
 
 import eric from 'assets/eric.mov'
 import eric2 from 'assets/eric2.mov'
+import Sparkles from 'components/Sparkles'
 
 const THRESHOLD = [0.1, 0.8, 0.9]
 
@@ -31,28 +32,24 @@ const Card = styled(motion.div)`
 `
 
 const FrontVideo = styled(Video)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
   backface-visibility: hidden;
-  background-color: #bbb;
 `
 
 const BackVideo = styled(Video)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
   backface-visibility: hidden;
-  background-color: teal;
-  color: white;
   transform: rotateY(180deg);
 `
+
+// const spring = {
+//   type: 'spring',
+//   damping: 20,
+//   stiffness: 300,
+// }
 
 const spring = {
   type: 'spring',
   damping: 20,
-  stiffness: 300,
+  stiffness: 30,
 }
 
 const variants = {
@@ -82,21 +79,18 @@ const textVariants = {
 export default function VideoSection({ styles, ...props }) {
   const [isDark, setIsDark] = useState(false)
 
-  const animation = useAnimation()
   const [ref, inView, entry] = useInView({
     threshold: THRESHOLD,
     rootMargin: '64px',
   })
 
   useEffect(() => {
-    console.log(entry?.intersectionRatio)
     if (entry?.intersectionRatio > 0.9) {
-      // animation.start('idle')
       setIsDark(true)
     } else {
       setIsDark(false)
     }
-  }, [animation, entry, inView])
+  }, [entry, inView])
 
   useEffect(() => {
     if (isDark) {
@@ -120,7 +114,7 @@ export default function VideoSection({ styles, ...props }) {
             animate={isDark ? 'night' : 'day'}
             variants={textVariants}
           >
-            и ночью
+            <Sparkles>и ночью</Sparkles>
           </motion.span>
         </Text>
         <Text variant="h4">

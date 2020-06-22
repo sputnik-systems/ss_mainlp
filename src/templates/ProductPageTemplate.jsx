@@ -45,10 +45,18 @@ const BgLines = styled.div`
   }
 `
 
+const StyledGrid = styled(Grid)`
+  grid-auto-rows: max-content;
+  z-index: 1;
+  position: relative;
+  grid-row-gap: calc(var(--spacing-xxl) * 2);
+`
+
 export default function ProductPageTemplate({
   children,
   nav,
   lines = false,
+  gridProps = {},
   ...props
 }) {
   return (
@@ -63,17 +71,7 @@ export default function ProductPageTemplate({
       )}
 
       {nav}
-      <Grid
-        // pt="7"
-        style={{
-          gridAutoRows: 'max-content',
-          zIndex: 1,
-          position: 'relative',
-          gridRowGap: 'calc(var(--spacing-xxl) * 2)',
-        }}
-      >
-        {children}
-      </Grid>
+      <StyledGrid {...gridProps}>{children}</StyledGrid>
     </Page>
   )
 }

@@ -2,6 +2,13 @@ import styled, { css } from 'styled-components'
 
 import { space, color, layout, variant, typography } from 'styled-system'
 
+const footer = css`
+  --bug: fix;
+
+  text-align: left;
+  line-height: 2;
+`
+
 const cta = css`
   --bug: fix;
 
@@ -85,6 +92,7 @@ export default styled('a')`
     variants: {
       cta,
       nav,
+      footer,
     },
   })}
 `

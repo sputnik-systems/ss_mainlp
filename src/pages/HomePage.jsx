@@ -22,6 +22,12 @@ export default function HomePage({ ...props }) {
           }
         />
       }
+      gridProps={{
+        style: {
+          gridRowGap: 'var(--spacing-xxl)',
+        },
+        pt: '7',
+      }}
     >
       <ParallaxItem style={{ gridColumn: '1/17' }}>
         <ProductCard

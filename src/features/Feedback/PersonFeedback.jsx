@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
-import { useInView } from 'react-intersection-observer'
+import React from 'react'
 import Video from 'components/Video'
 import eric from 'assets/eric.mov'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Text from 'components/Text'
-import Microphone from '@iconscout/react-unicons/icons/uil-microphone'
-import MicrophoneSlash from '@iconscout/react-unicons/icons/uil-microphone-slash'
+import Play from '@iconscout/react-unicons/icons/uil-play'
 
 const Wrapper = styled(motion.div)`
   width: 80px;
@@ -150,7 +148,7 @@ export default function PersonFeedback({ src = eric, ...props }) {
             pointerEvents: 'none',
           }}
         >
-          <MicrophoneSlash />
+          <Play />
         </motion.span>
       </Mask>
       <motion.span variants={nameVariants}>

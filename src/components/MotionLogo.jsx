@@ -9,7 +9,7 @@ const icon = {
   },
   visible: {
     pathLength: 1,
-    fill: 'var(--color-text)',
+    fill: 'var(--color-primary)',
     stroke: 'var(--color-primary)',
   },
 }

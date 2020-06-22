@@ -39,6 +39,7 @@ const contained = css`
   display: inline-flex;
   align-items: center;
   border: none;
+  cursor: none;
 
   transition: all 0.25s ease;
 
@@ -61,6 +62,7 @@ const contained = css`
 
     &::before {
       transform: scale(var(--hover-scale));
+      background: var(--color-primary-lighter);
     }
   }
 
@@ -83,6 +85,7 @@ export default styled('button')`
   text-align: center;
   cursor: pointer;
   font-family: var(--font-family);
+  font-size: 15px;
 
   &:hover {
     color: var(--color-primary);

@@ -9,6 +9,12 @@ export default function LangSwitcher({ ...props }) {
       <Link p="2" color="text" fontWeight="bold">
         Ru
       </Link>
+      <Link p="2" color="text">
+        Cn
+      </Link>
+      <Link p="2" color="text">
+        Sp
+      </Link>
     </Flex>
   )
 }

@@ -2,10 +2,11 @@ import styled, { css } from 'styled-components'
 import { space } from 'styled-system'
 
 const ifContained = css`
+  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 var(--spacing-m);
-  width: 100%;
+  ${space}
 `
 
 export default styled.div`
