@@ -35,6 +35,7 @@ export default {
     text: 'var(--color-text)',
     transparent: 'transparent',
     background: 'var(--color-background)',
+    subtleBackground: 'var(--color-subtle-background)',
     primary: 'var(--color-primary)',
   },
 }

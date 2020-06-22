@@ -74,6 +74,7 @@ export default function ProductNav({
             </>
           }
           right={right}
+          {...props}
         />
       </Sticky>
     </AnimatePresence>

@@ -59,4 +59,10 @@ export default styled.button`
       color: var(--color-primary);
     }
   }
+
+  &:active {
+    &::before {
+      transform: scale(0.96);
+    }
+  }
 `

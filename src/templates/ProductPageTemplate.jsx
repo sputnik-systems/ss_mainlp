@@ -44,19 +44,32 @@ const BgLines = styled.div`
   }
 `
 
-export default function ProductPageTemplate({ children, nav, ...props }) {
+export default function ProductPageTemplate({
+  children,
+  nav,
+  lines = false,
+  ...props
+}) {
   return (
     <Page as="main" {...props}>
-      <BgLines>
-        <div className="line line-1" />
-        <div className="line line-2" />
-        <div className="line line-3" />
-        <div className="line line-4" />
-      </BgLines>
+      {lines && (
+        <BgLines>
+          <div className="line line-1" />
+          <div className="line line-2" />
+          <div className="line line-3" />
+          <div className="line line-4" />
+        </BgLines>
+      )}
+
       {nav}
       <Grid
-        pt="7"
-        style={{ gridAutoRows: 'max-content', zIndex: 1, position: 'relative' }}
+        // pt="7"
+        style={{
+          gridAutoRows: 'max-content',
+          zIndex: 1,
+          position: 'relative',
+          gridRowGap: 'calc(var(--spacing-xxl) * 2)',
+        }}
       >
         {children}
       </Grid>

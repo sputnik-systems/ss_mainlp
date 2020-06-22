@@ -25,7 +25,7 @@ const nav = css`
   --bug: fix;
   position: relative;
   text-decoration: none;
-  padding: var(--spacing-s);
+  padding: var(--spacing-s) var(--spacing-m);
 
   color: var(--color-text-secondary);
   &:hover {
@@ -57,6 +57,12 @@ const nav = css`
     }
     & > svg {
       color: var(--color-text);
+    }
+  }
+
+  &:active {
+    &::before {
+      transform: scale(0.96);
     }
   }
 `

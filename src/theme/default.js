@@ -1,6 +1,8 @@
 import { css } from 'styled-components'
 
 export default css`
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
   /* main */
   --font-size: 18px;
   --font-weight-bold: 700;
@@ -9,6 +11,7 @@ export default css`
   --font-weight-regular: 400;
   --font-weight-light: 200;
   --font-family: 'Futura PT', Futura, -apple-system, sans-serif;
+  --font-family-secondary: 'Lato', -apple-system, sans-serif;
   --font-family-mono: 'League Mono', 'Fira Mono', monospace;
 
   /* colors */

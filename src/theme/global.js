@@ -45,7 +45,9 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     ${defaultTheme};
-    --hover-scale: 1.08;
+    --hover-scale: 1.05;
+    --scale-active: 0.96;
+    --hover-transition: all 0.25s ease;
   }
 
   ${global};

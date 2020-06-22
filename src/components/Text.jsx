@@ -33,6 +33,8 @@ const h4 = css`
   padding-top: 24px;
   line-height: 1.4;
   color: var(--color-text-secondary);
+  font-family: var(--font-family-secondary);
+  font-size: 22px;
 `
 
 export default styled('p')`

@@ -8,9 +8,13 @@ import Button from 'components/Button'
 import Image from 'components/Image'
 import Flex from 'components/Flex'
 import Grid from 'components/Grid'
+import heroVideo from 'assets/herovideo_web.mp4'
+import AngleRightB from '@iconscout/react-unicons/icons/uil-angle-right-b'
 
 import { ReactComponent as IntercomLogo } from 'assets/intercomLogo.svg'
 import Container from 'components/Container'
+import Video from 'components/Video'
+import FeedbackWrapper from 'features/Feedback/FeedbackWrapper'
 
 const styles = {
   fullBlock: { gridColumn: '1/17' },
@@ -31,12 +35,25 @@ export default function SputnikPage({ ...props }) {
           //     <IntercomLogo />
           //   </Link>
           // }
-          right={<Button variant="plain">Заказать установку</Button>}
+          right={
+            <Button variant="contained" color="primary">
+              Заказать установку
+            </Button>
+          }
         />
       }
     >
-      <Container style={styles.fullBlock} py="7">
-        <Text variant="hero" fontSize="114px" color="primary">
+      <Container
+        style={{
+          ...styles.fullBlock,
+          height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
+        }}
+      >
+        <Video src={heroVideo} />
+      </Container>
+
+      <Container style={styles.fullBlock} pb="7">
+        <Text variant="hero" fontSize="114px">
           Разработан для людей
         </Text>
         <Text variant="h4" textAlign="center" color="textSecondary" pt="7">
@@ -49,27 +66,37 @@ export default function SputnikPage({ ...props }) {
         </Text>
       </Container>
 
-      <Flex
-        style={{ ...styles.fullBlock, gridRow: '2 / span 2' }}
-        backgroundColor="text"
-        height="60vh"
-      />
-
-      <Flex
-        flexDirection="column"
-        style={styles.center}
+      <Grid
+        style={{ ...styles.fullBlock, position: 'relative' }}
         contained
         backgroundColor="background"
       >
-        <Text textAlign="center" variant="h3" style={styles.fullBlock}>
-          Повышает безопасность
-        </Text>
-        <Text textAlign="center" variant="h4" style={styles.fullBlock}>
-          Домофон работает со специальными криптозащищенными ключами,
-          существенно повышающими безопасность проживания в многоквартирных
-          домах.
-        </Text>
-      </Flex>
+        <Flex
+          style={styles.leftBlock}
+          backgroundColor="subtleBackground"
+          height="60vh"
+        />
+        <Flex flexDirection="column" style={styles.rightBlock}>
+          <Text variant="h3">Повышает безопасность</Text>
+          <Text variant="h4">
+            Домофон работает со специальными криптозащищенными ключами,
+            существенно повышающими безопасность проживания в многоквартирных
+            домах.
+          </Text>
+          <Link
+            mt="5"
+            color="primary"
+            variant="cta"
+            fontSize="3"
+            textAlign="left"
+            href="/"
+          >
+            Узнать подробнее
+            <AngleRightB />
+          </Link>
+        </Flex>
+        <FeedbackWrapper />
+      </Grid>
 
       <Grid style={styles.fullBlock} contained backgroundColor="background">
         <Flex
@@ -88,24 +115,6 @@ export default function SputnikPage({ ...props }) {
           backgroundColor="text"
           height="60vh"
         /> */}
-      </Grid>
-
-      <Grid style={styles.fullBlock} contained backgroundColor="background">
-        <Flex
-          style={{ ...styles.leftBlock }}
-          backgroundColor="text"
-          height="60vh"
-        />
-        <Flex flexDirection="column" style={styles.rightBlock}>
-          <Text variant="h3" textAlign="left">
-            Повышает безопасность
-          </Text>
-          <Text variant="h4" color="textSecondary">
-            Домофон работает со специальными криптозащищенными ключами,
-            существенно повышающими безопасность проживания в многоквартирных
-            домах.
-          </Text>
-        </Flex>
       </Grid>
 
       <Grid style={styles.fullBlock} contained backgroundColor="background">
