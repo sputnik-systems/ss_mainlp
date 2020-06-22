@@ -15,7 +15,7 @@ import Sparkles from 'components/Sparkles'
 
 const THRESHOLD = [0.1, 0.8, 0.9]
 
-const VideoWrapper = styled.div`
+const FlipScene = styled.div`
   background-color: transparent;
   perspective: 1000px;
   &:hover > div {
@@ -23,7 +23,7 @@ const VideoWrapper = styled.div`
   }
 `
 
-const Card = styled(motion.div)`
+const FlipCard = styled(motion.div)`
   position: relative;
   width: 100%;
   height: 100%;
@@ -46,21 +46,31 @@ const BackVideo = styled(Video)`
 //   stiffness: 300,
 // }
 
+// const spring = {
+//   type: 'spring',
+//   damping: 20,
+//   stiffness: 30,
+// }
+
 const spring = {
   type: 'spring',
   damping: 20,
-  stiffness: 30,
+  stiffness: 50,
 }
 
 const variants = {
   day: {
     rotateY: 0,
-    boxShadow: '0 0 0 rgba(0,0,0,0)',
+    boxShadow: '0 50px 100px rgba(253,216,53,0)',
+    transition: {
+      type: 'spring',
+      damping: 20,
+      stiffness: 100,
+    },
   },
   night: {
     rotateY: 180,
     boxShadow: '0 50px 100px rgba(253,216,53,0.25)',
-
     transition: spring,
   },
 }
@@ -68,10 +78,10 @@ const variants = {
 const textVariants = {
   day: {
     opacity: 0,
+    transition: spring,
   },
   night: {
     opacity: 1,
-
     transition: spring,
   },
 }
@@ -135,12 +145,12 @@ export default function VideoSection({ styles, ...props }) {
           <AngleRightB />
         </Link>
       </Flex>
-      <VideoWrapper style={styles.bigRightBlock}>
-        <Card animate={isDark ? 'night' : 'day'} variants={variants}>
+      <FlipScene style={styles.bigRightBlock}>
+        <FlipCard animate={isDark ? 'night' : 'day'} variants={variants}>
           <FrontVideo background src={eric} />
           <BackVideo background src={eric2} />
-        </Card>
-      </VideoWrapper>
+        </FlipCard>
+      </FlipScene>
       {/* <Flex
         style={styles.bigRightBlock}
         backgroundColor="subtleBackground"

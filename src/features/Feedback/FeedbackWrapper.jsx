@@ -24,7 +24,7 @@ const variants = {
 
 export default function FeedbackWrapper({ ...props }) {
   const animation = useAnimation()
-  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true })
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true })
 
   useEffect(() => {
     if (inView) {

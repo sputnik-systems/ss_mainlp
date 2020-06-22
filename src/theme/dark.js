@@ -2,6 +2,7 @@ import { css } from 'styled-components'
 
 export default css`
   --color-text: hsl(0deg, 0%, 100%);
+  --color-text-secondary: #d3d3d3;
   --color-background: hsl(210deg, 30%, 8%);
   --color-blurred-background: hsla(210deg, 30%, 8%, 0.85);
   --color-secondary: hsl(230deg, 92%, 63%);

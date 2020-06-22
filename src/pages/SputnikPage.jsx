@@ -112,19 +112,25 @@ export default function SputnikPage({ ...props }) {
         </Text>
       </Grid> */}
 
-      <Container style={styles.fullBlock}>
-        <Text variant="h1" textAlign="center">
-          Управляется через бесплатное мобильное приложение
-        </Text>
-        <Text variant="h4" textAlign="center" color="textSecondary">
-          Вы можете принимать видеозвонки от гостей, а также открывать домофон
-          тогда, когда вам это необходимо.
-        </Text>
-      </Container>
+      <Grid contained style={styles.fullBlock}>
+        <Flex flexDirection="column" style={styles.fullBlock}>
+          <Text variant="h1" textAlign="center">
+            Управляется через бесплатное мобильное приложение
+          </Text>
+          <Text variant="h4" textAlign="center" color="textSecondary">
+            Вы можете принимать видеозвонки от гостей, а также открывать домофон
+            тогда, когда вам это необходимо.
+          </Text>
+          <Link variant="cta" mx="auto" mt="5">
+            Узнать больше
+            <AngleRightB />
+          </Link>
+        </Flex>
+      </Grid>
       <Flex
         style={styles.fullBlock}
         backgroundColor="subtleBackground"
-        height="60vh"
+        height="80vh"
       />
     </ProductPageTemplate>
   )

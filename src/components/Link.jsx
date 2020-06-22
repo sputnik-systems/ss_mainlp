@@ -22,6 +22,7 @@ const cta = css`
 
   display: inline-flex;
   align-items: center;
+  /* justify-content: center; */
 
   &:hover {
     color: var(--color-primary-lighter);

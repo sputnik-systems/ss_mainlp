@@ -88,16 +88,15 @@ export default function ProductCard({
   }, [controls, inView])
 
   return (
-    <RouterLink style={{ textDecoration: 'none' }} to={ctaSecondary}>
+    <RouterLink style={{ textDecoration: 'none', ...style }} to={ctaSecondary}>
       <Card
         animate={controls}
         initial="hidden"
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: 50 },
-        }}
-        transition={{ ease: 'easeOut', duration: 0.3 }}
-        style={{ ...style }}
+        // variants={{
+        //   visible: { y: 0 },
+        //   hidden: { y: 50 },
+        // }}
+        // transition={{ ease: 'easeOut', duration: 0.3 }}
         {...props}
         ref={ref}
       >

@@ -6,6 +6,13 @@ import { motion } from 'framer-motion'
 import Text from 'components/Text'
 import Play from '@iconscout/react-unicons/icons/uil-play'
 
+const spring = {
+  type: 'spring',
+  damping: 50,
+  stiffness: 50,
+  velocity: 1,
+}
+
 const Wrapper = styled(motion.div)`
   width: 80px;
   height: 80px;
@@ -23,12 +30,6 @@ const Wrapper = styled(motion.div)`
 const wrapperVariants = {
   initial: {
     scale: 0,
-    transition: {
-      type: 'spring',
-      damping: 20,
-      stiffness: 300,
-      // damping: 40,
-    },
   },
   hover: {
     boxShadow: '0px 25px 50px rgba(0, 0, 0, 0.25)',
@@ -38,26 +39,22 @@ const wrapperVariants = {
 
     // boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.18)',
     scale: 1,
+
+    transition: spring,
   },
 }
 
 const maskVariants = {
   hover: {
     clipPath: `circle(60% at 50% 50%)`,
-    // transition: {
-    //   type: 'spring',
-    //   stiffness: 20,
-    //   restDelta: 2,
-    // },
+    transition: {
+      type: 'spring',
+      damping: 20,
+      stiffness: 100,
+    },
   },
   idle: {
     clipPath: 'circle(50% at 50% 50%)',
-    // transition: {
-    //   delay: 0.5,
-    //   type: 'spring',
-    //   stiffness: 400,
-    //   damping: 40,
-    // },
   },
 }
 
@@ -76,6 +73,7 @@ const micVariants = {
     scale: 1.05,
     x: '-50%',
     y: '-50%',
+    transition: spring,
   },
 }
 
