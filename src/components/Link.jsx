@@ -24,8 +24,9 @@ const cta = css`
 const nav = css`
   --bug: fix;
   position: relative;
-
   text-decoration: none;
+  padding: var(--spacing-s);
+
   color: var(--color-text-secondary);
   &:hover {
     color: var(--color-primary);

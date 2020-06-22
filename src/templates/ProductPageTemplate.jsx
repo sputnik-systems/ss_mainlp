@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Grid from 'components/Grid'
 
 const Page = styled.main`
-  /* min-height: 400vh; */
+  min-height: 100vh;
   position: relative;
   z-index: 2;
   background: var(--color-background);
@@ -54,7 +54,10 @@ export default function ProductPageTemplate({ children, nav, ...props }) {
         <div className="line line-4" />
       </BgLines>
       {nav}
-      <Grid pt="6" style={{ gridAutoRows: 'max-content' }}>
+      <Grid
+        pt="7"
+        style={{ gridAutoRows: 'max-content', zIndex: 1, position: 'relative' }}
+      >
         {children}
       </Grid>
     </Page>

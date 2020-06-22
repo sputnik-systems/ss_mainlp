@@ -7,7 +7,7 @@ export default css`
   --font-weight-medium: 600;
   --font-weight-demi: 500;
   --font-weight-regular: 400;
-  --font-weight-light: 300;
+  --font-weight-light: 200;
   --font-family: 'Futura PT', Futura, -apple-system, sans-serif;
   --font-family-mono: 'League Mono', 'Fira Mono', monospace;
 
@@ -85,7 +85,7 @@ export default css`
   --spacing-m: 1rem;
   --spacing-l: 1.325rem;
   --spacing-xl: 1.625rem;
-  --spacing-xxl: 2rem;
+  --spacing-xxl: 4rem;
 
   --br-s: 8px;
   --br-m: 15px;

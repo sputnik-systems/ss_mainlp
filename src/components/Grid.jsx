@@ -5,6 +5,7 @@ const ifContained = css`
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 var(--spacing-m);
+  width: 100%;
 `
 
 export default styled.div`

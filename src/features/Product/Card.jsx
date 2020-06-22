@@ -5,6 +5,7 @@ import Flex from 'components/Flex'
 import Text from 'components/Text'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link as RouterLink } from 'react-router-dom'
 
 import AngleRightB from '@iconscout/react-unicons/icons/uil-angle-right-b'
 
@@ -12,7 +13,7 @@ import sk from 'assets/img/sk.jpg'
 import iphone from 'assets/img/iphone.jpg'
 import relate from 'assets/img/relate.png'
 
-const Card = styled(motion.a)`
+const Card = styled(motion.section)`
   --color-subtle-background: #fafafa;
 
   quotes: '“' '”';
@@ -87,34 +88,35 @@ export default function ProductCard({
   }, [controls, inView])
 
   return (
-    <Card
-      animate={controls}
-      initial="hidden"
-      variants={{
-        visible: { y: 0 },
-        hidden: { y: 50 },
-      }}
-      transition={{ ease: 'easeOut', duration: 0.3 }}
-      style={{ ...style }}
-      {...props}
-      ref={ref}
-      href={ctaSecondary}
-    >
-      <Text variant="h1">{title}</Text>
+    <RouterLink style={{ textDecoration: 'none' }} to={ctaSecondary}>
+      <Card
+        animate={controls}
+        initial="hidden"
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: 50 },
+        }}
+        transition={{ ease: 'easeOut', duration: 0.3 }}
+        style={{ ...style }}
+        {...props}
+        ref={ref}
+      >
+        <Text variant="h1">{title}</Text>
 
-      <CtaLinks mt="6" alignItems="center" justifyContent="center">
-        <Link variant="cta" mr="5" href={ctaSecondary}>
-          Подробнее
-          <AngleRightB />
-        </Link>
-        <Link variant="cta" href={ctaPrimary}>
-          {cta}
-          <AngleRightB />
-        </Link>
-      </CtaLinks>
-      <ImageWrapper>
-        <Image />
-      </ImageWrapper>
-    </Card>
+        <CtaLinks mt="6" alignItems="center" justifyContent="center">
+          <Link variant="cta" mr="5" href={ctaSecondary}>
+            Подробнее
+            <AngleRightB />
+          </Link>
+          <Link variant="cta" href={ctaPrimary}>
+            {cta}
+            <AngleRightB />
+          </Link>
+        </CtaLinks>
+        <ImageWrapper>
+          <Image />
+        </ImageWrapper>
+      </Card>
+    </RouterLink>
   )
 }

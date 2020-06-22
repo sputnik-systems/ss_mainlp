@@ -1,8 +1,8 @@
 import { Text } from 'rebass/styled-components'
 import styled, { css } from 'styled-components'
-import { space, color, layout, variant } from 'styled-system'
+import { space, color, layout, variant, typography } from 'styled-system'
 
-const ifH1 = css`
+const h1 = css`
   --bug: fix;
   color: var(--color-text);
   font-size: 80px;
@@ -13,13 +13,41 @@ const ifH1 = css`
   font-family: var(--font-family);
 `
 
+const hero = css`
+  ${h1};
+  font-size: 114px;
+  font-weight: var(--font-weight-light);
+`
+
+const h3 = css`
+  --bug: fix;
+
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+`
+
+const h4 = css`
+  --bug: fix;
+
+  font-size: 28px;
+  padding-top: 24px;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+`
+
 export default styled('p')`
+  margin: 0;
+
   ${variant({
     variants: {
-      h1: ifH1,
+      h1,
+      h3,
+      h4,
+      hero,
     },
   })}
 
-  margin:0;
   ${space};
+  ${typography};
+  ${color};
 `

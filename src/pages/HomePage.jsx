@@ -1,14 +1,27 @@
 import React from 'react'
 import ProductPageTemplate from 'templates/ProductPageTemplate'
-import HomeNav from 'features/Home/Nav'
+import ProductNav from 'features/Product/Nav'
 import ProductCard from 'features/Product/Card'
 import ParallaxItem from 'components/ParallaxItem'
+import Link from 'components/Link'
+import logoPath from 'features/Home/logoPath'
 
 export default function HomePage({ ...props }) {
   return (
     <ProductPageTemplate
       {...props}
-      nav={<HomeNav style={{ gridColumn: '1/17' }} />}
+      nav={
+        <ProductNav
+          path={logoPath}
+          style={{ gridColumn: '1/17' }}
+          right={
+            <>
+              <Link variant="nav">Для партнеров и бизнеса</Link>
+              <Link variant="nav">Безопасность и комфорт</Link>
+            </>
+          }
+        />
+      }
     >
       <ParallaxItem style={{ gridColumn: '1/17' }}>
         <ProductCard

@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Container from 'components/Container'
 import { ReactComponent as GradientLight } from 'assets/gradientLight.svg'
-import { space, layout } from 'styled-system'
+import { space, layout, color } from 'styled-system'
 import Flex from 'components/Flex'
 
 const Body = styled.nav`
@@ -11,6 +11,7 @@ const Body = styled.nav`
   z-index: 2;
   height: 48px;
   border-style: solid;
+  background: var(--color-background);
   border-color: var(--color-subtle-background);
   border-width: 0;
 
@@ -25,6 +26,7 @@ const Body = styled.nav`
 
   ${space};
   ${layout};
+  ${color}
 `
 
 const StyledContainer = styled(Container)`
@@ -43,7 +45,7 @@ export default function Nav({
   return (
     <Body border={border} {...props}>
       <StyledContainer>
-        {left}
+        <Flex alignItems="center">{left}</Flex>
         <Flex alignItems="center">{right}</Flex>
       </StyledContainer>
       {shadow && (

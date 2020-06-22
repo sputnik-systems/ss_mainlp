@@ -33,5 +33,8 @@ export default {
   colors: {
     textSecondary: 'var(--color-text-secondary)',
     text: 'var(--color-text)',
+    transparent: 'transparent',
+    background: 'var(--color-background)',
+    primary: 'var(--color-primary)',
   },
 }

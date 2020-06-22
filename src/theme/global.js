@@ -30,7 +30,7 @@ const global = css`
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: var(--color-text-secondary);
+      background-color: var(--color-gray-400);
       border-radius: 8px;
     }
 
