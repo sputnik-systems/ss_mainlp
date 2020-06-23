@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import Grid from 'components/Grid'
 
 const Page = styled.main`
+  --gap: calc(var(--spacing-xxl) * 2);
+
   min-height: 100vh;
   position: relative;
   z-index: 2;
   background: var(--color-background);
   box-shadow: 0 50px 50px -50px rgba(0, 0, 0, 0.1);
   transition: var(--default-transition);
-
-  /* padding-bottom: calc(var(--spacing-xxl) * 2); */
+  padding-bottom: var(--gap);
 `
 
 const BgLines = styled.div`
@@ -49,7 +50,7 @@ const StyledGrid = styled(Grid)`
   grid-auto-rows: max-content;
   z-index: 1;
   position: relative;
-  grid-row-gap: calc(var(--spacing-xxl) * 2);
+  grid-row-gap: var(--gap);
 `
 
 export default function ProductPageTemplate({

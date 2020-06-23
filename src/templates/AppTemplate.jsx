@@ -6,6 +6,7 @@ const App = styled.div`
 
   position: relative;
   padding-bottom: var(--footer-height);
+  padding-top: var(--spacing-m);
 `
 
 export default function AppTemplate({ children, ...props }) {

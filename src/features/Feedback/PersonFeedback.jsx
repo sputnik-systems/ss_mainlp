@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Video from 'components/Video'
 import eric from 'assets/eric.mov'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Text from 'components/Text'
 import Play from '@iconscout/react-unicons/icons/uil-play'
+
+import { random } from 'utils/helpers'
 
 const spring = {
   type: 'spring',
@@ -14,8 +16,8 @@ const spring = {
 }
 
 const Wrapper = styled(motion.div)`
-  width: 80px;
-  height: 80px;
+  width: ${(p) => p.width}px;
+  height: ${(p) => p.height}px;
   border-radius: 100%;
   /* box-shadow: 0px 12.5px 25px rgba(0, 0, 0, 0.25); */
   will-change: transform;
@@ -46,7 +48,7 @@ const wrapperVariants = {
 
 const maskVariants = {
   hover: {
-    clipPath: `circle(60% at 50% 50%)`,
+    clipPath: `circle(70% at 50% 50%)`,
     transition: {
       type: 'spring',
       damping: 20,
@@ -113,12 +115,16 @@ const PersonName = styled(Text)`
 `
 
 export default function PersonFeedback({ src = eric, ...props }) {
+  const side = useRef(random(70, 90)).current
   return (
     <Wrapper
       {...props}
       // initial="initial"
       whileHover="hover"
+      whileTap="hover"
       // animate="idle"
+      width={side}
+      height={side}
       variants={wrapperVariants}
     >
       <Mask variants={maskVariants}>
@@ -126,14 +132,16 @@ export default function PersonFeedback({ src = eric, ...props }) {
           src={src}
           background
           autoPlay={false}
-          onMouseOver={(event) => event.target.play()}
-          onMouseOut={(event) => event.target.pause()}
+          onMouseOver={(e) => e.target.play()}
+          onMouseOut={(e) => e.target.pause()}
+          onTouchStart={(e) => e.target.play()}
+          onTouchEnd={(e) => e.target.pause()}
           muted={false}
           style={{
-            width: '120%',
-            height: '120%',
-            left: '-10%',
-            top: '-10%',
+            width: '140%',
+            height: '140%',
+            left: '-20%',
+            top: '-20%',
           }}
         />
         <motion.span

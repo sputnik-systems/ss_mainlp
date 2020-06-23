@@ -6,6 +6,8 @@ import Grid from 'components/Grid'
 import Container from 'components/Container'
 import Text from 'components/Text'
 
+import success from 'assets/mascotte/success.png'
+
 const FooterBody = styled(Grid)`
   height: var(--footer-height);
   /* background: var(--color-sputnik-pink); */
@@ -41,11 +43,13 @@ export default function Footer({ ...props }) {
           <Link variant="footer">Обратная связь</Link>
           <Link variant="footer">Идеи функций</Link>
         </Flex>
-        <Flex flexDirection="column" style={{ gridColumn: '10/17' }}>
+        <Flex flexDirection="column" style={{ gridColumn: '10/13' }}>
           <Text variant="h3" pb="3">
             Skolkovo
           </Text>
         </Flex>
+
+        <img src={success} alt="" style={{ gridColumn: '13/17' }} />
       </Grid>
     </FooterBody>
   )

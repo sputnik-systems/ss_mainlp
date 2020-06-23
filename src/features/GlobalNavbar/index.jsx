@@ -7,20 +7,36 @@ import Flex from 'components/Flex'
 
 import Search from '@iconscout/react-unicons/icons/uil-search'
 import User from '@iconscout/react-unicons/icons/uil-user'
+import MotionLogo from 'components/MotionLogo'
+import logoPath from 'features/Home/logoPath'
+import { Link as RouterLink } from 'react-router-dom'
 
 export default function Navbar({ ...props }) {
   return (
     <Nav
+      // mt="6"
+      height="60px"
       border
-      left={<LangSwitcher />}
+      left={
+        <>
+          <RouterLink to="/" style={{ height: '100%' }}>
+            <MotionLogo
+              path={logoPath}
+              style={{
+                marginLeft: 'var(--spacing-xs)',
+                height: '100%',
+              }}
+            />
+          </RouterLink>
+        </>
+      }
       right={
         <>
-          <Link p="3" variant="nav" href="tel://88005553535">
-            8 800 555 35 35
-          </Link>
-          <IconButton>
+          <Link variant="nav">Для бизнеса</Link>
+          <LangSwitcher />
+          {/* <IconButton>
             <Search />
-          </IconButton>
+          </IconButton> */}
           <IconButton>
             <User />
           </IconButton>

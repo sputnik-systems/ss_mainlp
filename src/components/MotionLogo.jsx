@@ -5,12 +5,12 @@ const icon = {
   hidden: {
     pathLength: 0,
     fill: 'transparent', // TODO: change to rgba with 0 opacity
-    stroke: 'var(--color-primary)',
+    stroke: 'var(--color-text)',
   },
   visible: {
     pathLength: 1,
-    fill: 'var(--color-primary)',
-    stroke: 'var(--color-primary)',
+    fill: 'var(--color-text)',
+    stroke: 'var(--color-text)',
   },
 }
 

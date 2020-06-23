@@ -70,6 +70,7 @@ const Image = styled.figure`
 
 export default function ProductCard({
   title,
+  subtitle,
   cta,
   ctaPrimary,
   ctaSecondary,
@@ -100,7 +101,12 @@ export default function ProductCard({
         {...props}
         ref={ref}
       >
-        <Text variant="h1">{title}</Text>
+        <Text variant="h1" textAlign="center">
+          {title}
+        </Text>
+        <Text variant="h4" textAlign="center">
+          {subtitle}
+        </Text>
 
         <CtaLinks mt="6" alignItems="center" justifyContent="center">
           <Link variant="cta" mr="5" href={ctaSecondary}>

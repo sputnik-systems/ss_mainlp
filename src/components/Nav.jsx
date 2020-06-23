@@ -33,6 +33,7 @@ const StyledContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 `
 
 export default function Nav({
@@ -45,8 +46,12 @@ export default function Nav({
   return (
     <Body border={border} {...props}>
       <StyledContainer>
-        <Flex alignItems="center">{left}</Flex>
-        <Flex alignItems="center">{right}</Flex>
+        <Flex height="100%" alignItems="center">
+          {left}
+        </Flex>
+        <Flex height="100%" alignItems="center">
+          {right}
+        </Flex>
       </StyledContainer>
       {shadow && (
         <GradientLight style={{ position: 'absolute', top: '100%' }} />

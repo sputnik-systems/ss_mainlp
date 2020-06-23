@@ -108,6 +108,7 @@ export default function VideoSection({ styles, ...props }) {
     } else {
       document.body.setAttribute('data-theme', '')
     }
+    return () => document.body.setAttribute('data-theme', '')
   }, [isDark])
 
   return (
@@ -116,8 +117,9 @@ export default function VideoSection({ styles, ...props }) {
       style={{ ...styles.fullBlock, minHeight: '90vh' }}
       contained
       backgroundColor="background"
+      as="section"
     >
-      <Flex flexDirection="column" style={styles.smallLeftBlock}>
+      <Flex flexDirection="column" style={styles.leftBlock}>
         <Text variant="h3">
           Снимает четкое видео днем...{' '}
           <motion.span

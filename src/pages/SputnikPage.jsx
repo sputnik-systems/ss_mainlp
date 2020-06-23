@@ -19,8 +19,8 @@ import VideoSection from 'features/Sputnik/VideoSection'
 
 const styles = {
   fullBlock: { gridColumn: '1/17' },
-  leftBlock: { gridColumn: '1/9' },
-  smallLeftBlock: { gridColumn: '1/8' },
+  leftBlock: { gridColumn: '1/8' },
+  bigLeftBlock: { gridColumn: '1/9' },
   rightBlock: { gridColumn: '10/17' },
   bigRightBlock: { gridColumn: '9/17' },
   center: { gridColumn: '2/16' },
@@ -32,11 +32,20 @@ export default function SputnikPage({ ...props }) {
       {...props}
       nav={
         <ProductNav
-          // left={
-          //   <Link ml="4">
-          //     <IntercomLogo />
-          //   </Link>
-          // }
+          left={
+            <Text
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth',
+                })
+              }
+              variant="h2"
+              fontWeight="bold"
+            >
+              Народный домофон
+            </Text>
+          }
           right={
             <Button variant="contained" color="primary">
               Заказать установку
@@ -50,11 +59,12 @@ export default function SputnikPage({ ...props }) {
           ...styles.fullBlock,
           height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
         }}
+        as="hero"
       >
         <Video src={heroVideo} />
       </Container>
 
-      <Container style={styles.fullBlock} pb="7">
+      <Container as="section" style={styles.fullBlock} pb="7">
         <Text variant="hero" fontSize="114px">
           Разработан для людей
         </Text>
@@ -72,9 +82,10 @@ export default function SputnikPage({ ...props }) {
         style={{ ...styles.fullBlock, position: 'relative' }}
         contained
         backgroundColor="background"
+        as="section"
       >
         <Flex
-          style={styles.leftBlock}
+          style={styles.bigLeftBlock}
           backgroundColor="subtleBackground"
           height="60vh"
         />
@@ -100,7 +111,7 @@ export default function SputnikPage({ ...props }) {
         <FeedbackWrapper />
       </Grid>
 
-      <VideoSection styles={styles} />
+      <VideoSection styles={styles} as="section" />
       {/* <Grid style={styles.fullBlock} contained backgroundColor="background">
         <Text color="textSecondary" style={styles.fullBlock}>
           My wife and I now have peace of mind when we leave our kids at home to
@@ -112,9 +123,9 @@ export default function SputnikPage({ ...props }) {
         </Text>
       </Grid> */}
 
-      <Grid contained style={styles.fullBlock}>
+      <Grid contained style={styles.fullBlock} as="section">
         <Flex flexDirection="column" style={styles.fullBlock}>
-          <Text variant="h1" textAlign="center">
+          <Text variant="h3" textAlign="center">
             Управляется через бесплатное мобильное приложение
           </Text>
           <Text variant="h4" textAlign="center" color="textSecondary">
@@ -131,7 +142,72 @@ export default function SputnikPage({ ...props }) {
         style={styles.fullBlock}
         backgroundColor="subtleBackground"
         height="80vh"
+        as="section"
       />
+
+      <Grid
+        style={{ ...styles.fullBlock, position: 'relative' }}
+        contained
+        backgroundColor="background"
+        as="section"
+      >
+        <Flex
+          style={styles.leftBlock}
+          backgroundColor="subtleBackground"
+          height="60vh"
+        />
+        <Flex flexDirection="column" style={styles.bigRightBlock} as="section">
+          <Text variant="h3">Совместим с аналоговыми трубками</Text>
+          <Text variant="h4">
+            Работает со всеми существующими вариантами трубок домофона, вам не
+            понадобится ничего менять.
+          </Text>
+          <Link
+            mt="5"
+            color="primary"
+            variant="cta"
+            fontSize="3"
+            textAlign="left"
+            href="/"
+          >
+            Узнать больше
+            <AngleRightB />
+          </Link>
+        </Flex>
+      </Grid>
+
+      <Grid
+        style={{ ...styles.fullBlock }}
+        contained
+        backgroundColor="background"
+        as="section"
+      >
+        <Flex flexDirection="column" style={styles.leftBlock}>
+          <Text variant="h3">Дружит с Алисой</Text>
+          <Text variant="h4">
+            Открывайте дверь гостям с помощью умной колонки «Алиса».
+            Настраивайте домофон так, как вам это удобно, меняйте звуки открытия
+            двери или устанавливайте режим тишины.
+          </Text>
+          <Link
+            mt="5"
+            color="primary"
+            variant="cta"
+            fontSize="3"
+            textAlign="left"
+            href="/"
+          >
+            Узнать больше
+            <AngleRightB />
+          </Link>
+        </Flex>
+
+        <Flex
+          style={styles.bigRightBlock}
+          backgroundColor="subtleBackground"
+          height="60vh"
+        />
+      </Grid>
     </ProductPageTemplate>
   )
 }

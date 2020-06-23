@@ -27,7 +27,8 @@ const global = css`
   @media (orientation: landscape) {
     ::-webkit-scrollbar {
       width: 8px;
-      background-color: var(--color-subtle-background);
+      /* background-color: var(--color-subtle-background); */
+      background-color: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -46,10 +47,10 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     ${defaultTheme};
-    --hover-scale: 1.05;
+    --hover-scale: 1.07;
     --scale-active: 0.96;
-    --hover-transition: all 0.25s ease;
-    --default-transition: all 0.25s ease;
+    --hover-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    --default-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   }
 
   body[data-theme='dark'] {

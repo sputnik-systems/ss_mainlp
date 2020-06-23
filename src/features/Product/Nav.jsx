@@ -62,13 +62,13 @@ export default function ProductNav({
           left={
             <>
               <RouterLink to="/">
-                <MotionLogo
+                {/* <MotionLogo
                   style={{
                     marginLeft: 'var(--spacing-xs)',
                     height: '100%',
                   }}
                   path={path}
-                />
+                /> */}
               </RouterLink>
               {left}
             </>
