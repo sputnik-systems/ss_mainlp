@@ -6,7 +6,7 @@ import Grid from 'components/Grid'
 import Container from 'components/Container'
 import Text from 'components/Text'
 
-import success from 'assets/mascotte/success.png'
+import vsem from 'assets/img/vsem.png'
 
 const FooterBody = styled(Grid)`
   height: var(--footer-height);
@@ -49,7 +49,11 @@ export default function Footer({ ...props }) {
           </Text>
         </Flex>
 
-        <img src={success} alt="" style={{ gridColumn: '13/17' }} />
+        <img
+          src={vsem}
+          alt=""
+          style={{ gridColumn: '13/17', width: '100%', objectFit: 'contain' }}
+        />
       </Grid>
     </FooterBody>
   )

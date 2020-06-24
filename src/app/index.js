@@ -8,6 +8,7 @@ import Footer from 'features/Footer'
 
 import Home from 'pages/HomePage'
 import Sputnik from 'pages/SputnikPage'
+import AppPage from 'pages/AppPage'
 
 // const pageVariants = {
 //   initial: {
@@ -61,6 +62,7 @@ export default function App() {
       <Navbar />
 
       <Switch location={location} key={location.pathname}>
+        <Route component={AppPage} path="/app" />
         <Route component={Sputnik} path="/sputnik" />
         <Route component={Home} path="/" />
       </Switch>

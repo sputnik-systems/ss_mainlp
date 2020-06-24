@@ -32,7 +32,7 @@ const global = css`
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: var(--color-gray-400);
+      background-color: var(--color-text);
       border-radius: 8px;
     }
 

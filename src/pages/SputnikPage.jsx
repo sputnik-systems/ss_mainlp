@@ -59,7 +59,7 @@ export default function SputnikPage({ ...props }) {
           ...styles.fullBlock,
           height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
         }}
-        as="hero"
+        as="header"
       >
         <Video src={heroVideo} />
       </Container>

@@ -33,6 +33,8 @@ export default function HomePage({ ...props }) {
           title="Спутник"
           subtitle="Мобильное приложение."
           cta="Установить"
+          ctaPrimary="/app/order"
+          ctaSecondary="/app"
         />
       </ParallaxItem>
       <ParallaxItem style={{ gridColumn: '1/17' }}>
