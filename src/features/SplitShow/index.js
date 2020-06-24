@@ -24,6 +24,10 @@ export default function SplitShow({ ...props }) {
         src={img3}
         style={{ gridColumn: '9/16', marginTop: 'var(--spacing-xxl)' }}
       />
+      {/* <SplitItem
+        src={img2}
+        style={{ gridColumn: '2/9', marginTop: 'var(--spacing-xxl)' }}
+      /> */}
     </Section>
   )
 }

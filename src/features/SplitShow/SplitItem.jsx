@@ -10,6 +10,8 @@ import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 import { range } from 'utils/helpers'
 import { useCallback } from 'react'
+import Text from 'components/Text'
+import useResizeObserver from 'use-resize-observer'
 
 const Wrapper = styled.div`
   /* margin: 34px 17px; */
@@ -24,13 +26,19 @@ const SplitImg = styled(motion.img)`
   width: 100%;
 `
 
-// const threshholds = range(0, 1, 0.01) //[0.0, 0.01, 0.02]
-//document.documentElement.clientHeight
-//      elementTop + 76 - document.documentElement.clientHeight,
+const SplitText = styled(Text)`
+  padding: 34px 0 53px 0;
+  max-width: 284px;
 
-const bodyOffset = 76
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+`
 
-export default function SplitItem({ src, ...props }) {
+const BODY_OFFSET = 76
+
+export default function SplitItem({ src, caption, ...props }) {
   const [element, setElement] = useState(0)
 
   const [elementTop, setElementTop] = useState(0)
@@ -48,15 +56,21 @@ export default function SplitItem({ src, ...props }) {
     ['-50%', '50%'],
   )
 
-  const handleImgLoad = useCallback(() => {
-    setElementTop(element.offsetTop + bodyOffset)
+  const handleResize = useCallback(() => {
+    setElementTop(element.offsetTop + BODY_OFFSET)
   }, [element])
+
+  useResizeObserver({
+    ref,
+    onResize: handleResize,
+  })
 
   return (
     <div ref={ref} {...props}>
       <Wrapper>
-        <SplitImg src={src} style={{ y }} onLoad={handleImgLoad} />
+        <SplitImg src={src} style={{ y }} />
       </Wrapper>
+      {caption && <SplitText as="caption">{caption}</SplitText>}
     </div>
   )
 }
