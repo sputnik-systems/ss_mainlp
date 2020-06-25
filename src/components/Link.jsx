@@ -34,8 +34,8 @@ const nav = css`
   position: relative;
   text-decoration: none;
   padding: var(--spacing-s) var(--spacing-m);
-
   color: var(--color-text-secondary);
+
   &:hover {
     color: var(--color-primary);
   }

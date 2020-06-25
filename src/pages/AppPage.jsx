@@ -55,7 +55,7 @@ export default function AppPage({ ...props }) {
         />
       }
     >
-      <Container
+      {/* <Container
         style={{
           ...styles.fullBlock,
           height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
@@ -63,20 +63,63 @@ export default function AppPage({ ...props }) {
         as="header"
       >
         <Video src={heroVideo} />
+      </Container> */}
+
+      <Container style={{ ...styles.fullBlock, height: '55vh' }}>
+        <Flex flexDirection="column" height="100%" justifyContent="center">
+          <Text pb="4" fontSize="4">
+            Умное приложение
+          </Text>
+          <Text textAlign="left" variant="h1" style={{ fontSize: '5.41667vw' }}>
+            Для управления вашей квартирой
+            <br /> и не только
+          </Text>
+        </Flex>
       </Container>
-      <div style={{ height: '100vh' }} />
 
       <section style={styles.fullBlock}>
         <SplitItem src={img4} />
       </section>
 
-      <div style={{ height: '100vh' }} />
-      <section style={styles.fullBlock}>
+      <Container style={styles.fullBlock}>
+        <Grid>
+          <Text style={{ gridColumn: '2/8' }} variant="h3">
+            What does being trendy mean to you?
+          </Text>
+          <Text
+            style={{ gridColumn: '10/16', padding: 0 }}
+            variant="h4"
+            // color="text"
+          >
+            The product is targeted at a 30-40 year old audience and our team
+            instantly blew past all the typical templates for these kinds of
+            sites. The idea was to develop an information portal that reflected
+            the most happening design trends and where you can find content
+            relevant to you.
+          </Text>
+        </Grid>
+      </Container>
+      {/* <section style={styles.fullBlock}>
         <SplitItem src={img4} />
-      </section>
+      </section> */}
       <SplitShow style={styles.fullBlock} />
 
-      <div style={{ height: '100vh' }} />
+      {/* <Container style={styles.fullBlock}>
+        <Grid></Grid>
+      </Container> */}
+      <Container style={styles.fullBlock}>
+        <Grid>
+          <Text style={{ gridColumn: '2/9' }} variant="h1" textAlign="left">
+            Design isn’t
+            <br /> just details
+          </Text>
+          <Flex
+            backgroundColor="subtleBackground"
+            height="85vh"
+            style={styles.fullBlock}
+          />
+        </Grid>
+      </Container>
     </ProductPageTemplate>
   )
 }

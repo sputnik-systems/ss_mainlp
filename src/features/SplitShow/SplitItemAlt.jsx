@@ -5,6 +5,10 @@ import useResizeObserver from 'use-resize-observer'
 
 import Text from 'components/Text'
 
+const BODY_OFFSET = 76
+
+const H = 600
+
 const Wrapper = styled.div`
   /* margin: 34px 17px; */
   /* background: var(--color-subtle-background); */
@@ -13,9 +17,10 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 
-const SplitImg = styled(motion.img)`
+const SplitImg = styled.img`
   width: 100%;
-  object-fit: cover;
+  height: ${H}px;
+  object-fit: contain;
 `
 
 const SplitText = styled(Text)`
@@ -28,14 +33,12 @@ const SplitText = styled(Text)`
   font-size: 22px;
 `
 
-const BODY_OFFSET = 76
+const MovingDiv = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+`
 
-export default function SplitItem({
-  src,
-  caption,
-  splitItemProps = {},
-  ...props
-}) {
+export default function SplitItemAlt({ src, src2, caption, ...props }) {
   const ref = useRef(null)
   const [elementTop, setElementTop] = useState(0)
   const { scrollY } = useViewportScroll()
@@ -48,14 +51,11 @@ export default function SplitItem({
   const y = useTransform(
     scrollY,
     [elementTop - window.innerHeight, elementTop + window.innerHeight],
-    ['-50%', '50%'],
+    ['-0%', '-100%'],
   )
 
   const handleResize = useCallback(() => {
-    const rect = ref.current.getBoundingClientRect()
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-
-    setElementTop(rect.top + scrollTop)
+    setElementTop(ref.current.offsetTop + BODY_OFFSET)
   }, [])
 
   useResizeObserver({
@@ -66,7 +66,10 @@ export default function SplitItem({
   return (
     <div ref={ref} {...props}>
       <Wrapper>
-        <SplitImg src={src} {...splitItemProps} style={{ y }} />
+        <MovingDiv style={{ height: H, y }}>
+          <SplitImg src={src} />
+          <SplitImg src={src2} />
+        </MovingDiv>
       </Wrapper>
       {caption && <SplitText as="caption">{caption}</SplitText>}
     </div>

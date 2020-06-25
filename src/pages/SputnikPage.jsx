@@ -16,6 +16,10 @@ import Container from 'components/Container'
 import Video from 'components/Video'
 import FeedbackWrapper from 'features/Feedback/FeedbackWrapper'
 import VideoSection from 'features/Sputnik/VideoSection'
+import SplitItem from 'features/SplitShow/SplitItem'
+import SplitShow from 'features/SplitShow'
+
+import img3 from 'features/SplitShow/img3.jpeg'
 
 const styles = {
   fullBlock: { gridColumn: '1/17' },
@@ -77,6 +81,7 @@ export default function SputnikPage({ ...props }) {
           аналоговых домофонов абсолютно во всех типах домов.
         </Text>
       </Container>
+      {/* <SplitShow style={styles.fullBlock} /> */}
 
       <Grid
         style={{ ...styles.fullBlock, position: 'relative' }}
@@ -84,11 +89,8 @@ export default function SputnikPage({ ...props }) {
         backgroundColor="background"
         as="section"
       >
-        <Flex
-          style={styles.bigLeftBlock}
-          backgroundColor="subtleBackground"
-          height="60vh"
-        />
+        <Flex backgroundColor="subtleBackground" height="60vh" />
+
         <Flex flexDirection="column" style={styles.rightBlock}>
           <Text variant="h3">Повышает безопасность</Text>
           <Text variant="h4">
