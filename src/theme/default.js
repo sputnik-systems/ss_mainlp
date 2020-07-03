@@ -1,8 +1,6 @@
 import { css } from 'styled-components'
 
 export default css`
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
   /* main */
   --font-size: 18px;
   --font-weight-bold: 700;
@@ -91,7 +89,7 @@ export default css`
   --spacing-xxl: 4rem;
 
   --br-s: 8px;
-  --br-m: 15px;
+  --br-m: 20px;
   --br-l: 30px;
 
   --size-desktop: 1024px;
@@ -99,6 +97,7 @@ export default css`
   --size-mobile: 420px;
 
   --shadow-main: 0 0 15px rgba(0, 0, 0, 0.07);
+  --shadow-strong: 0 50px 100px rgba(0, 0, 0, 0.1);
   /* 
    main: '0 3px 15px 2px rgba(0, 0, 0, 0.05)',
   strong: 'rgba(0, 0, 0, 0.2) 0px 35px 50px -30px', */

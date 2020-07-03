@@ -1,6 +1,7 @@
 import { Text } from 'rebass/styled-components'
 import styled, { css } from 'styled-components'
 import { space, color, layout, variant, typography } from 'styled-system'
+import gridColumns from 'utils/gridColumns'
 
 const h1 = css`
   --bug: fix;
@@ -52,4 +53,5 @@ export default styled('p')`
   ${space};
   ${typography};
   ${color};
+  ${gridColumns};
 `

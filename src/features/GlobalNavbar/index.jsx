@@ -16,7 +16,6 @@ export default function Navbar({ ...props }) {
     <Nav
       // mt="6"
       height="60px"
-      border
       left={
         <>
           <RouterLink to="/" style={{ height: '100%' }}>
@@ -33,13 +32,14 @@ export default function Navbar({ ...props }) {
       right={
         <>
           <Link variant="nav">Для бизнеса</Link>
+          <Link variant="nav">Войти</Link>
           <LangSwitcher />
           {/* <IconButton>
             <Search />
           </IconButton> */}
-          <IconButton>
+          {/* <IconButton>
             <User />
-          </IconButton>
+          </IconButton> */}
         </>
       }
     />

@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import config from 'app/config'
 import Navbar from 'features/GlobalNavbar'
 import Footer from 'features/Footer'
+import useScrollToTop from 'hooks/useScrollToTop'
 
 import Home from 'pages/HomePage'
 import Sputnik from 'pages/SputnikPage'
@@ -54,6 +55,7 @@ import AppPage from 'pages/AppPage'
 
 export default function App() {
   const location = useLocation()
+  useScrollToTop()
   return (
     <AppTemplate>
       <Helmet>

@@ -47,13 +47,13 @@ const nav = css`
 
   &::before {
     content: ' ';
-    background: var(--color-subtle-background);
+    background: var(--color-blurred-background);
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: -1;
     opacity: 0;
-    border-radius: var(--br-l);
+    border-radius: var(--br-m);
     left: 0;
     top: 0;
   }
@@ -61,7 +61,7 @@ const nav = css`
   &:hover {
     &::before {
       opacity: 1;
-      transform: scale(var(--hover-scale));
+      /* transform: scale(var(--hover-scale)); */
     }
     & > svg {
       color: var(--color-text);

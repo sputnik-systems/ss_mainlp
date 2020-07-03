@@ -8,7 +8,14 @@ import IconButton from 'components/IconButton'
 export default function LangSwitcher({ ...props }) {
   return (
     <IconButton>
-      <Globe />
+      <span
+        role="img"
+        aria-label="language"
+        style={{ fontSize: 24, width: 24, height: 24 }}
+      >
+        🇷🇺
+      </span>
+      {/* <Globe /> */}
     </IconButton>
   )
 }

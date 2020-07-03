@@ -16,10 +16,9 @@ import Container from 'components/Container'
 import Video from 'components/Video'
 import FeedbackWrapper from 'features/Feedback/FeedbackWrapper'
 import VideoSection from 'features/Sputnik/VideoSection'
-import SplitItem from 'features/SplitShow/SplitItem'
-import SplitShow from 'features/SplitShow'
 
-import img3 from 'features/SplitShow/img3.jpeg'
+import appShowreel from 'assets/img/app_showreel.jpg'
+import SplitItem from 'features/SplitShow/SplitItem'
 
 const styles = {
   fullBlock: { gridColumn: '1/17' },
@@ -60,15 +59,15 @@ export default function SputnikPage({ ...props }) {
     >
       <Container
         style={{
-          ...styles.fullBlock,
           height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
         }}
+        column="full"
         as="header"
       >
         <Video src={heroVideo} />
       </Container>
 
-      <Container as="section" style={styles.fullBlock} pb="7">
+      <Container as="section" column="full" pb="7">
         <Text variant="hero" fontSize="114px">
           Разработан для людей
         </Text>
@@ -81,17 +80,17 @@ export default function SputnikPage({ ...props }) {
           аналоговых домофонов абсолютно во всех типах домов.
         </Text>
       </Container>
-      {/* <SplitShow style={styles.fullBlock} /> */}
 
       <Grid
-        style={{ ...styles.fullBlock, position: 'relative' }}
+        style={{ position: 'relative' }}
         contained
         backgroundColor="background"
         as="section"
+        column="full"
       >
-        <Flex backgroundColor="subtleBackground" height="60vh" />
+        <Flex backgroundColor="subtleBackground" height="60vh" column="left" />
 
-        <Flex flexDirection="column" style={styles.rightBlock}>
+        <Flex flexDirection="column" column="right">
           <Text variant="h3">Повышает безопасность</Text>
           <Text variant="h4">
             Домофон работает со специальными криптозащищенными ключами,
@@ -114,8 +113,8 @@ export default function SputnikPage({ ...props }) {
       </Grid>
 
       <VideoSection styles={styles} as="section" />
-      {/* <Grid style={styles.fullBlock} contained backgroundColor="background">
-        <Text color="textSecondary" style={styles.fullBlock}>
+      {/* <Grid      column="full" contained backgroundColor="background">
+        <Text color="textSecondary"      column="full">
           My wife and I now have peace of mind when we leave our kids at home to
           do a quick errand. Installation was easy. No more worries when we are
           expecting a package.
@@ -125,8 +124,8 @@ export default function SputnikPage({ ...props }) {
         </Text>
       </Grid> */}
 
-      <Grid contained style={styles.fullBlock} as="section">
-        <Flex flexDirection="column" style={styles.fullBlock}>
+      <Grid contained column="full" as="section">
+        <Flex flexDirection="column" column="full">
           <Text variant="h3" textAlign="center">
             Управляется через бесплатное мобильное приложение
           </Text>
@@ -140,25 +139,18 @@ export default function SputnikPage({ ...props }) {
           </Link>
         </Flex>
       </Grid>
-      <Flex
-        style={styles.fullBlock}
-        backgroundColor="subtleBackground"
-        height="80vh"
-        as="section"
-      />
+
+      <SplitItem column="full" src={appShowreel} />
 
       <Grid
-        style={{ ...styles.fullBlock, position: 'relative' }}
+        style={{ position: 'relative' }}
         contained
         backgroundColor="background"
         as="section"
+        column="full"
       >
-        <Flex
-          style={styles.leftBlock}
-          backgroundColor="subtleBackground"
-          height="60vh"
-        />
-        <Flex flexDirection="column" style={styles.bigRightBlock} as="section">
+        <Flex column="left" backgroundColor="subtleBackground" height="60vh" />
+        <Flex flexDirection="column" column="bigRight" as="section">
           <Text variant="h3">Совместим с аналоговыми трубками</Text>
           <Text variant="h4">
             Работает со всеми существующими вариантами трубок домофона, вам не
@@ -178,13 +170,8 @@ export default function SputnikPage({ ...props }) {
         </Flex>
       </Grid>
 
-      <Grid
-        style={{ ...styles.fullBlock }}
-        contained
-        backgroundColor="background"
-        as="section"
-      >
-        <Flex flexDirection="column" style={styles.leftBlock}>
+      <Grid column="full" contained backgroundColor="background" as="section">
+        <Flex flexDirection="column" column="left">
           <Text variant="h3">Дружит с Алисой</Text>
           <Text variant="h4">
             Открывайте дверь гостям с помощью умной колонки «Алиса».
@@ -205,7 +192,7 @@ export default function SputnikPage({ ...props }) {
         </Flex>
 
         <Flex
-          style={styles.bigRightBlock}
+          column="bigRight"
           backgroundColor="subtleBackground"
           height="60vh"
         />

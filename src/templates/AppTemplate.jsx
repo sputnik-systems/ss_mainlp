@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const App = styled.div`
-  --footer-height: 100vh;
+  --footer-height: 300px;
 
   position: relative;
   padding-bottom: var(--footer-height);

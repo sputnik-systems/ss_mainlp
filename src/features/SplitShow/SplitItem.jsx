@@ -4,6 +4,11 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import useResizeObserver from 'use-resize-observer'
 
 import Text from 'components/Text'
+import gridColumns from 'utils/gridColumns'
+
+const Body = styled.div`
+  ${gridColumns};
+`
 
 const Wrapper = styled.div`
   /* margin: 34px 17px; */
@@ -16,6 +21,7 @@ const Wrapper = styled.div`
 const SplitImg = styled(motion.img)`
   width: 100%;
   object-fit: cover;
+  max-height: 100vh;
 `
 
 const SplitText = styled(Text)`
@@ -25,10 +31,12 @@ const SplitText = styled(Text)`
   width: 100%;
   margin: 0 auto;
   display: block;
-  font-size: 22px;
+  font-size: 24px;
 `
 
 const BODY_OFFSET = 76
+
+// TODO: account for img height when its > 100vh
 
 export default function SplitItem({
   src,
@@ -64,11 +72,11 @@ export default function SplitItem({
   })
 
   return (
-    <div ref={ref} {...props}>
+    <Body ref={ref} {...props}>
       <Wrapper>
         <SplitImg src={src} {...splitItemProps} style={{ y }} />
       </Wrapper>
       {caption && <SplitText as="caption">{caption}</SplitText>}
-    </div>
+    </Body>
   )
 }

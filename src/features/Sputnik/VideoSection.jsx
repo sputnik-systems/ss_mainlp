@@ -13,9 +13,9 @@ import eric from 'assets/eric.mov'
 import eric2 from 'assets/eric2.mov'
 import Sparkles from 'components/Sparkles'
 
-const THRESHOLD = [0.1, 0.8, 0.9]
+// const THRESHOLD = [0.1, 0.8, 0.9]
 
-const FlipScene = styled.div`
+const FlipScene = styled(Flex)`
   background-color: transparent;
   perspective: 1000px;
   &:hover > div {
@@ -27,6 +27,7 @@ const FlipCard = styled(motion.div)`
   position: relative;
   width: 100%;
   height: 100%;
+  max-height: 75vh;
 
   transform-style: preserve-3d;
 `
@@ -86,20 +87,25 @@ const textVariants = {
   },
 }
 
-export default function VideoSection({ styles, ...props }) {
+export default function VideoSection({ ...props }) {
   const [isDark, setIsDark] = useState(false)
 
   const [ref, inView, entry] = useInView({
-    threshold: THRESHOLD,
+    threshold: 0.7,
     rootMargin: '64px',
   })
 
   useEffect(() => {
-    if (entry?.intersectionRatio > 0.9) {
+    if (inView) {
       setIsDark(true)
     } else {
       setIsDark(false)
     }
+    // if (entry?.intersectionRatio > 0.9) {
+    //   setIsDark(true)
+    // } else {
+    //   setIsDark(false)
+    // }
   }, [entry, inView])
 
   useEffect(() => {
@@ -114,12 +120,13 @@ export default function VideoSection({ styles, ...props }) {
   return (
     <Grid
       ref={ref}
-      style={{ ...styles.fullBlock, minHeight: '90vh' }}
+      style={{ minHeight: '110vh' }}
       contained
       backgroundColor="background"
       as="section"
+      column="full"
     >
-      <Flex flexDirection="column" style={styles.leftBlock}>
+      <Flex flexDirection="column" column="left" justifyContent="center">
         <Text variant="h3">
           Снимает четкое видео днем...{' '}
           <motion.span
@@ -147,7 +154,7 @@ export default function VideoSection({ styles, ...props }) {
           <AngleRightB />
         </Link>
       </Flex>
-      <FlipScene style={styles.bigRightBlock}>
+      <FlipScene column="bigRight" justifyContent="center" alignItems="center">
         <FlipCard animate={isDark ? 'night' : 'day'} variants={variants}>
           <FrontVideo background src={eric} />
           <BackVideo background src={eric2} />

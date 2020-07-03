@@ -8,15 +8,25 @@ import Button from 'components/Button'
 import Image from 'components/Image'
 import Flex from 'components/Flex'
 import Grid from 'components/Grid'
-import heroVideo from 'assets/herovideo_web.mp4'
 import AngleRightB from '@iconscout/react-unicons/icons/uil-angle-right-b'
 
-import { ReactComponent as IntercomLogo } from 'assets/intercomLogo.svg'
 import Container from 'components/Container'
 import Video from 'components/Video'
 import SplitShow from 'features/SplitShow'
 import SplitItem from 'features/SplitShow/SplitItem'
-import img4 from 'features/SplitShow/img4.jpg'
+
+import { ReactComponent as Apple } from 'assets/icons/ios.svg'
+import { ReactComponent as GooglePlay } from 'assets/icons/googleplay.svg'
+import appShowreel from 'assets/img/app_showreel.jpg'
+import appWidget from 'assets/img/app_widget.png'
+import appWatch from 'assets/img/app_watch.png'
+
+import video from 'assets/videos/wickretvideo.mp4'
+
+import appCodes from 'assets/img/app_phonereel.png'
+import PhoneSection from 'features/PhoneSection'
+
+import Phone from 'features/PhoneSection/Phone'
 
 const styles = {
   fullBlock: { gridColumn: '1/17' },
@@ -26,6 +36,29 @@ const styles = {
   bigRightBlock: { gridColumn: '9/17' },
   center: { gridColumn: '2/16' },
 }
+
+const splitLeft = [
+  {
+    src: appCodes,
+    caption: 'Открываыйте дверь через мобильное приложение...',
+  },
+  {
+    src: appWidget,
+    caption: '... а также через виджет.',
+  },
+  {
+    src: appCodes,
+    caption: 'Пользуйтесь технологией «свободные руки».',
+  },
+]
+
+const splitRight = [
+  { src: appWatch, caption: '...с помощью умных часов...' },
+  {
+    src: appCodes,
+    caption: 'Создавайте коды доступа.',
+  },
+]
 
 export default function AppPage({ ...props }) {
   return (
@@ -43,45 +76,81 @@ export default function AppPage({ ...props }) {
               }
               variant="h2"
               fontWeight="bold"
+              style={{ fontSize: 28, letterSpacing: '-0.15rem' }}
             >
-              App
+              Sputnik App
             </Text>
           }
           right={
-            <Button variant="contained" color="primary">
-              Скачать
-            </Button>
+            <>
+              <Link variant="nav" mr="2">
+                Спецификация
+              </Link>
+              <Button variant="contained" color="primary">
+                Скачать
+              </Button>
+            </>
           }
         />
       }
     >
-      {/* <Container
-        style={{
-          ...styles.fullBlock,
-          height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
-        }}
-        as="header"
-      >
-        <Video src={heroVideo} />
-      </Container> */}
+      <Container column="full">
+        <Grid>
+          <Flex
+            column="padLeft"
+            flexDirection="column"
+            height="100%"
+            justifyContent="center"
+            style={{
+              gridColumn: '2/9',
+              height: '86vh',
+            }}
+          >
+            {/* <Text textAlign="left" variant="h4" mb="3">
+              Умное приложение
+            </Text> */}
+            <Text variant="h1" textAlign="left">
+              Приложение для управления умным домом
+            </Text>
+            <Flex mt="7">
+              <Button variant="store" mr="4">
+                <Apple />
+                <span>App Store</span>
+              </Button>
+              <Button variant="store">
+                <GooglePlay />
+                <span>Google Play</span>
+              </Button>
+            </Flex>
+          </Flex>
 
-      <Container style={{ ...styles.fullBlock, height: '55vh' }}>
-        <Flex flexDirection="column" height="100%" justifyContent="center">
-          <Text pb="4" fontSize="4">
-            Умное приложение
-          </Text>
-          <Text textAlign="left" variant="h1" style={{ fontSize: '5.41667vw' }}>
-            Для управления вашей квартирой
-            <br /> и не только
-          </Text>
-        </Flex>
+          <Flex
+            style={{ height: '86vh' }}
+            alignItems="center"
+            justifyContent="center"
+            column="padRight"
+          >
+            <Phone>
+              <Video src={video} background />
+            </Phone>
+          </Flex>
+          {/* <Image
+            height="85vh"
+            column="padRight"
+            style={{
+              objectFit: 'contain',
+              justifySelf: 'center',
+            }}
+            src={phone}
+          /> */}
+        </Grid>
       </Container>
 
-      <section style={styles.fullBlock}>
-        <SplitItem src={img4} />
-      </section>
+      <SplitItem column="full" src={appShowreel} />
 
-      <Container style={styles.fullBlock}>
+      <PhoneSection column="full" />
+
+      {/* <Container style={styles.fullBlock}>
         <Grid>
           <Text style={{ gridColumn: '2/8' }} variant="h3">
             What does being trendy mean to you?
@@ -98,20 +167,34 @@ export default function AppPage({ ...props }) {
             relevant to you.
           </Text>
         </Grid>
-      </Container>
-      {/* <section style={styles.fullBlock}>
-        <SplitItem src={img4} />
-      </section> */}
-      <SplitShow style={styles.fullBlock} />
-
-      {/* <Container style={styles.fullBlock}>
-        <Grid></Grid>
       </Container> */}
+
+      <Container style={styles.fullBlock}>
+        <Grid>
+          <Text style={{ gridColumn: '2/10' }} variant="h1" textAlign="left">
+            Ключи, они такие разные...
+          </Text>
+
+          {/* <Text
+            color="textSecondary"
+            textAlign="left"
+            variant="h4"
+            column="center"
+            // pt="0"
+          >
+            Нет желания искать ключ в сумки или кармане? Ничего страшного. У вас
+            много других способов как открыть дверь с помощью кодов доступа,
+            мобильного приложения, виджета, умных часов или с технологией
+            “свободные руки”.
+          </Text> */}
+        </Grid>
+      </Container>
+      <SplitShow left={splitLeft} right={splitRight} column="full" />
+
       <Container style={styles.fullBlock}>
         <Grid>
           <Text style={{ gridColumn: '2/9' }} variant="h1" textAlign="left">
-            Design isn’t
-            <br /> just details
+            Защитим <br /> лично вас
           </Text>
           <Flex
             backgroundColor="subtleBackground"

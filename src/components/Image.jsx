@@ -1,3 +1,7 @@
 import { Image } from 'rebass/styled-components'
+import styled from 'styled-components'
+import gridColumns from 'utils/gridColumns'
 
-export default Image
+export default styled(Image)`
+  ${gridColumns};
+`
