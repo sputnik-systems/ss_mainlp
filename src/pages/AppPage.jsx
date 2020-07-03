@@ -110,7 +110,7 @@ export default function AppPage({ ...props }) {
               Умное приложение
             </Text> */}
             <Text variant="h1" textAlign="left">
-              Приложение для управления умным домом
+              Управляй <br /> умным домом
             </Text>
             <Flex mt="7">
               <Button variant="store" mr="4">
