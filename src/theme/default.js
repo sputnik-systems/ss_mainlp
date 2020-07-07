@@ -76,6 +76,8 @@ export default css`
 
   --color-sputnik-pink: #edd7df;
   --color-sputnik-pink-dark: #c5819a;
+  --color-sputnik-yellow: #ffd600;
+  --color-sputnik-yellow-dark: #e6c100;
 
   --prefers-dark: false;
   --scrollbar-width: 12px;

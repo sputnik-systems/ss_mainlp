@@ -11,7 +11,14 @@ export default function LangSwitcher({ ...props }) {
       <span
         role="img"
         aria-label="language"
-        style={{ fontSize: 24, width: 24, height: 24 }}
+        style={{
+          fontSize: 24,
+          width: 32,
+          height: 32,
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
       >
         🇷🇺
       </span>

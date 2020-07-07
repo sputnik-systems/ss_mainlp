@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useCallback } from 'react'
 import { useResizeObserver } from '@asyarb/use-resize-observer'
 
 import ProductPageTemplate from 'templates/ProductPageTemplate'
@@ -10,7 +10,7 @@ import Button from 'components/Button'
 import Image from 'components/Image'
 import Flex from 'components/Flex'
 import Grid from 'components/Grid'
-import AngleRightB from '@iconscout/react-unicons/icons/uil-angle-right-b'
+import Emoji from 'components/Emoji'
 
 import Container from 'components/Container'
 import Video from 'components/Video'
@@ -20,38 +20,75 @@ import SplitItem from 'features/SplitShow/SplitItem'
 import { ReactComponent as Apple } from 'assets/icons/ios.svg'
 import { ReactComponent as GooglePlay } from 'assets/icons/googleplay.svg'
 import appShowreel from 'assets/img/app_showreel.jpg'
-import appWidget from 'assets/img/app_widget.png'
-import appWatch from 'assets/img/app_watch.png'
 
 import video from 'assets/videos/wickretvideo.mp4'
 
-import appCodes from 'assets/img/app_phonereel.png'
 import PhoneSection from 'features/PhoneSection'
+import KeysSection from 'features/App/KeysSection'
+import CardsSection from 'features/App/CardsSection'
 
 import Phone from 'features/PhoneSection/Phone'
-import StackableCards from 'features/StackableCards'
-import { useCallback } from 'react'
 
-const splitLeft = [
-  {
-    src: appCodes,
-    caption: 'Открываыйте дверь через мобильное приложение...',
-  },
-  {
-    src: appWidget,
-    caption: '... а также через виджет.',
-  },
-  {
-    src: appCodes,
-    caption: 'Пользуйтесь технологией «свободные руки».',
-  },
-]
+import pic1 from 'assets/img/app/pic1.png'
+import pic2 from 'assets/img/app/pic2.png'
+import pic3 from 'assets/img/app/pic3.png'
 
-const splitRight = [
-  { src: appWatch, caption: '...с помощью умных часов...' },
+const phoneSlides = [
   {
-    src: appCodes,
-    caption: 'Создавайте коды доступа.',
+    title: 'Квартира к вам не привязана',
+    subtitle: (
+      <>
+        <Text variant="h4">
+          <span style={{ color: 'var(--color-text)' }}>
+            Видеозвонки с домофона на ваш смартфон где бы вы не находились.{' '}
+          </span>
+          Теперь вы никогда не пропустите звонки от неожиданных гостей, лишь бы
+          у вас был интернет.
+        </Text>
+        <Text variant="h4">
+          Все же пропустили звонок? Ничего страшного, в вашем распоряжение
+          всегда есть доступ к архиву входящих звонков. Даже если вы не взяли
+          трубку, автоответчик запишет для вас видео послание от вашего гостя.
+          Неожиданно и очень удобно.
+        </Text>
+      </>
+    ),
+    src: pic1,
+  },
+  {
+    title: 'Видно здесь и сейчас',
+    subtitle: (
+      <>
+        <Text variant="h4" color="text">
+          Круглосуточный доступ ко всем вашим видеокамерам в режиме реального
+          времени.
+        </Text>
+        <Text variant="h4">
+          Вы сможете автоматически просматривать видео с домофона, подъезда,
+          лифта, парковки или вашей детской площадке.
+        </Text>
+        <Text variant="h4">
+          При желание вы всегда сможете купить дополнительные камеры изи которые
+          без сложных настроек заработают там где вы скажете. Все изи как
+          никогда раньше
+        </Text>
+      </>
+    ),
+    src: pic2,
+    cta: 'Подробнее',
+  },
+  {
+    title: 'Устанавливайте коды открытия домофона',
+    subtitle: (
+      <>
+        <Text variant="h4">
+          Временные и Постоянные. Себе или друзьям. Ваши гости влюбятся в
+          «Спутник».
+        </Text>
+      </>
+    ),
+    src: pic3,
+    cta: 'Подробнее',
   },
 ]
 
@@ -143,7 +180,7 @@ export default function AppPage({ ...props }) {
 
       <SplitItem column="full" style={{ height: '100vh' }} src={appShowreel} />
 
-      <PhoneSection column="full" />
+      <PhoneSection slides={phoneSlides} as="section" column="full" />
 
       {/* <Container column="full">
         <Grid>
@@ -164,16 +201,22 @@ export default function AppPage({ ...props }) {
         </Grid>
       </Container> */}
 
-      <Container column="full">
-        <Grid>
-          <Text style={{ gridColumn: '2/10' }} variant="h1" textAlign="left">
-            Ключи, они такие разные...
-          </Text>
-        </Grid>
-      </Container>
-      <SplitShow left={splitLeft} right={splitRight} column="full" />
+      <KeysSection />
 
       <Container column="full">
+        <Text variant="h3" textAlign="center">
+          Познакомьтесь с домофоном поближе
+        </Text>
+        <Text variant="h4" textAlign="center">
+          Просто улыбнись домофону <Emoji emote="😉" />. Не против, если
+          перейдем на ты?
+        </Text>
+      </Container>
+      <Container column="full">
+        <Flex backgroundColor="subtleBackground" height="85vh" column="full" />
+      </Container>
+
+      {/* <Container column="full">
         <Grid>
           <Text style={{ gridColumn: '2/9' }} variant="h1" textAlign="left">
             Защитим <br /> лично вас
@@ -184,10 +227,45 @@ export default function AppPage({ ...props }) {
             column="full"
           />
         </Grid>
-      </Container>
+      </Container> */}
 
       <Container column="full">
-        <StackableCards />
+        <Grid>
+          <Text column="padLeft" variant="h3">
+            Береги <br /> автомобиль <Emoji emote={'🚙'} />
+          </Text>
+          <Text
+            column="padRight"
+            // style={{ gridColumn: '9/16', padding: 0 }}
+            variant="h4"
+
+            // color="text"
+          >
+            <span style={{ color: 'var(--color-text)' }}>
+              Дворовые видеокамеры, подключенные к нашему искусственному
+              интеллекту, защищают ваш автомобиль все время пока он припаркован
+              во дворе.
+            </span>
+            <Text
+              // style={{ gridColumn: '9/16', padding: 0 }}
+              variant="h4"
+
+              // color="text"
+            >
+              Система сможет заметить любую подозрительную активность возле
+              вашей машины и незамедлительно сообщить вам об этом. Если в вашем
+              доме не установлены умные камеры, закажите их установку у наших
+              партнеров или подключите свою (ссылка на изи), мы будем только
+              рады.
+            </Text>
+          </Text>
+        </Grid>
+      </Container>
+
+      <SplitItem column="full" src={appShowreel} />
+
+      <Container column="full">
+        <CardsSection />
       </Container>
     </ProductPageTemplate>
   )

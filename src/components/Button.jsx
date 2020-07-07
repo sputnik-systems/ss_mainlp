@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components'
 
 import { space, color, layout, variant, typography } from 'styled-system'
 
+import buttonColors from 'utils/buttonColors'
+
 const store = css`
   --bug: fix;
   align-items: center;
@@ -61,8 +63,9 @@ const plain = css`
 
 const contained = css`
   --bug: fix;
+
   position: relative;
-  color: var(--color-primary-contrast);
+  color: var(--button-secondary);
   font-weight: var(--font-weight-demi);
   /* font-size: var(--font-size); */
   display: inline-flex;
@@ -73,10 +76,11 @@ const contained = css`
 
   background: transparent;
   border: none;
+
   &::before {
     transition: var(--hover-transition);
     content: ' ';
-    background: var(--color-primary);
+    background: var(--button-primary);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -87,11 +91,11 @@ const contained = css`
   }
 
   &:hover {
-    color: var(--color-primary-contrast);
+    color: var(--button-secondary);
 
     &::before {
       transform: scale(var(--hover-scale));
-      background: var(--color-primary-lighter);
+      background: var(--button-hover);
     }
   }
 
@@ -102,35 +106,68 @@ const contained = css`
   }
 `
 
-export default styled('button')`
+const card = css`
+  --bug: fix;
+  ${contained};
+  padding: var(--spacing-s) var(--spacing-xl);
+  flex-shrink: 0;
+  border-radius: var(--br-m);
+  font-size: inherit;
+  font-weight: 500;
+  margin-top: 2rem;
+
+  color: ${(p) => {
+    console.log(p)
+
+    return p.color || 'inherit'
+  }};
+
+  &:hover {
+    /* color: var(--color-primary-contrast); */
+    color: ${(p) => p.color || 'inherit'};
+
+    &::before {
+      background: ${(p) => p.bg || 'inherit'};
+    }
+  }
+`
+
+export default styled.button`
   appearance: none;
   outline: none;
   background: var(--color-background);
   border-radius: var(--br-m);
   border: 1px solid var(--color-subtle-background);
   color: var(--color-text-secondary);
-  padding: var(--spacing-s) var(--spacing-m);
+  padding: var(--spacing-s) var(--spacing-l);
   text-decoration: none;
   text-align: center;
   cursor: pointer;
   font-family: var(--font-family);
   font-size: 15px;
 
+  --button-primary: var(--color-primary);
+  --button-secondary: var(--color-primary-contrast);
+  --button-hover: var(--color-primary-darker);
+
   &:hover {
-    color: var(--color-primary);
+    color: var(--button-hover);
   }
 
   ${space};
   ${color};
   ${layout};
   ${typography};
+
+  ${buttonColors};
   ${variant({
     variants: {
       plain,
       contained,
       store,
+      card,
     },
-  })}
+  })};
 `
 
 // export default Text

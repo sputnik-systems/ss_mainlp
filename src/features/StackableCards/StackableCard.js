@@ -41,6 +41,8 @@ const Content = styled(Container)`
 
 const vh = document.documentElement.clientHeight
 
+// 0.14 = (100vh - 72vh(card height)) / 2
+
 export default function StackableCard({
   idx,
   bg,
@@ -67,7 +69,7 @@ export default function StackableCard({
 
   const scale = useTransform(
     scrollY,
-    [elementTop, elementTop + vh],
+    [elementTop + vh * 0.14, elementTop + vh],
     [1, 0.9 + idx * 0.03],
   )
 

@@ -14,6 +14,17 @@ const h1 = css`
   font-family: var(--font-family);
 `
 
+const h2 = css`
+  --bug: fix;
+  color: var(--color-text);
+  font-size: 72px;
+  letter-spacing: -2px;
+  line-height: 1;
+  font-weight: var(--font-weight-demi);
+  text-align: left;
+  font-family: var(--font-family);
+`
+
 const hero = css`
   ${h1};
   font-size: 114px;
@@ -40,10 +51,12 @@ const h4 = css`
 
 export default styled('p')`
   margin: 0;
+  text-align: left;
 
   ${variant({
     variants: {
       h1,
+      h2,
       h3,
       h4,
       hero,

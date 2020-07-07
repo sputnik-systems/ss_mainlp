@@ -2,6 +2,13 @@ import styled, { css } from 'styled-components'
 
 import { space, color, layout, variant, typography } from 'styled-system'
 
+const inline = css`
+  --bug: fix;
+
+  color: inherit;
+  text-decoration: underline;
+`
+
 const footer = css`
   --bug: fix;
 
@@ -94,6 +101,7 @@ export default styled('a')`
       cta,
       nav,
       footer,
+      inline,
     },
   })}
 `

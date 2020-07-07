@@ -5,7 +5,7 @@ const Span = styled.span`
   font-family: apple color emoji, segoe ui emoji, noto color emoji,
     android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
     segoe ui symbol, sans-serif;
-  font-size: ${(p) => p.fontSize || 'var(--font-size)'};
+  font-size: ${(p) => p.fontSize || 'inherit'};
 `
 
 export default function Emoji({ emote, fontSize, ...props }) {
