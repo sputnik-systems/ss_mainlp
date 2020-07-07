@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
-import useResizeObserver from 'use-resize-observer'
+import { useResizeObserver } from '@asyarb/use-resize-observer'
 
 import Text from 'components/Text'
 import gridColumns from 'utils/gridColumns'
@@ -38,6 +38,13 @@ const BODY_OFFSET = 76
 
 // TODO: account for img height when its > 100vh
 
+// const vh = Math.max(
+//   document.documentElement.clientHeight || 0,
+//   window.innerHeight || 0,
+// )
+
+const vh = document.documentElement.clientHeight
+
 export default function SplitItem({
   src,
   caption,
@@ -48,14 +55,14 @@ export default function SplitItem({
   const [elementTop, setElementTop] = useState(0)
   const { scrollY } = useViewportScroll()
 
-  useLayoutEffect(() => {
-    const element = ref.current
-    setElementTop(element.offsetTop)
-  }, [ref])
+  // useLayoutEffect(() => {
+  //   const element = ref.current
+  //   setElementTop(element.offsetTop)
+  // }, [ref])
 
   const y = useTransform(
     scrollY,
-    [elementTop - window.innerHeight, elementTop + window.innerHeight],
+    [elementTop - vh, elementTop + vh],
     ['-50%', '50%'],
   )
 
@@ -68,7 +75,7 @@ export default function SplitItem({
 
   useResizeObserver({
     ref,
-    onResize: handleResize,
+    callback: handleResize,
   })
 
   return (

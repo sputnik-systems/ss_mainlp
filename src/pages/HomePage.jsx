@@ -23,7 +23,7 @@ export default function HomePage({ ...props }) {
       // }
       gridProps={{
         style: {
-          gridRowGap: 'var(--spacing-xxl)',
+          gridRowGap: 0,
         },
         pt: '7',
       }}

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
-import useResizeObserver from 'use-resize-observer'
+import { useResizeObserver } from '@asyarb/use-resize-observer'
 
 import Text from 'components/Text'
 

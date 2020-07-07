@@ -53,13 +53,10 @@ const StyledGrid = styled(Grid)`
   grid-row-gap: var(--gap);
 `
 
-export default function ProductPageTemplate({
-  children,
-  nav,
-  lines = false,
-  gridProps = {},
-  ...props
-}) {
+function ProductPageTemplate(
+  { children, nav, lines = false, gridProps = {}, ...props },
+  ref,
+) {
   return (
     <Page as="main" {...props}>
       {lines && (
@@ -72,7 +69,11 @@ export default function ProductPageTemplate({
       )}
 
       {nav}
-      <StyledGrid {...gridProps}>{children}</StyledGrid>
+      <StyledGrid {...gridProps} ref={ref}>
+        {children}
+      </StyledGrid>
     </Page>
   )
 }
+
+export default React.forwardRef(ProductPageTemplate)

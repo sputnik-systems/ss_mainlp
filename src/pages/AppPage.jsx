@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useResizeObserver } from '@asyarb/use-resize-observer'
+
 import ProductPageTemplate from 'templates/ProductPageTemplate'
 import ProductNav from 'features/Product/Nav'
 import ParallaxItem from 'components/ParallaxItem'
@@ -27,15 +29,8 @@ import appCodes from 'assets/img/app_phonereel.png'
 import PhoneSection from 'features/PhoneSection'
 
 import Phone from 'features/PhoneSection/Phone'
-
-const styles = {
-  fullBlock: { gridColumn: '1/17' },
-  leftBlock: { gridColumn: '1/8' },
-  bigLeftBlock: { gridColumn: '1/9' },
-  rightBlock: { gridColumn: '10/17' },
-  bigRightBlock: { gridColumn: '9/17' },
-  center: { gridColumn: '2/16' },
-}
+import StackableCards from 'features/StackableCards'
+import { useCallback } from 'react'
 
 const splitLeft = [
   {
@@ -61,9 +56,18 @@ const splitRight = [
 ]
 
 export default function AppPage({ ...props }) {
+  const ref = useRef()
+  const handleResize = useCallback(() => {
+    window.dispatchEvent(new Event('resize'))
+  }, [])
+  useResizeObserver({
+    ref,
+    callback: handleResize,
+  })
   return (
     <ProductPageTemplate
       {...props}
+      ref={ref}
       nav={
         <ProductNav
           left={
@@ -134,23 +138,14 @@ export default function AppPage({ ...props }) {
               <Video src={video} background />
             </Phone>
           </Flex>
-          {/* <Image
-            height="85vh"
-            column="padRight"
-            style={{
-              objectFit: 'contain',
-              justifySelf: 'center',
-            }}
-            src={phone}
-          /> */}
         </Grid>
       </Container>
 
-      <SplitItem column="full" src={appShowreel} />
+      <SplitItem column="full" style={{ height: '100vh' }} src={appShowreel} />
 
       <PhoneSection column="full" />
 
-      {/* <Container style={styles.fullBlock}>
+      {/* <Container column="full">
         <Grid>
           <Text style={{ gridColumn: '2/8' }} variant="h3">
             What does being trendy mean to you?
@@ -169,29 +164,16 @@ export default function AppPage({ ...props }) {
         </Grid>
       </Container> */}
 
-      <Container style={styles.fullBlock}>
+      <Container column="full">
         <Grid>
           <Text style={{ gridColumn: '2/10' }} variant="h1" textAlign="left">
             Ключи, они такие разные...
           </Text>
-
-          {/* <Text
-            color="textSecondary"
-            textAlign="left"
-            variant="h4"
-            column="center"
-            // pt="0"
-          >
-            Нет желания искать ключ в сумки или кармане? Ничего страшного. У вас
-            много других способов как открыть дверь с помощью кодов доступа,
-            мобильного приложения, виджета, умных часов или с технологией
-            “свободные руки”.
-          </Text> */}
         </Grid>
       </Container>
       <SplitShow left={splitLeft} right={splitRight} column="full" />
 
-      <Container style={styles.fullBlock}>
+      <Container column="full">
         <Grid>
           <Text style={{ gridColumn: '2/9' }} variant="h1" textAlign="left">
             Защитим <br /> лично вас
@@ -199,9 +181,13 @@ export default function AppPage({ ...props }) {
           <Flex
             backgroundColor="subtleBackground"
             height="85vh"
-            style={styles.fullBlock}
+            column="full"
           />
         </Grid>
+      </Container>
+
+      <Container column="full">
+        <StackableCards />
       </Container>
     </ProductPageTemplate>
   )
