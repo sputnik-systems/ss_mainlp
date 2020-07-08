@@ -11,7 +11,7 @@ import Link from 'components/Link'
 import Button from 'components/Button'
 import Text from 'components/Text'
 import Image from 'components/Image'
-import Phone from './Phone'
+import Phone from 'features/Phone'
 
 const NAV = 64
 
@@ -93,7 +93,6 @@ function Slide({ title, subtitle, src, cta, paginate, idx, page, ...props }) {
 }
 
 /*
-
  <Link
           variant="cta"
           mt="5"
@@ -102,50 +101,61 @@ function Slide({ title, subtitle, src, cta, paginate, idx, page, ...props }) {
           textAlign="left"
           href="/"
         >
-          
           <AngleRightB />
-        </Link>*/
+        </Link>
+*/
 
-export default function PhoneSection({ slides, ...props }) {
+export default function PhoneSection({
+  slides,
+  phonePosition = 'right',
+  ...props
+}) {
   const [page, setPage] = useState(0)
   const paginate = (newPage) => {
     setPage(newPage)
   }
 
   return (
-    <Grid {...props}>
-      <Container column="full">
-        <Grid>
-          <Flex column="padLeft" flexDirection="column">
-            {slides.map((slide, idx) => (
-              <Slide
-                {...slide}
-                idx={idx}
-                page={page}
-                key={idx}
-                paginate={paginate}
-              />
-            ))}
-          </Flex>
+    <Container {...props}>
+      <Grid>
+        <Flex
+          column={phonePosition === 'right' ? 'padLeft' : 'padRight'}
+          flexDirection="column"
+          order={phonePosition === 'right' ? 1 : 2}
+        >
+          {slides.map((slide, idx) => (
+            <Slide
+              {...slide}
+              idx={idx}
+              page={page}
+              key={idx}
+              paginate={paginate}
+            />
+          ))}
+        </Flex>
 
-          <Sticky column="padRight" alignItems="center" justifyContent="center">
-            <Phone>
-              <AnimatePresence>
-                <StyledImage
-                  as={motion.img}
-                  src={slides[page].src}
-                  key={slides[page].src}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={spring}
-                />
-              </AnimatePresence>
-            </Phone>
-          </Sticky>
-        </Grid>
-      </Container>
-    </Grid>
+        <Sticky
+          column={phonePosition === 'right' ? 'padRight' : 'padLeft'}
+          alignItems="center"
+          justifyContent="center"
+          order={phonePosition === 'right' ? 2 : 1}
+        >
+          <Phone>
+            <AnimatePresence>
+              <StyledImage
+                as={motion.img}
+                src={slides[page].src}
+                key={slides[page].src}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={spring}
+              />
+            </AnimatePresence>
+          </Phone>
+        </Sticky>
+      </Grid>
+    </Container>
   )
 }

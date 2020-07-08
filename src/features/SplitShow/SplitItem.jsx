@@ -22,6 +22,7 @@ const SplitImg = styled(motion.img)`
   width: 100%;
   object-fit: cover;
   max-height: 100vh;
+  height: ${(p) => p.height};
 `
 
 const SplitText = styled(Text)`
@@ -49,6 +50,7 @@ export default function SplitItem({
   src,
   caption,
   splitItemProps = {},
+  height,
   ...props
 }) {
   const ref = useRef(null)
@@ -81,7 +83,7 @@ export default function SplitItem({
   return (
     <Body ref={ref} {...props}>
       <Wrapper>
-        <SplitImg src={src} {...splitItemProps} style={{ y }} />
+        <SplitImg src={src} {...splitItemProps} height={height} style={{ y }} />
       </Wrapper>
       {caption && <SplitText as="caption">{caption}</SplitText>}
     </Body>

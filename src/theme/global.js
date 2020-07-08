@@ -44,6 +44,11 @@ const global = css`
     box-sizing: border-box;
   }
 
+  #modal-root {
+    position: relative;
+    z-index: 1000;
+  }
+
   body {
     margin: 0;
     font-family: var(--font-family);

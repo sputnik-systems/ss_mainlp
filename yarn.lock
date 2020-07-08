@@ -1496,6 +1496,13 @@
     redux-thunk "^2.3.0"
     reselect "^4.0.0"
 
+"@reecelucas/react-use-hotkeys@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@reecelucas/react-use-hotkeys/-/react-use-hotkeys-1.2.0.tgz#f9b7a5e902f099756d567dca9770b5db0c5df304"
+  integrity sha512-XssCgmTqTJosvFkWkzlYYz+B3X1++7WnofJgIilmgTXHsv/SZ383qYnpLPw/KRh2eiNIrRnRLdT+bMkvVhBwww==
+  dependencies:
+    shim-keyboard-event-key "^1.0.3"
+
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
@@ -9973,6 +9980,11 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+
+shim-keyboard-event-key@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/shim-keyboard-event-key/-/shim-keyboard-event-key-1.0.3.tgz#9a9441d6b7d1fb25819d86182caf554e821a515c"
+  integrity sha512-PTNRkOxDlZ2+Xz4CbKJJsh/pe1DJdaC+b4HHV02A1aEWNmwh1g9am0ZiU/ktu3uVfQrY3yDHTOVhst3xpLhw2A==
 
 side-channel@^1.0.2:
   version "1.0.2"

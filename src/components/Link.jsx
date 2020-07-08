@@ -6,7 +6,8 @@ const inline = css`
   --bug: fix;
 
   color: inherit;
-  text-decoration: underline;
+  border-bottom: 2px solid;
+  padding-bottom: 2px;
 `
 
 const footer = css`

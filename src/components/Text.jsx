@@ -49,6 +49,13 @@ const h4 = css`
   font-size: 22px;
 `
 
+const h5 = css`
+  --bug: fix;
+
+  font-size: 2rem;
+  line-height: 2.6rem;
+`
+
 export default styled('p')`
   margin: 0;
   text-align: left;
@@ -59,6 +66,7 @@ export default styled('p')`
       h2,
       h3,
       h4,
+      h5,
       hero,
     },
   })}

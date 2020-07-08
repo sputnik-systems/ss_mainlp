@@ -9,7 +9,13 @@ const Col = styled.div`
   & > * {
     /* margin: 34px 17px; */
 
-    margin: var(--spacing-l) var(--spacing-m);
+    margin-right: var(--spacing-m);
+    margin-left: var(--spacing-m);
+
+    &:not(:first-child) {
+      margin-top: var(--spacing-xxl);
+      margin-bottom: var(--spacing-xxl);
+    }
   }
 `
 
@@ -21,7 +27,11 @@ export default function SplitShow({ left, right, ...props }) {
           <SplitItem {...i} column="padLeft" key={i.src} />
         ))}
       </Col>
-      <Col style={{ marginTop: 'calc(var(--spacing-xxl) * 2)' }}>
+      <Col
+        style={{
+          marginTop: 'calc(var(--spacing-xxl) * 2)',
+        }}
+      >
         {right?.map((i) => (
           <SplitItem {...i} column="padRight" key={i.src} />
         ))}
