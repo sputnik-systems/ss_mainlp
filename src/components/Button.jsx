@@ -20,8 +20,10 @@ const store = css`
   border-color: var(--color-subtle-background-darker);
   transition: var(--default-transition);
 
-  & > svg {
+  & > svg,
+  & > img {
     margin-right: var(--spacing-l);
+    width: 20px;
   }
 
   & > span {
@@ -116,12 +118,6 @@ const card = css`
   font-weight: 500;
   margin-top: 2rem;
 
-  color: ${(p) => {
-    console.log(p)
-
-    return p.color || 'inherit'
-  }};
-
   &:hover {
     /* color: var(--color-primary-contrast); */
     color: ${(p) => p.color || 'inherit'};
@@ -144,7 +140,8 @@ export default styled.button`
   text-align: center;
   cursor: pointer;
   font-family: var(--font-family);
-  font-size: 15px;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-demi);
 
   --button-primary: var(--color-primary);
   --button-secondary: var(--color-primary-contrast);

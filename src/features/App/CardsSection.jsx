@@ -70,10 +70,6 @@ const cards = [
           </Text>
         </Flex>
 
-        {/* <Text variant="h4" color="inherit">
-          <Link variant="cta"> Обсудить вашу идею</Link>
-        </Text> */}
-
         <Text variant="h4" color="inherit">
           <Button
             variant="card"
@@ -99,18 +95,32 @@ const cards = [
       </Text>
     ),
     sub: (
-      <Text variant="h4" color="inherit">
-        <Button
-          variant="card"
-          style={{
-            '--button-primary': 'var(--color-sputnik-yellow-dark)',
-            '--button-secondary': 'var(--color-text)',
-            '--button-hover': 'var(--color-sputnik-yellow-dark)',
-          }}
-        >
-          Узнать подробнее
-        </Button>
-      </Text>
+      <>
+        <Flex alignItems="center">
+          <Text variant="h4" color="inherit">
+            <Emoji
+              emote="😇"
+              fontSize="200%"
+              style={{ marginRight: 'var(--spacing-m)' }}
+            />{' '}
+          </Text>
+          <Text variant="h4" color="inherit">
+            и +100500 к карме
+          </Text>
+        </Flex>
+        <Text variant="h4" color="inherit">
+          <Button
+            variant="card"
+            style={{
+              '--button-primary': 'var(--color-sputnik-yellow-dark)',
+              '--button-secondary': 'var(--color-text)',
+              '--button-hover': 'var(--color-sputnik-yellow-dark)',
+            }}
+          >
+            Узнать подробнее
+          </Button>
+        </Text>
+      </>
     ),
   },
 ]

@@ -3,6 +3,7 @@ import LangSwitcher from 'features/LangSwitcher'
 import Nav from 'components/Nav'
 import IconButton from 'components/IconButton'
 import Link from 'components/Link'
+import Button from 'components/Button'
 import Flex from 'components/Flex'
 
 import Search from '@iconscout/react-unicons/icons/uil-search'
@@ -15,6 +16,7 @@ export default function Navbar({ ...props }) {
   return (
     <Nav
       // mt="6"
+      style={{ zIndex: 2 }}
       height="60px"
       left={
         <>
@@ -32,8 +34,11 @@ export default function Navbar({ ...props }) {
       right={
         <>
           <Link variant="nav">Для бизнеса</Link>
-          <Link variant="nav">Войти</Link>
           <LangSwitcher />
+
+          <Button variant="contained" ml="3">
+            Войти
+          </Button>
           {/* <IconButton>
             <Search />
           </IconButton> */}

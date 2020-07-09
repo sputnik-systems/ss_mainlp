@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'components/Link'
+import Button from 'components/Button'
 import Flex from 'components/Flex'
 import Text from 'components/Text'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link as RouterLink } from 'react-router-dom'
 
-import AngleRightB from '@iconscout/react-unicons/icons/uil-angle-right-b'
+import { UilArrowRight } from '@iconscout/react-unicons'
 
-import sk from 'assets/img/sk.jpg'
 import iphone from 'assets/img/iphone.jpg'
-import relate from 'assets/img/relate.png'
 
 const Card = styled(motion.section)`
   --color-subtle-background: #fafafa;
@@ -109,13 +108,17 @@ export default function ProductCard({
         </Text>
 
         <CtaLinks mt="6" alignItems="center" justifyContent="center">
+          {/* <Button fontSize="20px" variant="contained">
+            Подробнее
+            <UilArrowRight style={{ marginLeft: 'var(--spacing-s)' }} />
+          </Button> */}
           <Link variant="cta" mr="5" href={ctaSecondary}>
             Подробнее
-            <AngleRightB />
+            <UilArrowRight />
           </Link>
           <Link variant="cta" href={ctaPrimary}>
             {cta}
-            <AngleRightB />
+            <UilArrowRight />
           </Link>
         </CtaLinks>
         <ImageWrapper>

@@ -43,7 +43,7 @@ const h4 = css`
 
   font-size: 28px;
   padding-top: 24px;
-  line-height: 1.4;
+  line-height: 1.5;
   color: var(--color-text-secondary);
   font-family: var(--font-family-secondary);
   font-size: 22px;

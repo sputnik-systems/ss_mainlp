@@ -30,8 +30,8 @@ import video from 'assets/videos/wickretvideo.mp4'
 import whatsapp from 'assets/svg/whatsapp.svg'
 import telegram from 'assets/svg/telegram.svg'
 import viber from 'assets/svg/viber.svg'
-import Modal from 'components/Modal'
 import { useState } from 'react'
+import DownloadAppModal from 'features/App/DownloadAppModal'
 
 const slidesOne = [
   {
@@ -176,7 +176,7 @@ export default function AppPage({ ...props }) {
         </Grid>
       </Container>
 
-      <SplitItem column="full" src={appShowreel} height="100vh" />
+      <SplitItem column="full" src={appShowreel} />
 
       <PhoneSection slides={slidesOne} as="section" column="full" />
 
@@ -193,7 +193,7 @@ export default function AppPage({ ...props }) {
           приватно - только цифры и формулы.
         </Text>
       </Container>
-      <SplitItem column="full" src={appShowreel} height="100vh" />
+      <SplitItem column="full" src={appShowreel} />
 
       <Container column="full">
         <Grid>
@@ -231,7 +231,7 @@ export default function AppPage({ ...props }) {
         <CardsSection />
       </Container>
 
-      <Modal fixed isOpen={downloadModal} onClose={toggleDownloadModal} />
+      <DownloadAppModal isOpen={downloadModal} onClose={toggleDownloadModal} />
     </ProductPageTemplate>
   )
 }

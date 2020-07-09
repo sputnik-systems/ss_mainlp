@@ -43,6 +43,7 @@ const nav = css`
   text-decoration: none;
   padding: var(--spacing-s) var(--spacing-m);
   color: var(--color-text-secondary);
+  /* font-weight: var(--font-weight-demi); */
 
   &:hover {
     color: var(--color-primary);
@@ -69,6 +70,8 @@ const nav = css`
   &:hover {
     &::before {
       opacity: 1;
+      background: var(--color-subtle-background);
+
       /* transform: scale(var(--hover-scale)); */
     }
     & > svg {
