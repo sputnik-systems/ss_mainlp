@@ -9,11 +9,20 @@ const subtle = css`
   --button-hover: var(--color-subtle-background-darker);
 `
 
+const background = css`
+  --bug: fix;
+
+  --button-primary: var(--color-background);
+  --button-secondary: var(--color-text);
+  --button-hover: var(--color-subtle-background);
+`
+
 export default css`
   ${variant({
     prop: 'color',
     variants: {
       subtle,
+      background,
     },
   })}
 `

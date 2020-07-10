@@ -4,6 +4,8 @@ import { space, color, layout, variant, typography } from 'styled-system'
 
 import buttonColors from 'utils/buttonColors'
 
+import { nav } from './Link'
+
 const store = css`
   --bug: fix;
   align-items: center;
@@ -108,6 +110,15 @@ const contained = css`
   }
 `
 
+const text = css`
+  --bug: fix;
+
+  ${nav};
+  font-weight: var(--font-weight-regular);
+  background: none;
+  border: none;
+`
+
 const card = css`
   --bug: fix;
   ${contained};
@@ -164,6 +175,7 @@ export default styled.button`
       contained,
       store,
       card,
+      text,
     },
   })};
 `

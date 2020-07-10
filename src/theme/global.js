@@ -91,6 +91,7 @@ const GlobalStyle = createGlobalStyle`
     --scale-active: 0.96;
     --hover-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     --default-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    --filter-backdrop: blur(20px) saturate(180%);
   }
 
   body[data-theme='dark'] {

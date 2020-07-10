@@ -7,10 +7,28 @@ import IconButton from 'components/IconButton'
 import Button from 'components/Button'
 import Emoji from 'components/Emoji'
 
+import Select from 'components/Select'
+
+const shoe_list = ['Prada', 'Jimmy Choos', 'Nike', 'Adidas']
+const options = [
+  { value: 'ru', label: '🇷🇺 Русский' },
+  { value: 'en', label: '🇬🇧 English' },
+  { value: 'sp', label: '🇪🇸 Español ' },
+]
 export default function LangSwitcher({ ...props }) {
   return (
-    <Link variant="nav">
-      <Emoji emote={'🇷🇺'} /> Русский
-    </Link>
+    <Select
+      options={options}
+      isMulti={false}
+      isClearable={false}
+      isSearchable={false}
+      width="200px"
+      defaultValue={{ value: 'ru', label: '🇷🇺 Русский' }}
+    />
   )
 }
+
+// <Link variant="nav">
+/* <Emoji emote={'🇷🇺'} /> Русский */
+
+// {/* </Link> */}

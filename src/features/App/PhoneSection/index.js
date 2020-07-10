@@ -71,7 +71,7 @@ function Slide({ title, subtitle, src, cta, paginate, idx, page, ...props }) {
       <Text textAlign="left" variant="h3">
         {title}
       </Text>
-      <Text variant="h4" textAlign="left">
+      <Text textAlign="left" variant="h5">
         {subtitle}
       </Text>
 

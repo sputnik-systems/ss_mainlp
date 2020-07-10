@@ -142,7 +142,15 @@ function ModalContent({
         as={motion.div}
         onClick={!disableBackdropClick && onClose}
       >
-        <ModalBody as={motion.div} variants={bodyVariants} {...props}>
+        <ModalBody
+          as={motion.div}
+          variants={bodyVariants}
+          {...props}
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+          }}
+        >
           <CloseButton
             as={motion.button}
             variants={buttonVariants}
@@ -153,9 +161,11 @@ function ModalContent({
           {Boolean(title) && (
             <Text
               textAlign="center"
-              variant="h5"
+              variant="h3"
               style={{
                 padding: 'var(--spacing-xs) calc(var(--spacing-l) * 5)',
+                fontSize: '2rem',
+                lineHeight: '2.6rem',
               }}
             >
               {title}

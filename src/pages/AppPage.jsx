@@ -13,6 +13,7 @@ import Grid from 'components/Grid'
 import Emoji from 'components/Emoji'
 import Image from 'components/Image'
 import Link from 'components/Link'
+import Fade from 'components/Fade'
 import IconButton from 'components/IconButton'
 
 import Container from 'components/Container'
@@ -51,7 +52,7 @@ const slidesOne = [
   {
     title: 'Гости будут в восторге',
     subtitle: (
-      <Text variant="h4">
+      <Text variant="h5">
         Создавайте коды открытия домофона как для себя так и для своих гостей.
         Можно временные, а можно постоянные. Делитесь кодами доступа с друзьями.{' '}
         <br />
@@ -150,26 +151,28 @@ export default function AppPage({ ...props }) {
               height: '86vh',
             }}
           >
-            <Text variant="h1" textAlign="left">
-              Управляй <br /> умным домом
-            </Text>
-            <Flex mt="7">
-              <Button variant="store" mr="4">
-                <Apple />
-                <span>App Store</span>
-              </Button>
-              <Button variant="store" mr="4">
-                <GooglePlay />
-                <span>Google Play</span>
-              </Button>
-              <IconButton onClick={toggleDownloadModal}>
-                <UilEllipsisV />
-                {/* <Image src={appGallery} style={{ width: 20 }} /> */}
-              </IconButton>
-              {/* <Button variant="store" style={{ width: 'auto' }}>
+            <Fade>
+              <Text variant="h1" textAlign="left">
+                Управляй <br /> умным домом
+              </Text>
+              <Flex mt="7">
+                <Button variant="store" mr="4">
+                  <Apple />
+                  <span>App Store</span>
+                </Button>
+                <Button variant="store" mr="4">
+                  <GooglePlay />
+                  <span>Google Play</span>
+                </Button>
+                <IconButton onClick={toggleDownloadModal}>
+                  <UilEllipsisV />
+                  {/* <Image src={appGallery} style={{ width: 20 }} /> */}
+                </IconButton>
+                {/* <Button variant="store" style={{ width: 'auto' }}>
                 <Image src={appGallery} style={{ margin: 0 }} />
               </Button> */}
-            </Flex>
+              </Flex>
+            </Fade>
           </Flex>
 
           <Flex

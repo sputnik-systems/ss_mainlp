@@ -52,8 +52,13 @@ const h4 = css`
 const h5 = css`
   --bug: fix;
 
-  font-size: 2rem;
-  line-height: 2.6rem;
+  /* font-size: 2rem;
+  line-height: 2.6rem; */
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-secondary);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-top: 16px;
 `
 
 export default styled('p')`

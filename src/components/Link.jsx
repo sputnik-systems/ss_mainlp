@@ -1,5 +1,6 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
-
+import { Link } from 'react-router-dom'
 import { space, color, layout, variant, typography } from 'styled-system'
 
 const inline = css`
@@ -37,7 +38,7 @@ const cta = css`
   }
 `
 
-const nav = css`
+export const nav = css`
   --bug: fix;
   position: relative;
   text-decoration: none;
@@ -81,8 +82,7 @@ const nav = css`
     }
   }
 `
-
-export default styled('a')`
+const Component = styled.a`
   color: var(--color-text-secondary);
   text-decoration: none;
   text-align: center;
@@ -106,5 +106,9 @@ export default styled('a')`
     },
   })}
 `
+
+export default ({ internal = false, ...props }) => (
+  <Component as={internal ? Link : 'a'} {...props} />
+)
 
 // export default Text

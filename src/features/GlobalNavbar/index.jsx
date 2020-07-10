@@ -16,7 +16,7 @@ export default function Navbar({ ...props }) {
   return (
     <Nav
       // mt="6"
-      style={{ zIndex: 2 }}
+      // style={{ zIndex: 2 }}
       height="60px"
       left={
         <>
