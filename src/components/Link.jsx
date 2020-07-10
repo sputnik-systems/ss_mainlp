@@ -49,11 +49,6 @@ const nav = css`
     color: var(--color-primary);
   }
 
-  ,
-  &::before {
-    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  }
-
   &::before {
     content: ' ';
     background: var(--color-blurred-background);
@@ -65,6 +60,7 @@ const nav = css`
     border-radius: var(--br-m);
     left: 0;
     top: 0;
+    transition: var(--hover-transition);
   }
 
   &:hover {
@@ -91,6 +87,7 @@ export default styled('a')`
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     color: var(--color-text);

@@ -142,6 +142,7 @@ export default styled.button`
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight-demi);
+  user-select: none;
 
   --button-primary: var(--color-primary);
   --button-secondary: var(--color-primary-contrast);

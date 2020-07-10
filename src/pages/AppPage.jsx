@@ -1,7 +1,8 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useCallback, useState } from 'react'
 import { useResizeObserver } from '@asyarb/use-resize-observer'
 import { ReactComponent as Apple } from 'assets/icons/ios.svg'
 import { ReactComponent as GooglePlay } from 'assets/icons/googleplay.svg'
+import { UilEllipsisV } from '@iconscout/react-unicons'
 
 import ProductPageTemplate from 'templates/ProductPageTemplate'
 import ProductNav from 'features/Product/Nav'
@@ -12,6 +13,7 @@ import Grid from 'components/Grid'
 import Emoji from 'components/Emoji'
 import Image from 'components/Image'
 import Link from 'components/Link'
+import IconButton from 'components/IconButton'
 
 import Container from 'components/Container'
 import Video from 'components/Video'
@@ -21,6 +23,7 @@ import Phone from 'features/Phone'
 import PhoneSection from 'features/App/PhoneSection'
 import KeysSection from 'features/App/KeysSection'
 import CardsSection from 'features/App/CardsSection'
+import DownloadAppModal from 'features/App/DownloadAppModal'
 
 import pic1 from 'assets/img/app/pic1.png'
 import pic2 from 'assets/img/app/pic2.png'
@@ -30,8 +33,7 @@ import video from 'assets/videos/wickretvideo.mp4'
 import whatsapp from 'assets/svg/whatsapp.svg'
 import telegram from 'assets/svg/telegram.svg'
 import viber from 'assets/svg/viber.svg'
-import { useState } from 'react'
-import DownloadAppModal from 'features/App/DownloadAppModal'
+import appGallery from 'assets/icons/appgallery.png'
 
 const slidesOne = [
   {
@@ -156,10 +158,17 @@ export default function AppPage({ ...props }) {
                 <Apple />
                 <span>App Store</span>
               </Button>
-              <Button variant="store">
+              <Button variant="store" mr="4">
                 <GooglePlay />
                 <span>Google Play</span>
               </Button>
+              <IconButton onClick={toggleDownloadModal}>
+                <UilEllipsisV />
+                {/* <Image src={appGallery} style={{ width: 20 }} /> */}
+              </IconButton>
+              {/* <Button variant="store" style={{ width: 'auto' }}>
+                <Image src={appGallery} style={{ margin: 0 }} />
+              </Button> */}
             </Flex>
           </Flex>
 
@@ -176,7 +185,7 @@ export default function AppPage({ ...props }) {
         </Grid>
       </Container>
 
-      <SplitItem column="full" src={appShowreel} />
+      <SplitItem column="full" src={appShowreel} height="98vh" />
 
       <PhoneSection slides={slidesOne} as="section" column="full" />
 
@@ -187,13 +196,12 @@ export default function AppPage({ ...props }) {
           Или просто улыбнитесь домофону <Emoji emote="😉" />
         </Text>
         <Text variant="h4" textAlign="center">
-          Не против дальше перейти на «ты»? Технология распознавания лиц откроет
-          домофон просто узнав тебя. При этом наш уникальный алгоритм работает
-          без необходимости использования твоих фотографий, все максимально
-          приватно - только цифры и формулы.
+          Технология распознавания лиц откроет домофон просто узнав тебя. При
+          этом наш уникальный алгоритм работает без необходимости использования
+          твоих фотографий, все максимально приватно - только цифры и формулы.
         </Text>
       </Container>
-      <SplitItem column="full" src={appShowreel} />
+      <SplitItem column="full" src={appShowreel} height="98vh" />
 
       <Container column="full">
         <Grid>
@@ -201,12 +209,10 @@ export default function AppPage({ ...props }) {
             Береги <br /> автомобиль <Emoji emote={'🚙'} />
           </Text>
           <Text column="padRight" variant="h4">
-            <span style={{ color: 'var(--color-text)' }}>
-              Мы научили дворовые видеокамеры охранять твой автомобиль все время
-              пока он припаркован во дворе. Система сможет заметить любую
-              подозрительную активность возле твоей машины и незамедлительно
-              сообщить об этом.
-            </span>
+            Мы научили дворовые видеокамеры охранять твой автомобиль все время
+            пока он припаркован во дворе. Система сможет заметить любую
+            подозрительную активность возле твоей машины и незамедлительно
+            сообщить об этом.
             <Text variant="h4">
               Если в твоем доме не установлены умные камеры,{' '}
               <Link variant="inline">закажи их установку</Link> у наших
