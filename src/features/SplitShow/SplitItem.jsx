@@ -1,6 +1,7 @@
 import React, { useState, useRef, useLayoutEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
+import { useResizeObserver } from '@asyarb/use-resize-observer'
 import { useWindowSize } from '@react-hook/window-size'
 
 import Text from 'components/Text'
@@ -55,21 +56,25 @@ export default function SplitItem({
   const { scrollY } = useViewportScroll()
   const [elementTop, setElementTop] = useState(0)
   const ref = useRef(null)
+  const [buffer, setBuffer] = useState(vh)
 
-  const handleResize = useCallback(() => {
+  const handleResize = useCallback((entry) => {
     const { top } = ref.current.getBoundingClientRect()
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     setElementTop(top + scrollTop)
-  }, [ref])
+    setBuffer(vh, entry?.contentRect?.height)
+  }, [])
 
   const size = useWindowSize()
   useLayoutEffect(() => {
     handleResize()
   }, [handleResize, size])
 
+  useResizeObserver({ ref, callback: handleResize })
+
   const y = useTransform(
     scrollY,
-    [elementTop - vh, elementTop + vh],
+    [elementTop - buffer, elementTop + buffer],
     ['-50%', '50%'],
     { clamp: false },
   )
