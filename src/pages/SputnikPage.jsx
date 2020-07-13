@@ -26,15 +26,7 @@ import { ReactComponent as SputnikIcon } from 'assets/svg/sputnikIcon.svg'
 
 import eric from 'assets/eric.mov'
 import eric2 from 'assets/eric2.mov'
-
-const styles = {
-  fullBlock: { gridColumn: '1/17' },
-  leftBlock: { gridColumn: '1/8' },
-  bigLeftBlock: { gridColumn: '1/9' },
-  rightBlock: { gridColumn: '10/17' },
-  bigRightBlock: { gridColumn: '9/17' },
-  center: { gridColumn: '2/16' },
-}
+import Mascotte from 'components/Mascotte'
 
 const persons = [
   {
@@ -94,6 +86,46 @@ const persons = [
   },
 ]
 
+const categories = [
+  {
+    title: 'Криптозащищенным ключом',
+    src: 'draft',
+    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+  },
+  {
+    title: 'Индивидуальным кодом доступа',
+    src: 'draft',
+    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+  },
+  {
+    title: 'Мобильным приложением',
+    src: 'draft',
+    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+  },
+  {
+    title: 'Виджетом на смартфоне',
+    src: 'draft',
+    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+  },
+  {
+    title: 'Умными часами',
+    src: 'draft',
+    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+  },
+  {
+    title: 'Просто улыбнувшись домофону',
+    src: 'draft',
+    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+  },
+  {
+    title: 'Звонком в квартиру к себе или соседу',
+    src: 'draft',
+    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+  },
+]
+
+//  height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
+
 export default function SputnikPage({ ...props }) {
   return (
     <ProductPageTemplate
@@ -121,17 +153,7 @@ export default function SputnikPage({ ...props }) {
         />
       }
     >
-      {/* <Container
-        style={{
-          height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
-        }}
-        column="full"
-        as="header"
-      >
-        <Video src={heroVideo} />
-      </Container> */}
-
-      <Container column="full">
+      <Container column="full" style={{ zIndex: 999, position: 'relative' }}>
         <Grid style={{ position: 'relative', alignItems: 'center' }}>
           <FeedbackWrapper persons={persons} />
           <Flex
@@ -148,13 +170,10 @@ export default function SputnikPage({ ...props }) {
               <Text variant="h1" textAlign="left">
                 Разработан для людей
               </Text>
-              <Text variant="h5" color="textSecondary" pt="6">
-                Народный домофон Спутник специально спроектирован для работы в
-                обычных многоквартирных домах.
-              </Text>
-              <Text variant="h5" color="textSecondary">
-                Невысокая стоимость домофона позволяет устанавливать его вместо
-                аналоговых домофонов абсолютно во всех типах домов.
+              <Text variant="h4" color="textSecondary">
+                Специально спроектирован для работы в обычных многоквартирных
+                домах. Невысокая стоимость домофона позволяет устанавливать
+                Спутник без каких либо существенных затрат для жителей
               </Text>
 
               <Button mt="6" mr="auto" variant="contained">
@@ -183,51 +202,17 @@ export default function SputnikPage({ ...props }) {
         </Grid>
       </Container>
 
-      <SplitItem height="98vh" src={sk} column="full" />
-      {/* 
-      <Container
-        as="section"
-        column="full"
-        pb="7"
-        style={{
-          height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
-          position: 'relative',
-        }}
-      >
-        <FeedbackWrapper />
+      <SplitItem minHeight="70vh" src={sk} column="full" />
 
-        <Fade style={{ height: '100%' }}>
-          <Flex flexDirection="column" justifyContent="center" height="100%">
-            <Text variant="hero" fontSize="114px" color="primary">
-              Разработан для людей
-            </Text>
-            <Text variant="h4" textAlign="center" color="textSecondary" pt="7">
-              Народный домофон Спутник специально спроектирован для работы в
-              обычных многоквартирных домах.
-            </Text>
-            <Text variant="h4" textAlign="center" color="textSecondary" pt="3">
-              Невысокая стоимость домофона позволяет устанавливать его вместо
-              аналоговых домофонов абсолютно во всех типах домов.
-            </Text>
-          </Flex>
-        </Fade>
-      </Container> */}
-
-      <Grid
-        style={{ position: 'relative' }}
-        contained
-        backgroundColor="background"
-        as="section"
-        column="full"
-      >
+      <Grid contained backgroundColor="background" as="section" column="full">
         <Flex backgroundColor="subtleBackground" height="60vh" column="left" />
 
         <Flex flexDirection="column" column="right">
-          <Text variant="h3">Повышает безопасность</Text>
+          <Text variant="h3">У вас все под контролем</Text>
           <Text variant="h4">
-            Домофон работает со специальными криптозащищенными ключами,
-            существенно повышающими безопасность проживания в многоквартирных
-            домах.
+            Создавайте коды открытия двери, принимайте звонки с дивана или
+            просто настройте бесключевой доступ в подъезд. Управляйте домофоном
+            через ваше мобильное приложение так как вам вздумается
           </Text>
 
           <Button mt="6" mr="auto" variant="contained" color="subtle">
@@ -237,34 +222,77 @@ export default function SputnikPage({ ...props }) {
         </Flex>
       </Grid>
 
-      <VideoSection styles={styles} as="section" />
-      {/* <Grid      column="full" contained backgroundColor="background">
-        <Text color="textSecondary"      column="full">
-          My wife and I now have peace of mind when we leave our kids at home to
-          do a quick errand. Installation was easy. No more worries when we are
-          expecting a package.
+      <Grid
+        contained
+        as="section"
+        column="full"
+        minHeight="100vh"
+        style={{ gridTemplateRows: 'max-content 1fr' }}
+      >
+        <Text
+          variant="h1"
+          column="center"
+          textAlign="left"
+          style={{ lineHeight: 1.25 }}
+        >
+          Лайфхак.
+          <br />{' '}
+          <Text variant="h3">Как открыть домофон 7 разными способами</Text>
         </Text>
-        <Text color="textSecondary" style={{ gridColumn: '14/17' }}>
-          Joseph8 (verified customer)
-        </Text>
-      </Grid> */}
+
+        <Grid
+          py="7"
+          column="center"
+          // p="7"
+          style={{
+            // gridTemplateColumns: 'repeat(auto-fit, minmax(150px, min-content))',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: 'var(--spacing-xxxl) var(--spacing-xxl)',
+          }}
+          // backgroundColor="subtleBackground"
+        >
+          {categories.map((cat) => (
+            <Flex flexDirection="column">
+              <Mascotte
+                emote={cat.src}
+                style={{
+                  marginRight: 'auto',
+                  maxHeight: 120,
+                  objectPosition: 'left',
+                }}
+              />
+              <Text mt="6" mb="4" variant="h6">
+                {cat.title}
+              </Text>
+              <Text mt="auto" color="textSecondary">
+                {cat.subtitle}
+              </Text>
+            </Flex>
+          ))}
+        </Grid>
+      </Grid>
+
+      <VideoSection as="section" />
 
       <Grid contained column="full" as="section">
         <Flex flexDirection="column" column="full">
           <Text variant="h3" textAlign="center">
-            Управляется через бесплатное мобильное приложение
+            Превратить ваш дом в крепость? Легко 😎
           </Text>
           <Text variant="h4" textAlign="center" color="textSecondary">
-            Вы можете принимать видеозвонки от гостей, а также открывать домофон
-            тогда, когда вам это необходимо.
+            Вместе с компанией Дельта мы создали специальную услугу по охране
+            вашей квартиры и дома.
+            <br /> С ее помощью ваш дом буквально превращается в вашу крепость
+            за считанные минуты.
           </Text>
           <Button mt="6" mx="auto" variant="contained" color="subtle">
-            Узнать больше
+            Узнать подробнее
             <UilArrowRight />
           </Button>
         </Flex>
       </Grid>
-      <SplitItem column="center" src={appShowreel} />
+      <Image src={appShowreel} column="full" />
+      {/* <SplitItem column="full" src={appShowreel} min /> */}
 
       <Grid
         style={{ position: 'relative' }}
@@ -277,8 +305,9 @@ export default function SputnikPage({ ...props }) {
         <Flex flexDirection="column" column="bigRight" as="section">
           <Text variant="h3">Совместим с аналоговыми трубками</Text>
           <Text variant="h4">
-            Работает со всеми существующими вариантами трубок домофона, вам не
-            понадобится ничего менять.
+            Работает с большинством трубок домофона, вам не понадобится ничего
+            менять в своей квартире. Если вам надоела ваша существующая трубка
+            вы всегда можете купить новую - выбор огромен.
           </Text>
           <Button mt="6" mr="auto" variant="contained" color="subtle">
             Узнать больше
@@ -307,6 +336,53 @@ export default function SputnikPage({ ...props }) {
           height="60vh"
         />
       </Grid>
+
+      {/* <Container column="full">
+        <Grid>
+          <Text column="padLeft" variant="h3">
+            Береги <br /> автомобиль <Emoji emote={'🚙'} />
+          </Text>
+          <Text column="padRight" variant="h4">
+            Мы научили дворовые видеокамеры охранять твой автомобиль все время
+            пока он припаркован во дворе. Система сможет заметить любую
+            подозрительную активность возле твоей машины и незамедлительно
+            сообщить об этом.
+            <Text variant="h4">
+              Если в твоем доме не установлены умные камеры,{' '}
+              <Link variant="inline">закажи их установку</Link> у наших
+              партнеров или <Link variant="inline">подключи свою</Link>, мы
+              будем только рады.
+            </Text>
+          </Text>
+        </Grid>
+      </Container> */}
+
+      <Container column="full">
+        <Grid>
+          <Text variant="h3" column="padLeft" textAlign="left">
+            Зевс ⚡️
+          </Text>
+          <Text variant="h4" column="padRight">
+            Звучит невероятно, но факт - «Спутник» не просто домофон.
+            <br /> «Спутник» — часть системы экстренного информирования
+            населения о чрезвычайных ситуациях. <br />
+            Во время ЧС вы сможете услышать четкий план действий в подобной
+            ситуации через вашу обычную квартирную трубку от домофона.
+          </Text>{' '}
+          <Button
+            mt="6"
+            mr="auto"
+            variant="contained"
+            color="subtle"
+            column="padRight"
+          >
+            Узнать больше
+            <UilArrowRight />
+          </Button>
+        </Grid>
+      </Container>
+
+      <SplitItem minHeight="70vh" src={appShowreel} column="full" />
     </ProductPageTemplate>
   )
 }

@@ -12,6 +12,7 @@ import styled from 'styled-components'
 import eric from 'assets/eric.mov'
 import eric2 from 'assets/eric2.mov'
 import Sparkles from 'components/Sparkles'
+import Emoji from 'components/Emoji'
 
 // const THRESHOLD = [0.1, 0.8, 0.9]
 
@@ -132,7 +133,9 @@ export default function VideoSection({ ...props }) {
             animate={isDark ? 'night' : 'day'}
             variants={textVariants}
           >
-            <Sparkles>и ночью</Sparkles>
+            <Sparkles>
+              и ночью <Emoji emote={'🌕'} />
+            </Sparkles>
           </motion.span>
         </Text>
         <Text variant="h4">

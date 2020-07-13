@@ -36,6 +36,7 @@ const h3 = css`
 
   font-size: 3.2rem;
   line-height: 3.6rem;
+  font-weight: var(--font-weight-regular);
 `
 
 const h4 = css`
@@ -61,6 +62,14 @@ const h5 = css`
   padding-top: 16px;
 `
 
+const h6 = css`
+  --bug: fix;
+
+  font-size: 1.625rem;
+  line-height: 2.125rem;
+  font-weight: var(--font-weight-demi);
+`
+
 export default styled('p')`
   margin: 0;
   text-align: left;
@@ -72,6 +81,7 @@ export default styled('p')`
       h3,
       h4,
       h5,
+      h6,
       hero,
     },
   })}

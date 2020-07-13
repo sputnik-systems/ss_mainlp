@@ -138,7 +138,7 @@ export default function AppPage({ ...props }) {
         />
       }
     >
-      <Container column="full">
+      <Container column="full" style={{ zIndex: 999, position: 'relative' }}>
         <Grid>
           <Flex
             column="heroLeft"
@@ -199,7 +199,13 @@ export default function AppPage({ ...props }) {
           твоих фотографий, все максимально приватно - только цифры и формулы.
         </Text>
       </Container>
-      <SplitItem column="full" src={appShowreel} height="98vh" />
+      <SplitItem
+        column="full"
+        src={
+          'https://images.unsplash.com/photo-1513206139743-d812fb597a1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=647&q=80'
+        }
+        minHeight="70vh"
+      />
 
       <Container column="full">
         <Grid>

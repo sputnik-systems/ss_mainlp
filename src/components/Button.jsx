@@ -5,6 +5,7 @@ import { space, color, layout, variant, typography } from 'styled-system'
 import buttonColors from 'utils/buttonColors'
 
 import { nav } from './Link'
+import gridColumns from 'utils/gridColumns'
 
 const store = css`
   --bug: fix;
@@ -154,6 +155,7 @@ export default styled.button`
   font-size: var(--font-size);
   font-weight: var(--font-weight-demi);
   user-select: none;
+  z-index: 3;
 
   --button-primary: var(--color-primary);
   --button-secondary: var(--color-primary-contrast);
@@ -167,7 +169,7 @@ export default styled.button`
   ${color};
   ${layout};
   ${typography};
-
+  ${gridColumns};
   ${buttonColors};
   ${variant({
     variants: {

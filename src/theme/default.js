@@ -90,6 +90,7 @@ export default css`
   --spacing-l: 1.325rem;
   --spacing-xl: 1.625rem;
   --spacing-xxl: 4rem;
+  --spacing-xxxl: 6rem;
 
   --br-s: 12px;
   --br-m: 20px;

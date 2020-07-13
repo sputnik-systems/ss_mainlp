@@ -5,13 +5,13 @@ import Nav from 'components/Nav'
 import Text from 'components/Text'
 import { motion, useViewportScroll, useAnimation } from 'framer-motion'
 
-const Sticky = styled(motion.header)`
+const Sticky = styled(motion.nav)`
   background: var(--color-blurred-background);
   backdrop-filter: blur(20px) saturate(180%);
   position: fixed;
   top: 0;
   grid-column: 1/9;
-  z-index: 999;
+  z-index: 888;
   width: 100%;
 `
 
@@ -59,7 +59,6 @@ export default function ProductNav({ left, right, ...props }) {
     >
       <Nav
         backgroundColor="transparent"
-        height="64px"
         left={
           <>
             <Text
@@ -83,6 +82,7 @@ export default function ProductNav({ left, right, ...props }) {
           </>
         }
         right={right}
+        style={{ height: 'var(--nav-height)' }}
         {...props}
       />
     </Sticky>

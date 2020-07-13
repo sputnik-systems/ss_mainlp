@@ -7,7 +7,7 @@ const Page = styled.main`
 
   min-height: 100vh;
   position: relative;
-  z-index: 2;
+  z-index: 900;
   background: var(--color-background);
   box-shadow: 0 50px 50px -50px rgba(0, 0, 0, 0.1);
   transition: var(--default-transition);

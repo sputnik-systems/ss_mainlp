@@ -17,7 +17,7 @@ const Body = styled.nav`
 
   align-items: center;
   grid-column: 1/9;
-  z-index: 999;
+  z-index: 888;
   ${(p) =>
     p.border &&
     css`
