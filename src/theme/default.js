@@ -91,7 +91,7 @@ export default css`
   --spacing-xl: 1.625rem;
   --spacing-xxl: 4rem;
 
-  --br-s: 8px;
+  --br-s: 12px;
   --br-m: 20px;
   --br-l: 30px;
 

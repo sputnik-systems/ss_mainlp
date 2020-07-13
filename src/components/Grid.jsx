@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { space } from 'styled-system'
+import { space, layout } from 'styled-system'
 import gridColumns from 'utils/gridColumns'
 
 const ifContained = css`
@@ -20,5 +20,6 @@ export default styled.div`
 
   ${(p) => p.contained && ifContained};
   ${space};
+  ${layout};
   ${gridColumns};
 `

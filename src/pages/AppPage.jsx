@@ -35,6 +35,7 @@ import whatsapp from 'assets/svg/whatsapp.svg'
 import telegram from 'assets/svg/telegram.svg'
 import viber from 'assets/svg/viber.svg'
 import appGallery from 'assets/icons/appgallery.png'
+import { ReactComponent as AppLogo } from 'assets/svg/mobileAppLogo.svg'
 
 const slidesOne = [
   {
@@ -111,19 +112,17 @@ export default function AppPage({ ...props }) {
       nav={
         <ProductNav
           left={
-            <Text
-              onClick={() =>
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                })
-              }
-              variant="h2"
-              fontWeight="bold"
-              style={{ fontSize: 28, letterSpacing: '-0.15rem' }}
-            >
-              Sputnik App
-            </Text>
+            <>
+              <AppLogo
+                style={{
+                  height: '100%',
+                  borderRadius: 'var(--br-l)',
+                  width: 'auto',
+                  padding: 'var(--spacing-s)',
+                }}
+              />
+              Спутник
+            </>
           }
           right={
             <>
@@ -142,14 +141,10 @@ export default function AppPage({ ...props }) {
       <Container column="full">
         <Grid>
           <Flex
-            column="padLeft"
+            column="heroLeft"
             flexDirection="column"
-            height="100%"
+            height="86vh"
             justifyContent="center"
-            style={{
-              gridColumn: '2/9',
-              height: '86vh',
-            }}
           >
             <Fade>
               <Text variant="h1" textAlign="left">
@@ -179,7 +174,7 @@ export default function AppPage({ ...props }) {
             style={{ height: '86vh' }}
             alignItems="center"
             justifyContent="center"
-            column="padRight"
+            column="heroRight"
           >
             <Phone>
               <Video src={video} background />

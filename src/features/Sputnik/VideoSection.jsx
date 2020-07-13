@@ -4,9 +4,9 @@ import { useInView } from 'react-intersection-observer'
 import Grid from 'components/Grid'
 import Text from 'components/Text'
 import Flex from 'components/Flex'
-import Link from 'components/Link'
+import Button from 'components/Button'
 import Video from 'components/Video'
-import AngleRightB from '@iconscout/react-unicons/icons/uil-angle-right-b'
+import { UilArrowRight } from '@iconscout/react-unicons'
 import styled from 'styled-components'
 
 import eric from 'assets/eric.mov'
@@ -91,7 +91,7 @@ export default function VideoSection({ ...props }) {
   const [isDark, setIsDark] = useState(false)
 
   const [ref, inView, entry] = useInView({
-    threshold: 0.7,
+    threshold: 0.6,
     rootMargin: '64px',
   })
 
@@ -120,13 +120,12 @@ export default function VideoSection({ ...props }) {
   return (
     <Grid
       ref={ref}
-      style={{ minHeight: '110vh' }}
       contained
       backgroundColor="background"
       as="section"
       column="full"
     >
-      <Flex flexDirection="column" column="left" justifyContent="center">
+      <Flex flexDirection="column" column="left">
         <Text variant="h3">
           Снимает четкое видео днем...{' '}
           <motion.span
@@ -142,19 +141,16 @@ export default function VideoSection({ ...props }) {
           помогают обнаружить как вандалов, так и злоумышленников, промышляющих
           кражами в подъездах и квартирах.
         </Text>
-        <Link
-          mt="5"
-          color="primary"
-          variant="cta"
-          fontSize="3"
-          textAlign="left"
-          href="/"
-        >
+        <Button mt="6" mr="auto" variant="contained" color="subtle">
           Посмотреть примеры
-          <AngleRightB />
-        </Link>
+          <UilArrowRight />
+        </Button>
       </Flex>
-      <FlipScene column="bigRight" justifyContent="center" alignItems="center">
+      <FlipScene
+        style={{ height: '70vh' }}
+        column="padRight"
+        justifyContent="center"
+      >
         <FlipCard animate={isDark ? 'night' : 'day'} variants={variants}>
           <FrontVideo background src={eric} />
           <BackVideo background src={eric2} />

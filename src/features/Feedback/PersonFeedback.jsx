@@ -101,21 +101,28 @@ const Mask = styled(motion.div)`
 
 const PersonName = styled(Text)`
   position: absolute;
-  width: 120%;
+  transform: translateX(-50%);
   bottom: -50%;
-  left: -10%;
+  left: 50%;
   display: block;
   font-size: 14px;
   text-align: center;
   font-weight: var('font-weight-demi');
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: var(--spacing-xxs);
-  border-radius: var(--br-m);
+  transition: var(--default-transition);
+  background: var(--color-blurred-background);
+  backdrop-filter: var(--backdrop);
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  border-radius: var(--br-s);
 `
 
-export default function PersonFeedback({ src = eric, ...props }) {
-  const side = useRef(random(70, 90)).current
+export default function PersonFeedback({
+  src = eric,
+  name = 'Person Name',
+  poster,
+  size,
+  ...props
+}) {
+  const side = useRef(size || random(70, 115, 5)).current
   return (
     <Wrapper
       {...props}
@@ -137,6 +144,7 @@ export default function PersonFeedback({ src = eric, ...props }) {
           onTouchStart={(e) => e.target.play()}
           onTouchEnd={(e) => e.target.pause()}
           muted={false}
+          poster={poster}
           style={{
             width: '140%',
             height: '140%',
@@ -158,7 +166,7 @@ export default function PersonFeedback({ src = eric, ...props }) {
         </motion.span>
       </Mask>
       <motion.span variants={nameVariants}>
-        <PersonName>Эрик Фарукшин</PersonName>
+        <PersonName>{name}</PersonName>
       </motion.span>
     </Wrapper>
   )

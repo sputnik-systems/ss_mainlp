@@ -66,6 +66,7 @@ export default function SplitItem({
     scrollY,
     [elementTop - vh, elementTop + vh],
     ['-50%', '50%'],
+    { clamp: false },
   )
 
   const handleResize = useCallback(() => {

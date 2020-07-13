@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import PersonFeedback from 'features/Feedback/PersonFeedback'
-import eric2 from 'assets/eric2.mov'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import ParallaxItem from 'components/ParallaxItem'
 
 const Wrapper = styled(motion.div)`
   position: absolute;
@@ -16,13 +16,13 @@ const variants = {
   idle: {
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.3,
+      staggerChildren: 0.25,
     },
   },
   initial: {},
 }
 
-export default function FeedbackWrapper({ ...props }) {
+export default function FeedbackWrapper({ persons, ...props }) {
   const animation = useAnimation()
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true })
 
@@ -41,16 +41,15 @@ export default function FeedbackWrapper({ ...props }) {
       initial="initial"
       variants={variants}
     >
-      <PersonFeedback
-        style={{ position: 'absolute', left: '65%', bottom: '20%' }}
-      />
-      <PersonFeedback
-        style={{ position: 'absolute', left: '44%', top: '10%' }}
-        src={eric2}
-      />
-      <PersonFeedback
-        style={{ position: 'absolute', left: '10%', bottom: '10%' }}
-      />
+      {persons?.map((p) => (
+        <ParallaxItem
+          style={{ position: 'absolute', left: p.left, top: p.top }}
+          buffer={300}
+          end={-150}
+        >
+          <PersonFeedback src={p.src} {...p} />
+        </ParallaxItem>
+      ))}
     </Wrapper>
   )
 }

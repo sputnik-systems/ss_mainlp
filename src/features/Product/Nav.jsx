@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Nav from 'components/Nav'
 
-import { Link as RouterLink } from 'react-router-dom'
-import sputnikLogoPath from 'features/Home/logoPath'
+import Text from 'components/Text'
 import { motion, useViewportScroll, useAnimation } from 'framer-motion'
 
 const Sticky = styled(motion.header)`
@@ -37,12 +36,7 @@ const transition = {
   ease: [0.17, 0.67, 0.83, 0.67],
 }
 
-export default function ProductNav({
-  path = sputnikLogoPath,
-  left,
-  right,
-  ...props
-}) {
+export default function ProductNav({ left, right, ...props }) {
   const { scrollY } = useViewportScroll()
   const controls = useAnimation()
 
@@ -68,16 +62,24 @@ export default function ProductNav({
         height="64px"
         left={
           <>
-            <RouterLink to="/">
-              {/* <MotionLogo
-                  style={{
-                    marginLeft: 'var(--spacing-xs)',
-                    height: '100%',
-                  }}
-                  path={path}
-                /> */}
-            </RouterLink>
-            {left}
+            <Text
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth',
+                })
+              }
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                height: '100%',
+                fontSize: 28,
+                cursor: 'pointer',
+              }}
+              variant="h3"
+            >
+              {left}
+            </Text>
           </>
         }
         right={right}

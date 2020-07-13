@@ -26,6 +26,7 @@ export default function Navbar({ ...props }) {
               style={{
                 marginLeft: 'var(--spacing-xs)',
                 height: '100%',
+                cursor: 'pointer',
               }}
             />
           </RouterLink>
