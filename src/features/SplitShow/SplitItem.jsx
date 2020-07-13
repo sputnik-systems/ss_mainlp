@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
-import { useResizeObserver } from '@asyarb/use-resize-observer'
+import { useWindowSize } from '@react-hook/window-size'
 
 import Text from 'components/Text'
 import gridColumns from 'utils/gridColumns'
@@ -23,6 +23,7 @@ const SplitImg = styled(motion.img)`
   object-fit: cover;
   max-height: 98vh;
   min-height: ${(p) => p.minHeight};
+  height: 100%;
 `
 
 const SplitText = styled(Text)`
@@ -34,8 +35,6 @@ const SplitText = styled(Text)`
   display: block;
   font-size: 24px;
 `
-
-const BODY_OFFSET = 76
 
 // TODO: account for img height when its > 100vh
 
@@ -53,14 +52,20 @@ export default function SplitItem({
   minHeight,
   ...props
 }) {
-  const ref = useRef(null)
-  const [elementTop, setElementTop] = useState(0)
   const { scrollY } = useViewportScroll()
+  const [elementTop, setElementTop] = useState(0)
+  const ref = useRef(null)
 
-  // useLayoutEffect(() => {
-  //   const element = ref.current
-  //   setElementTop(element.offsetTop)
-  // }, [ref])
+  const handleResize = useCallback(() => {
+    const { top } = ref.current.getBoundingClientRect()
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    setElementTop(top + scrollTop)
+  }, [ref])
+
+  const size = useWindowSize()
+  useLayoutEffect(() => {
+    handleResize()
+  }, [handleResize, size])
 
   const y = useTransform(
     scrollY,
@@ -68,18 +73,6 @@ export default function SplitItem({
     ['-50%', '50%'],
     { clamp: false },
   )
-
-  const handleResize = useCallback(() => {
-    const rect = ref.current.getBoundingClientRect()
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-
-    setElementTop(rect.top + scrollTop)
-  }, [])
-
-  useResizeObserver({
-    ref,
-    callback: handleResize,
-  })
 
   return (
     <Body ref={ref} {...props}>

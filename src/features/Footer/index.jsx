@@ -10,7 +10,7 @@ import vsem from 'assets/img/vsem.png'
 
 const FooterBody = styled(Grid)`
   height: var(--footer-height);
-  /* background: var(--color-sputnik-pink); */
+  background: var(--color-subtle-background);
   /* color: var(--color-sputnik-pink-dark); */
   /* box-shadow: inset rgba(0, 0, 0, 0.2) 0px 35px 50px -30px; */
   /* box-shadow: inset 0px 10px 50px rgba(0, 0, 0, 0.1); */
@@ -26,7 +26,7 @@ const FooterBody = styled(Grid)`
 export default function Footer({ ...props }) {
   return (
     <FooterBody as="footer">
-      <Grid contained style={{ gridColumn: '1/17' }}>
+      {/* <Grid contained style={{ gridColumn: '1/17' }}>
         <Flex flexDirection="column" style={{ gridColumn: '1/4' }}>
           <Text variant="h3" pb="3">
             About
@@ -54,7 +54,15 @@ export default function Footer({ ...props }) {
           alt=""
           style={{ gridColumn: '13/17', width: '100%', objectFit: 'contain' }}
         />
-      </Grid>
+      </Grid> */}
+      <Flex
+        flexDirection="column"
+        alignItems="flex-start"
+        justifyContent="center"
+        column="padLeft"
+      >
+        <Text variant="h1"> sputnik.systems</Text>
+      </Flex>
     </FooterBody>
   )
 }
