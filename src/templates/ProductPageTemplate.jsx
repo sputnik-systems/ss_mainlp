@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useRef, useCallback } from 'react'
 import styled from 'styled-components'
+import { useResizeObserver } from '@asyarb/use-resize-observer'
+
 import Grid from 'components/Grid'
 
 const Page = styled.main`
@@ -7,7 +9,7 @@ const Page = styled.main`
 
   min-height: 100vh;
   position: relative;
-  z-index: 900;
+  z-index: 2;
   background: var(--color-background);
   /* box-shadow: 0 50px 50px -50px rgba(0, 0, 0, 0.1); */
   transition: var(--default-transition);
@@ -53,10 +55,22 @@ const StyledGrid = styled(Grid)`
   grid-row-gap: var(--gap);
 `
 
-function ProductPageTemplate(
-  { children, nav, lines = false, gridProps = {}, ...props },
-  ref,
-) {
+function ProductPageTemplate({
+  children,
+  nav,
+  lines = false,
+  gridProps = {},
+  ...props
+}) {
+  const ref = useRef()
+  const handleResize = useCallback(() => {
+    window.dispatchEvent(new Event('resize'))
+  }, [])
+  useResizeObserver({
+    ref,
+    callback: handleResize,
+  })
+
   return (
     <Page as="main" {...props}>
       {lines && (
@@ -76,4 +90,4 @@ function ProductPageTemplate(
   )
 }
 
-export default React.forwardRef(ProductPageTemplate)
+export default ProductPageTemplate

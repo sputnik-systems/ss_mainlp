@@ -119,13 +119,7 @@ export default function VideoSection({ ...props }) {
   }, [isDark])
 
   return (
-    <Grid
-      ref={ref}
-      contained
-      backgroundColor="background"
-      as="section"
-      column="full"
-    >
+    <Grid ref={ref} contained as="section" column="full">
       <Flex flexDirection="column" column="left">
         <Text variant="h3">
           Снимает четкое видео днем...{' '}

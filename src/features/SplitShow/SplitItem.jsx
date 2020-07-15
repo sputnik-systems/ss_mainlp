@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 const SplitImg = styled(motion.img)`
   width: 100%;
   object-fit: cover;
-  max-height: 98vh;
+  max-height: 100vh;
   min-height: ${(p) => p.minHeight};
   height: 100%;
 `

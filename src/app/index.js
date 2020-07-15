@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import AppTemplate from 'templates/AppTemplate'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
@@ -10,6 +10,9 @@ import useScrollToTop from 'hooks/useScrollToTop'
 import Home from 'pages/HomePage'
 import Sputnik from 'pages/SputnikPage'
 import AppPage from 'pages/AppPage'
+import LoadingPage from 'pages/Loading'
+
+const LokkiPage = lazy(() => import('pages/LokkiPage'))
 
 // const pageVariants = {
 //   initial: {
@@ -63,11 +66,14 @@ export default function App() {
       </Helmet>
       <Navbar />
 
-      <Switch location={location} key={location.pathname}>
-        <Route component={AppPage} path="/app" />
-        <Route component={Sputnik} path="/sputnik" />
-        <Route component={Home} path="/" />
-      </Switch>
+      <Suspense fallback={LoadingPage}>
+        <Switch location={location} key={location.pathname}>
+          <Route component={LokkiPage} path="/lokki" />
+          <Route component={AppPage} path="/app" />
+          <Route component={Sputnik} path="/sputnik" />
+          <Route component={Home} exact path="/" />
+        </Switch>
+      </Suspense>
 
       <Footer />
     </AppTemplate>

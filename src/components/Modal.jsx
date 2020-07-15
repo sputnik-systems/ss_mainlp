@@ -193,7 +193,7 @@ function ModalContent({
 // 'modal-root' is a sibling to 'app-root'
 const modalRoot = document.getElementById('modal-root')
 
-export default function Modal({ isOpen, fixed, children, ...props }) {
+export default function Modal({ isOpen, fixed = false, children, ...props }) {
   // element to which the modal will be rendered
   const el = document.createElement('div')
 

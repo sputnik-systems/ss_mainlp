@@ -1,4 +1,5 @@
 import React, { useState, useRef, useLayoutEffect } from 'react'
+import styled from 'styled-components'
 import {
   motion,
   useViewportScroll,
@@ -6,12 +7,17 @@ import {
   useSpring,
 } from 'framer-motion'
 import { random } from 'utils/helpers'
+import gridColumns from 'utils/gridColumns'
 
 const springConfig = {
   damping: 100,
   stiffness: 100,
   mass: random(1, 3),
 }
+
+const Body = styled.div`
+  ${gridColumns};
+`
 
 export default function ParallaxItem({
   children,
@@ -35,8 +41,8 @@ export default function ParallaxItem({
   }, [ref])
 
   return (
-    <motion.div ref={ref} style={{ ...style, y }} {...props}>
+    <Body as={motion.div} ref={ref} style={{ ...style, y }} {...props}>
       {children}
-    </motion.div>
+    </Body>
   )
 }

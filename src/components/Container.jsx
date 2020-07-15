@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space } from 'styled-system'
+import { space, color } from 'styled-system'
 import gridColumns from 'utils/gridColumns'
 
 export default styled.div`
@@ -8,5 +8,6 @@ export default styled.div`
   margin: 0 auto;
   padding: 0 var(--spacing-m);
   ${space};
+  ${color};
   ${gridColumns};
 `

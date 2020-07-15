@@ -37,5 +37,6 @@ export default {
     background: 'var(--color-background)',
     subtleBackground: 'var(--color-subtle-background)',
     primary: 'var(--color-primary)',
+    yellow: 'var(--color-sputnik-yellow)',
   },
 }

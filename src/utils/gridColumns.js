@@ -17,8 +17,11 @@ export default css`
       center: { gridColumn: '2/16' },
       padLeft: { gridColumn: '2/8' },
       padRight: { gridColumn: '10/16' },
-      heroLeft: { gridColumn: '2/10' },
-      heroRight: { gridColumn: '10/16' },
+      heroLeft: { gridColumn: '2/11' },
+      heroRight: { gridColumn: '11/16' },
+
+      productLeft: { gridColumn: '2/9' },
+      productRight: { gridColumn: '9/16' },
     },
   })}
 `

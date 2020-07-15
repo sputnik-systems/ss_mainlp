@@ -42,13 +42,11 @@ export default function FeedbackWrapper({ persons, ...props }) {
       variants={variants}
     >
       {persons?.map((p) => (
-        <ParallaxItem
+        <PersonFeedback
           style={{ position: 'absolute', left: p.left, top: p.top }}
-          buffer={350}
-          end={-150}
-        >
-          <PersonFeedback src={p.src} {...p} />
-        </ParallaxItem>
+          src={p.src}
+          {...p}
+        />
       ))}
     </Wrapper>
   )

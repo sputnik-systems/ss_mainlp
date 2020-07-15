@@ -1,5 +1,4 @@
-import React, { useRef, useCallback, useState } from 'react'
-import { useResizeObserver } from '@asyarb/use-resize-observer'
+import React, { useCallback, useState } from 'react'
 import { ReactComponent as Apple } from 'assets/icons/ios.svg'
 import { ReactComponent as GooglePlay } from 'assets/icons/googleplay.svg'
 import { UilEllipsisV } from '@iconscout/react-unicons'
@@ -92,15 +91,6 @@ const slidesTwo = [
 ]
 
 export default function AppPage({ ...props }) {
-  const ref = useRef()
-  const handleResize = useCallback(() => {
-    window.dispatchEvent(new Event('resize'))
-  }, [])
-  useResizeObserver({
-    ref,
-    callback: handleResize,
-  })
-
   const [downloadModal, setDownloadModal] = useState(false)
   const toggleDownloadModal = useCallback(() => {
     setDownloadModal(!downloadModal)
@@ -108,7 +98,6 @@ export default function AppPage({ ...props }) {
   return (
     <ProductPageTemplate
       {...props}
-      ref={ref}
       nav={
         <ProductNav
           left={

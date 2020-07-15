@@ -21,6 +21,7 @@ import SplitItem from 'features/SplitShow/SplitItem'
 import appShowreel from 'assets/img/app_showreel.jpg'
 // import sk from 'assets/img/sputnik_cropped.png'
 import sk from 'assets/img/sk.jpg'
+import zeus from 'assets/img/zeus.png'
 import { ReactComponent as IntercomLogo } from 'assets/intercomLogo.svg'
 import { ReactComponent as SputnikIcon } from 'assets/svg/sputnikIcon.svg'
 
@@ -52,7 +53,7 @@ const persons = [
   },
   {
     src: eric,
-    left: '60%',
+    left: '65%',
     top: '50%',
     poster:
       'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80',
@@ -66,7 +67,7 @@ const persons = [
   },
   {
     src: eric,
-    left: '80%',
+    left: '85%',
     top: '60%',
   },
   {
@@ -168,12 +169,14 @@ export default function SputnikPage({ ...props }) {
           >
             <Fade>
               <Text variant="h1" textAlign="left">
-                Разработан для людей
+                Разработан
+                <br /> для людей 👨‍🔬👩‍💼👨‍💻🧖‍♀️
               </Text>
               <Text variant="h4" color="textSecondary">
                 Специально спроектирован для работы в обычных многоквартирных
-                домах. Невысокая стоимость домофона позволяет устанавливать
-                Спутник без каких либо существенных затрат для жителей
+                домах. <br />
+                Невысокая стоимость домофона позволяет устанавливать Спутник без
+                каких либо существенных затрат для жителей.
               </Text>
 
               <Button mt="6" mr="auto" variant="contained">
@@ -204,7 +207,7 @@ export default function SputnikPage({ ...props }) {
 
       <SplitItem minHeight="70vh" src={sk} column="full" />
 
-      <Grid contained backgroundColor="background" as="section" column="full">
+      <Grid contained as="section" column="full">
         <Flex backgroundColor="subtleBackground" height="60vh" column="left" />
 
         <Flex flexDirection="column" column="right">
@@ -235,7 +238,7 @@ export default function SputnikPage({ ...props }) {
           textAlign="left"
           style={{ lineHeight: 1.25 }}
         >
-          Лайфхак.
+          Лайфхак
           <br />{' '}
           <Text variant="h3">Как открыть домофон 7 разными способами</Text>
         </Text>
@@ -297,13 +300,12 @@ export default function SputnikPage({ ...props }) {
       <Grid
         style={{ position: 'relative' }}
         contained
-        backgroundColor="background"
         as="section"
         column="full"
       >
         <Flex column="left" backgroundColor="subtleBackground" height="60vh" />
         <Flex flexDirection="column" column="bigRight" as="section">
-          <Text variant="h3">Совместим с аналоговыми трубками</Text>
+          <Text variant="h3">Совместим с аналоговыми трубками 📞</Text>
           <Text variant="h4">
             Работает с большинством трубок домофона, вам не понадобится ничего
             менять в своей квартире. Если вам надоела ваша существующая трубка
@@ -316,9 +318,9 @@ export default function SputnikPage({ ...props }) {
         </Flex>
       </Grid>
 
-      <Grid column="full" contained backgroundColor="background" as="section">
+      <Grid column="full" contained as="section">
         <Flex flexDirection="column" column="left">
-          <Text variant="h3">Дружит с Алисой</Text>
+          <Text variant="h3">Дружит с Алисой 🙋‍♀️</Text>
           <Text variant="h4">
             Открывайте дверь гостям с помощью умной колонки «Алиса».
             Настраивайте домофон так, как вам это удобно, меняйте звуки открытия
@@ -358,11 +360,11 @@ export default function SputnikPage({ ...props }) {
       </Container> */}
 
       <Container column="full">
-        <Grid>
-          <Text variant="h3" column="padLeft" textAlign="left">
-            Зевс ⚡️
-          </Text>
-          <Text variant="h4" column="padRight">
+        <Text variant="h3" column="padLeft" textAlign="left">
+          Зевс ⚡️
+        </Text>
+        <Flex flexDirection="column">
+          <Text variant="h4">
             Звучит невероятно, но факт - «Спутник» не просто домофон.
             <br /> «Спутник» — часть системы экстренного информирования
             населения о чрезвычайных ситуациях. <br />
@@ -379,10 +381,28 @@ export default function SputnikPage({ ...props }) {
             Узнать больше
             <UilArrowRight />
           </Button>
+        </Flex>
+      </Container>
+
+      <Container
+        column="center"
+        style={{ display: 'flex', justifyContent: 'center', height: '80vh' }}
+        backgroundColor="yellow"
+      >
+        <Grid column="full" height="100%%" style={{ alignItems: 'center' }}>
+          <Image
+            src={zeus}
+            column="center"
+            style={{
+              height: '96%',
+              objectPosition: 'bottom',
+              objectFit: 'contain',
+            }}
+          />
         </Grid>
       </Container>
 
-      <SplitItem minHeight="70vh" src={appShowreel} column="full" />
+      {/* <SplitItem minHeight="70vh" src={zeus} column="center" /> */}
     </ProductPageTemplate>
   )
 }
