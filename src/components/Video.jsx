@@ -20,6 +20,7 @@ const StyledVideo = styled.video`
 
 export default function Video({
   src,
+  type = 'video/mp4',
   autoPlay = true,
   muted = true,
   background,
@@ -27,13 +28,14 @@ export default function Video({
 }) {
   return (
     <StyledVideo
-      src={src}
       autoPlay={autoPlay}
       loop
       playsInline
       muted={muted}
       background={background}
       {...props}
-    />
+    >
+      <source src={src} type={type} />
+    </StyledVideo>
   )
 }

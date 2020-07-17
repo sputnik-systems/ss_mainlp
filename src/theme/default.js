@@ -105,4 +105,24 @@ export default css`
   /* 
    main: '0 3px 15px 2px rgba(0, 0, 0, 0.05)',
   strong: 'rgba(0, 0, 0, 0.2) 0px 35px 50px -30px', */
+
+  /* social */
+  --instagram: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  --instagram-contrast: white;
+
+  --yt: #ff0000;
+  --yt-contrast: white;
+
+  --tg: #0088cc;
+  --tg-contrast: white;
+
+  --sk: #c6de43;
+  --sk-contrast: #656665;
 `

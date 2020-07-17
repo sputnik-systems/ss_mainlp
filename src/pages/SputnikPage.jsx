@@ -24,6 +24,7 @@ import sk from 'assets/img/sk.jpg'
 import zeus from 'assets/img/zeus.png'
 import { ReactComponent as IntercomLogo } from 'assets/intercomLogo.svg'
 import { ReactComponent as SputnikIcon } from 'assets/svg/sputnikIcon.svg'
+import coverVideo from 'assets/videos/speakphone-cover.mp4'
 
 import eric from 'assets/eric.mov'
 import eric2 from 'assets/eric2.mov'
@@ -205,7 +206,12 @@ export default function SputnikPage({ ...props }) {
         </Grid>
       </Container>
 
-      <SplitItem minHeight="70vh" src={sk} column="full" />
+      <SplitItem
+        minHeight="70vh"
+        src={coverVideo}
+        type="video/mp4"
+        column="full"
+      />
 
       <Grid contained as="section" column="full">
         <Flex backgroundColor="subtleBackground" height="60vh" column="left" />
@@ -360,28 +366,30 @@ export default function SputnikPage({ ...props }) {
       </Container> */}
 
       <Container column="full">
-        <Text variant="h3" column="padLeft" textAlign="left">
-          Зевс ⚡️
-        </Text>
-        <Flex flexDirection="column">
-          <Text variant="h4">
-            Звучит невероятно, но факт - «Спутник» не просто домофон.
-            <br /> «Спутник» — часть системы экстренного информирования
-            населения о чрезвычайных ситуациях. <br />
-            Во время ЧС вы сможете услышать четкий план действий в подобной
-            ситуации через вашу обычную квартирную трубку от домофона.
-          </Text>{' '}
-          <Button
-            mt="6"
-            mr="auto"
-            variant="contained"
-            color="subtle"
-            column="padRight"
-          >
-            Узнать больше
-            <UilArrowRight />
-          </Button>
-        </Flex>
+        <Grid>
+          <Text variant="h1" column="padLeft" textAlign="left">
+            Зевс ⚡️
+          </Text>
+          <Flex flexDirection="column" column="center">
+            <Text variant="h4">
+              Звучит невероятно, но факт. «Спутник» это не просто домофон.
+              <br /> «Спутник» — часть системы экстренного информирования
+              населения о чрезвычайных ситуациях. <br />
+              Во время ЧС вы сможете услышать четкий план действий в подобной
+              ситуации через вашу обычную квартирную трубку от домофона.
+            </Text>{' '}
+            <Button
+              mt="6"
+              mr="auto"
+              variant="contained"
+              color="subtle"
+              column="padRight"
+            >
+              Узнать больше
+              <UilArrowRight />
+            </Button>
+          </Flex>
+        </Grid>
       </Container>
 
       <Container

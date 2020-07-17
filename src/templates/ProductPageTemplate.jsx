@@ -11,7 +11,7 @@ const Page = styled.main`
   position: relative;
   z-index: 2;
   background: var(--color-background);
-  /* box-shadow: 0 50px 50px -50px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 50px 50px -50px rgba(0, 0, 0, 0.1);
   transition: var(--default-transition);
   padding-bottom: var(--gap);
 `

@@ -63,7 +63,12 @@ const Option = ({ children, innerProps, innerRef, ...props }) => (
   <Button
     variant={props.isSelected ? 'contained' : 'text'}
     color={props.isSelected ? 'primary' : 'subtle'}
-    style={{ width: '100%', textAlign: 'start', cursor: 'pointer' }}
+    style={{
+      width: '100%',
+      textAlign: 'start',
+      cursor: 'pointer',
+      justifyContent: 'flex-start',
+    }}
     ref={innerRef}
     {...innerProps}
   >

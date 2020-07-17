@@ -5,6 +5,7 @@ import { useResizeObserver } from '@asyarb/use-resize-observer'
 import { useWindowSize } from '@react-hook/window-size'
 
 import Text from 'components/Text'
+import Video from 'components/Video'
 import gridColumns from 'utils/gridColumns'
 
 const Body = styled.div`
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 
-const SplitImg = styled(motion.img)`
+const SplitImg = styled(Video)`
   width: 100%;
   object-fit: cover;
   max-height: 100vh;
@@ -51,6 +52,7 @@ export default function SplitItem({
   caption,
   splitItemProps = {},
   minHeight,
+  type,
   ...props
 }) {
   const { scrollY } = useViewportScroll()
@@ -87,6 +89,13 @@ export default function SplitItem({
           {...splitItemProps}
           minHeight={minHeight}
           style={{ y }}
+          background
+          as={type ? motion.video : motion.img}
+          type={type}
+          muted
+          playsInline
+          autoPlay
+          loop
         />
       </Wrapper>
       {caption && <SplitText as="caption">{caption}</SplitText>}

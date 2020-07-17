@@ -15,6 +15,20 @@ const Sticky = styled(motion.nav)`
   width: 100%;
 `
 
+const LeftText = styled(Text)`
+  display: flex;
+  alignitems: center;
+  height: 100%;
+  font-size: 28px;
+  cursor: pointer;
+  & > *:first-child {
+    height: 100%;
+    border-radius: var(--br-l);
+    width: auto;
+    padding: var(--spacing-s);
+  }
+`
+
 const variants = {
   initial: {
     y: '-100%',
@@ -42,7 +56,10 @@ export default function ProductNav({ left, right, ...props }) {
 
   useEffect(() => {
     function update(latest) {
-      latest > window.innerHeight ? controls.start('in') : controls.start('out')
+      latest > window.innerHeight / 2 &&
+      latest < window.scrollY - window.innerHeight
+        ? controls.start('in')
+        : controls.start('out')
     }
 
     const unsubscribe = scrollY.onChange(update)
@@ -61,24 +78,17 @@ export default function ProductNav({ left, right, ...props }) {
         backgroundColor="transparent"
         left={
           <>
-            <Text
+            <LeftText
               onClick={() =>
                 window.scrollTo({
                   top: 0,
                   behavior: 'smooth',
                 })
               }
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                height: '100%',
-                fontSize: 28,
-                cursor: 'pointer',
-              }}
               variant="h3"
             >
               {left}
-            </Text>
+            </LeftText>
           </>
         }
         right={right}

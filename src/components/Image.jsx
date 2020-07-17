@@ -4,4 +4,5 @@ import gridColumns from 'utils/gridColumns'
 
 export default styled(Image)`
   ${gridColumns};
+  object-fit: ${(p) => p.fit || 'unset'};
 `

@@ -35,12 +35,14 @@ const products = [
     subtitle: 'Голосовая колонка.',
     cta: 'Купить',
     column: 'productLeft',
+    disabled: true,
   },
   {
     title: 'Аск',
     subtitle: 'Домофонные трубка.',
     cta: 'Купить',
     column: 'productRight',
+    disabled: true,
   },
 ]
 
@@ -70,6 +72,7 @@ export default function HomePage({ ...props }) {
       {products.map((product) => (
         <ParallaxItem column={product.column}>
           <ProductCard
+            {...product}
             title={product.title}
             subtitle={product.subtitle}
             cta={product.cta}

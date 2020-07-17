@@ -17,6 +17,7 @@ export default function Navbar({ ...props }) {
     <Nav
       // mt="6"
       // style={{ zIndex: 2 }}
+      pt="6"
       style={{ height: 'var(--nav-height)' }}
       left={
         <>

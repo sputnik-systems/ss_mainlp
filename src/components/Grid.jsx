@@ -10,6 +10,10 @@ const ifContained = css`
   ${space}
 `
 
+const ifAutoFit = css`
+  grid-template-columns: repeat(auto-fit, minmax(${(p) => p.autoFit}));
+`
+
 export default styled.div`
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -19,6 +23,7 @@ export default styled.div`
   grid-column-gap: var(--spacing-l);
 
   ${(p) => p.contained && ifContained};
+  ${(p) => p.autoFit && ifAutoFit}
   ${space};
   ${layout};
   ${color};

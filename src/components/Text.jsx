@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { space, color, layout, variant, typography } from 'styled-system'
 import gridColumns from 'utils/gridColumns'
 
-const h1 = css`
+export const h1 = css`
   --bug: fix;
   color: var(--color-text);
   font-size: 80px;
@@ -14,7 +14,7 @@ const h1 = css`
   font-family: var(--font-family);
 `
 
-const h2 = css`
+export const h2 = css`
   --bug: fix;
   color: var(--color-text);
   font-size: 72px;
@@ -25,13 +25,13 @@ const h2 = css`
   font-family: var(--font-family);
 `
 
-const hero = css`
+export const hero = css`
   ${h1};
   font-size: 114px;
   font-weight: var(--font-weight-light);
 `
 
-const h3 = css`
+export const h3 = css`
   --bug: fix;
 
   font-size: 3.2rem;
@@ -39,7 +39,7 @@ const h3 = css`
   font-weight: var(--font-weight-regular);
 `
 
-const h4 = css`
+export const h4 = css`
   --bug: fix;
 
   font-size: 28px;
@@ -50,7 +50,7 @@ const h4 = css`
   font-size: 22px;
 `
 
-const h5 = css`
+export const h5 = css`
   --bug: fix;
 
   /* font-size: 2rem;
@@ -62,7 +62,7 @@ const h5 = css`
   padding-top: 16px;
 `
 
-const h6 = css`
+export const h6 = css`
   --bug: fix;
 
   font-size: 1.625rem;

@@ -17,12 +17,21 @@ const background = css`
   --button-hover: var(--color-subtle-background);
 `
 
+const primary = css`
+  --bug: fix;
+
+  --button-primary: var(--color-primary);
+  --button-secondary: var(--color-primary-contrast);
+  --button-hover: var(--color-primary-darker);
+`
+
 export default css`
   ${variant({
     prop: 'color',
     variants: {
       subtle,
       background,
+      primary,
     },
   })}
 `

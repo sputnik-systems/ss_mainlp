@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'components/Link'
-import Button from 'components/Button'
+import Fade from 'components/Fade'
 import Flex from 'components/Flex'
 import Text from 'components/Text'
 import { motion, useAnimation } from 'framer-motion'
@@ -28,7 +28,7 @@ const Card = styled(motion.section)`
   height: calc(var(--content-height) + var(--global-nav-collective-height));
   background-color: var(--color-subtle-background);
 
-  cursor: pointer;
+  cursor: ${(p) => (p.disabled ? 'default' : 'pointer')};
   display: block;
   text-decoration: none;
 `
@@ -73,6 +73,7 @@ export default function ProductCard({
   cta,
   ctaPrimary,
   ctaSecondary,
+  disabled,
   style,
   ...props
 }) {
@@ -88,39 +89,50 @@ export default function ProductCard({
   }, [controls, inView])
 
   return (
-    <RouterLink style={{ textDecoration: 'none', ...style }} to={ctaSecondary}>
+    <RouterLink
+      style={{
+        textDecoration: 'none',
+        ...style,
+        pointerEvents: disabled ? 'none' : 'all',
+      }}
+      disabled={disabled}
+      to={ctaSecondary}
+    >
       <Card
+        disabled={disabled}
         animate={controls}
         initial="hidden"
-        // variants={{
-        //   visible: { y: 0 },
-        //   hidden: { y: 50 },
-        // }}
-        // transition={{ ease: 'easeOut', duration: 0.3 }}
+        style={{ pointerEvents: 'none' }}
         {...props}
         ref={ref}
       >
-        <Text variant="h1" textAlign="center">
-          {title}
-        </Text>
-        <Text variant="h4" textAlign="center">
-          {subtitle}
-        </Text>
+        <Fade>
+          <Text variant="h1" textAlign="center">
+            {title}
+          </Text>
+          <Text variant="h4" textAlign="center">
+            {subtitle}
+          </Text>
 
-        <CtaLinks mt="6" alignItems="center" justifyContent="center">
-          {/* <Button fontSize="20px" variant="contained">
-            Подробнее
-            <UilArrowRight style={{ marginLeft: 'var(--spacing-s)' }} />
-          </Button> */}
-          <Link variant="cta" mr="5" href={ctaSecondary}>
-            Подробнее
-            <UilArrowRight />
-          </Link>
-          <Link variant="cta" href={ctaPrimary}>
-            {cta}
-            <UilArrowRight />
-          </Link>
-        </CtaLinks>
+          <CtaLinks mt="6" alignItems="center" justifyContent="center">
+            {disabled ? (
+              <Link disabled variant="cta" mr="5" href={ctaSecondary}>
+                Скоро ⏱
+              </Link>
+            ) : (
+              <>
+                <Link variant="cta" mr="5" href={ctaSecondary}>
+                  Подробнее
+                  <UilArrowRight />
+                </Link>
+                <Link variant="cta" href={ctaPrimary}>
+                  {cta}
+                  <UilArrowRight />
+                </Link>
+              </>
+            )}
+          </CtaLinks>
+        </Fade>
         <ImageWrapper>
           <Image />
         </ImageWrapper>
