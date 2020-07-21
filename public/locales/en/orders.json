@@ -1,0 +1,11 @@
+{
+  "units": {
+    "order": "order",
+    "order_plural": "orders"
+  },
+  "notifications": {
+    "new": "You received a new order!"
+  },
+  "search_placeholder": "address or order number",
+  "new_available_interval": "(1){You have a new order available to you};(2-inf){You have {{count }} new orders available to you};"
+}

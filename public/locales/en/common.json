@@ -1,0 +1,57 @@
+{
+  "button": {
+    "signout": "sign out",
+    "delete": "delete",
+    "add": "add",
+    "remove": "remove",
+    "create": "create",
+    "ok": "ok",
+    "cancel": "cancel",
+    "file": "choose file",
+    "upload": "upload",
+    "edit_profile": "edit",
+    "apps": "Your app list",
+    "click_to_see": "Click to see details",
+    "click_to_update": "Click to update",
+    "to_top": "back to top",
+    "change_lang": "Change language",
+    "confirm": "confirm",
+    "fold": "fold",
+    "unfold": "unfold",
+    "update": "update",
+    "close": "close",
+    "update_settings": "update settings",
+    "later": "not now"
+  },
+  "tabs": {
+    "map": "map",
+    "list": "list"
+  },
+  "select": {
+    "none": "None",
+    "city": "Choose city",
+    "intercom": "Choose intercom",
+    "sound": "Choose sound"
+  },
+  "nav": {
+    "home": "Home",
+    "fast": "Common actions"
+  },
+  "toast": {
+    "new_version": "New version available",
+    "error": "Something went wrong!"
+  },
+  "filters": {
+    "new_first": "new first",
+    "old_first": "old first",
+    "by_address": "by address",
+    "urgent": "urgent",
+    "installation": "installations",
+    "configuration": "configurations",
+    "from_citizen": "from citizens",
+    "anomaly": "anomalies",
+    "by_serial": "by serial",
+    "online": "online",
+    "installed": "installed"
+  }
+}

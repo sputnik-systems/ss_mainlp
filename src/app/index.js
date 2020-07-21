@@ -12,7 +12,7 @@ import Sputnik from 'pages/SputnikPage'
 import AppPage from 'pages/AppPage'
 import LoadingPage from 'pages/Loading'
 
-const LokkiPage = lazy(() => import('pages/LokkiPage'))
+const LokiPage = lazy(() => import('pages/LokiPage'))
 
 // const pageVariants = {
 //   initial: {
@@ -68,7 +68,7 @@ export default function App() {
 
       <Suspense fallback={LoadingPage}>
         <Switch location={location} key={location.pathname}>
-          <Route component={LokkiPage} path="/lokki" />
+          <Route component={LokiPage} path="/loki" />
           <Route component={AppPage} path="/app" />
           <Route component={Sputnik} path="/sputnik" />
           <Route component={Home} exact path="/" />

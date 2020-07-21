@@ -1,0 +1,43 @@
+{
+  "locations": {
+    "country": "Country",
+    "region": "Region/State",
+    "region_plural": "Regions/States",
+    "city": "City",
+    "city_plural": "Cities",
+    "entry": "Entry #{{e}}",
+    "entry_plural": "Entries",
+    "address": "Address",
+    "address_plural": "Addresses",
+    "street": "Street",
+    "street_plural": "Streets",
+    "house": "House",
+    "house_plural": "Houses",
+    "area": "Area",
+    "area_plural": "Areas"
+  },
+  "placeholder": {
+    "country": "Germany",
+    "region": "Rheinland-Pfalz",
+    "city": "Peffingen",
+    "entry": "Entry number, e.g. 1",
+    "address": "Germany, Berlin, Bismarckstraße 42",
+    "street": "Güntzelstrasse",
+    "house": "43"
+  },
+  "loading": {
+    "entries": "Loading entries list..."
+  },
+  "countries": {
+    "list": "Countries list"
+  },
+  "apartments": {
+    "unit": "Apartment",
+    "unit_numbered": "Apartment #{{number}}",
+    "unit_plural": "Apartments",
+    "loading": "Loading apartment list",
+    "search_placeholder": "Search/create apartments",
+    "add_numbered": "Add new aparment #{{number}}"
+  },
+  "actions": { "copy_address": "Copy address" }
+}

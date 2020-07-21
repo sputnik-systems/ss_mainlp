@@ -1,0 +1,64 @@
+{
+  "units": {
+    "device": "Device",
+    "device_plural": "Devices"
+  },
+  "actions": {
+    "install": "Install device",
+    "expanded_input": "Expanded input",
+    "close_collecting": "Stop collecting keys",
+    "open_collecting": "Start collecting keys",
+    "prolong_collecting": "Prolong collecting keys",
+    "change_flat_range": "Change flat range",
+    "control": "Control your intercom",
+    "open_door": "Open door",
+    "unlink": "Unlink from installation point"
+  },
+  "helper_text": {
+    "install_simple": "Enter address as you would normally type it. Don't be afraid to make mistakes 😉 \n Such parameters as region or area are completly optional.",
+    "install_expanded": "We won't be checking the provided address.\n Please confirm that it's correct before submitting one.",
+    "prolong": "Keys will be collected for two more weeks",
+    "device_modal": "Device statuses and it's configuration",
+    "com_connection_scheme": "«{{com}}» commutator connection scheme"
+  },
+  "params": {
+    "flat_range": "Flat range",
+    "com_type": "Commutator type",
+    "com_interval": "(0){Metakom};(1){Vizit};(2){Cyfral};(3){Eltys}",
+    "installation_point": "Installation point",
+    "installation_date": "Installation date",
+    "collecting_closed": "Stopped collecting keys",
+    "online": "online",
+    "offline": "offline",
+    "opened": "opened",
+    "closed": "closed",
+    "volume": "Volume",
+    "mic": "Mic sensitivity",
+    "sound_preset": "Sound preset",
+    "com_settings": "Commutator settings",
+    "sound_settings": "Sound settings",
+    "installed": "Installed",
+    "not_installed": "Not installed"
+  },
+  "my": "My devices",
+  "placeholder": {
+    "search": "serial number or motherboard id",
+    "first_flat": "first",
+    "last_flat": "last"
+  },
+  "cameras": {
+    "unit": "CCV Camera",
+    "unit_plural": "CCV Cameras",
+    "missing": "Missing CCV Cameras",
+    "header": "CCV Cameras",
+    "helper": "CCV Camera linked to installation point",
+    "loading": "Loading...",
+    "attach_new": "Attach CCV Camera",
+    "choose": "Choose camera"
+  },
+  "intercoms": {
+    "attach_new": "Attach new intercom",
+    "choose": "Choose intercom",
+    "sputnik_numbered": "Sputnik #{{number}}"
+  }
+}

@@ -56,8 +56,7 @@ export default function ProductNav({ left, right, ...props }) {
 
   useEffect(() => {
     function update(latest) {
-      latest > window.innerHeight / 2 &&
-      latest < window.scrollY - window.innerHeight
+      latest > window.innerHeight / 2
         ? controls.start('in')
         : controls.start('out')
     }

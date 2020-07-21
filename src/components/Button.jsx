@@ -215,16 +215,17 @@ const inline = css`
 // `
 
 const social = css`
-  padding: 0;
-  border-radius: 0;
+  --bug: fix;
+
   background: var(--button-primary);
   color: var(--button-secondary);
+  filter: grayscale(0.9);
 
-  font-size: 22px;
   &:hover {
     background: var(--button-primary);
     color: var(--button-secondary);
-    opacity: 0.7;
+
+    filter: grayscale(0);
   }
 `
 

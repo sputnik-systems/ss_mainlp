@@ -91,7 +91,6 @@ const Search = ({ style = {}, ...props }) => {
     <ReactSelect
       cacheOptions
       defaultOptions
-      isMulti
       styles={customStyles}
       components={{ Control, SingleValue, Placeholder, Option }}
       theme={(selectTheme) => ({

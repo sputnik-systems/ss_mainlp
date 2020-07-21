@@ -37,7 +37,7 @@ import viber from 'assets/svg/viber.svg'
 import appGallery from 'assets/icons/appgallery.png'
 import { ReactComponent as AppLogo } from 'assets/svg/mobileAppLogo.svg'
 
-export default function AppPage({ ...props }) {
+export default function LokiPage({ ...props }) {
   const ref = useRef()
   const handleResize = useCallback(() => {
     window.dispatchEvent(new Event('resize'))

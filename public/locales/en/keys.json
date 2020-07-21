@@ -1,0 +1,29 @@
+{
+  "units": {
+    "key": "key",
+    "key_plural": "keys",
+    "access_code": "access code",
+    "access_code_plural": "access codes"
+  },
+  "actions": {
+    "add_access_code": "add access code",
+    "remove_access_code": "remove access code",
+    "remove_all_keys": "remove all keys",
+    "add_key": "add new key",
+    "sync_keys": "sync keys"
+  },
+  "placeholder": {
+    "access_code": "three-digit code",
+    "key": "key hex"
+  },
+  "messages": {
+    "valid": "valid",
+    "recently_used": "Recently used keys",
+    "empty": "Keys list empty"
+  },
+  "helper": {
+    "valid_timeless": "Valid until deleted",
+    "valid_until": "Valid until",
+    "recently_used": "Rejected keys, that tried to access the intercom during the last 48 hours"
+  }
+}

@@ -4,64 +4,69 @@ import ProductNav from 'features/Product/Nav'
 import ProductCard from 'features/Product/Card'
 import ParallaxItem from 'components/ParallaxItem'
 import Link from 'components/Link'
+import { useTranslation } from 'react-i18next'
 
+// ns, cta, ctaPrimary?, ctaSecondary?, column, disabled?
 const products = [
   {
-    title: 'Спутник',
-    subtitle: 'Мобильное приложение.',
-    column: 'full',
-    cta: 'Установить',
+    ns: 'mobile_app',
+    cta: 'install',
     ctaPrimary: '/app/order',
     ctaSecondary: '/app',
-  },
-  {
-    title: 'Спутник Локки',
-    subtitle: 'Ключ от домофона.',
     column: 'full',
-    cta: 'Купить',
-    ctaPrimary: '/lokki/order',
-    ctaSecondary: '/lokki',
   },
   {
-    title: 'Спутник Óдин',
-    subtitle: 'Народный домофон.',
-    cta: 'Оставить заявку',
+    ns: 'loki',
+    cta: 'buy',
+    ctaPrimary: '/loki/order',
+    ctaSecondary: '/loki',
+    column: 'full',
+  },
+  {
+    ns: 'tor',
+    cta: 'submit_application',
     ctaPrimary: '/sputnik/order',
     ctaSecondary: '/sputnik',
     column: 'full',
   },
   {
-    title: 'Алиса',
-    subtitle: 'Голосовая колонка.',
-    cta: 'Купить',
+    ns: 'yandex_alice',
+    cta: 'buy',
     column: 'productLeft',
     disabled: true,
   },
   {
-    title: 'Аск',
-    subtitle: 'Домофонные трубка.',
-    cta: 'Купить',
+    ns: 'ask',
+    cta: 'buy',
     column: 'productRight',
+    disabled: true,
+  },
+  {
+    ns: 'izi',
+    cta: 'buy',
+    column: 'productLeft',
+    disabled: true,
+  },
+  {
+    ns: 'starter_kit',
+    cta: 'buy',
+    column: 'productRight',
+    disabled: true,
+  },
+  {
+    ns: 'delta',
+    cta: 'buy',
+    column: 'center',
     disabled: true,
   },
 ]
 
 export default function HomePage({ ...props }) {
+  const { t } = useTranslation(['common', ...products.map((p) => p.ns)])
+
   return (
     <ProductPageTemplate
       {...props}
-      // nav={
-      //   <ProductNav
-      //     // path={logoPath}
-      //     style={{ gridColumn: '1/17' }}
-      //     right={
-      //       <>
-      //         {/* <Link variant="nav">Для партнеров и бизнеса</Link> */}
-      //         {/* <Link variant="nav">Безопасность и комфорт</Link> */}
-      //       </>
-      //     }
-      //   />
-      // }
       gridProps={{
         style: {
           gridRowGap: 0,
@@ -70,32 +75,17 @@ export default function HomePage({ ...props }) {
       }}
     >
       {products.map((product) => (
-        <ParallaxItem column={product.column}>
+        <ParallaxItem column={product.column} key={product.ns}>
           <ProductCard
             {...product}
-            title={product.title}
-            subtitle={product.subtitle}
-            cta={product.cta}
+            title={t(`${product.ns}:name`)}
+            subtitle={t(`${product.ns}:description`)}
+            cta={t(`common:button.${product.cta}`)}
             ctaPrimary={product.ctaPrimary}
             ctaSecondary={product.ctaSecondary}
           />
         </ParallaxItem>
       ))}
-
-      {/*
-      <ParallaxItem style={{ gridColumn: '2/9' }}>
-        <ProductCard title="Изи" subtitle="Видеокамера." cta="Купить" />
-      </ParallaxItem>
-      <ParallaxItem style={{ gridColumn: '9/16' }}>
-        <ProductCard title="StarterKit" subtitle="Умный дом." cta="Купить" />
-      </ParallaxItem>
-      <ParallaxItem style={{ gridColumn: '4/14' }}>
-        <ProductCard
-          title="Delta"
-          subtitle="Личная безопасность."
-          cta="Купить"
-        />
-      </ParallaxItem> */}
     </ProductPageTemplate>
   )
 }

@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   }
 `
 
-const Fade = ({ unmount, vertical = false, children, ...props }) => {
+const Fade = ({ unmount, vertical = true, children, ...props }) => {
   const ref = useRef()
   const observer = useRef()
   useEffect(() => {

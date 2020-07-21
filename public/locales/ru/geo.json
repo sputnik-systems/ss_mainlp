@@ -1,0 +1,50 @@
+{
+  "locations": {
+    "country": "Страна",
+    "region": "Регион",
+    "region_plural": "Регионы",
+    "city": "Город",
+    "city_plural": "Города",
+    "entry": "Подъезд №{{e}}",
+    "entry_plural": "Подъезды",
+    "address": "Адрес",
+    "address_plural": "Адреса",
+    "address_house": "Адрес дома",
+    "street": "Улица",
+    "street_plural": "Улицы",
+    "house": "Дом",
+    "house_plural": "Дома",
+    "area": "Область",
+    "area_plural": "Области"
+  },
+  "placeholder": {
+    "country": "Россия",
+    "region": "Татарстан",
+    "city": "Казань",
+    "entry": "Номер подъезда",
+    "address": "Россия, Казань, Козина 3а",
+    "street": "Козина",
+    "house": "3а"
+  },
+  "loading": {
+    "entries": "Загружаем список подъездов..."
+  },
+  "countries": {
+    "list": "Список стран"
+  },
+  "apartments": {
+    "unit": "Квартира",
+    "unit_numbered": "Квартира №{{number}}",
+    "unit_plural": "Квартиры",
+    "loading": "Загружаем список квартир...",
+    "search_placeholder": "Поиск/создание квартир",
+    "add_numbered": "Добавить новую квартиру №{{number}}"
+  },
+  "actions": {
+    "copy_address": "Скопировать адрес",
+    "unlink_house": "Отвязать дом"
+  },
+  "entry": {
+    "history": "История подъезда"
+  }
+}

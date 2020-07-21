@@ -119,8 +119,18 @@ export default function VideoSection({ ...props }) {
   }, [isDark])
 
   return (
-    <Grid ref={ref} contained as="section" column="full">
-      <Flex flexDirection="column" column="left">
+    <Grid
+      ref={ref}
+      contained
+      as="section"
+      column="full"
+      style={{ position: 'relative', height: '200vh' }}
+    >
+      <Flex
+        flexDirection="column"
+        column="left"
+        style={{ position: 'sticky', top: 0 }}
+      >
         <Text variant="h3">
           Снимает четкое видео днем...{' '}
           <motion.span
@@ -144,7 +154,10 @@ export default function VideoSection({ ...props }) {
         </Button>
       </Flex>
       <FlipScene
-        style={{ height: '70vh' }}
+        style={{
+          position: 'sticky',
+          top: 0,
+        }}
         column="padRight"
         justifyContent="center"
       >

@@ -15,7 +15,7 @@ import { UilArrowRight } from '@iconscout/react-unicons'
 import Container from 'components/Container'
 import Video from 'components/Video'
 import FeedbackWrapper from 'features/Feedback/FeedbackWrapper'
-import VideoSection from 'features/Sputnik/VideoSection'
+import DayNightSection from 'features/Sputnik/DayNightSection'
 import SplitItem from 'features/SplitShow/SplitItem'
 
 import appShowreel from 'assets/img/app_showreel.jpg'
@@ -116,11 +116,6 @@ const categories = [
   },
   {
     title: 'Просто улыбнувшись домофону',
-    src: 'draft',
-    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
-  },
-  {
-    title: 'Звонком в квартиру к себе или соседу',
     src: 'draft',
     subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
   },
@@ -246,7 +241,7 @@ export default function SputnikPage({ ...props }) {
         >
           Лайфхак
           <br />{' '}
-          <Text variant="h3">Как открыть домофон 7 разными способами</Text>
+          <Text variant="h3">Как открыть домофон 6 разными способами</Text>
         </Text>
 
         <Grid
@@ -255,7 +250,7 @@ export default function SputnikPage({ ...props }) {
           // p="7"
           style={{
             // gridTemplateColumns: 'repeat(auto-fit, minmax(150px, min-content))',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(2, 1fr)',
             gap: 'var(--spacing-xxxl) var(--spacing-xxl)',
           }}
           // backgroundColor="subtleBackground"
@@ -281,7 +276,7 @@ export default function SputnikPage({ ...props }) {
         </Grid>
       </Grid>
 
-      <VideoSection as="section" />
+      <DayNightSection as="section" />
 
       <Grid contained column="full" as="section">
         <Flex flexDirection="column" column="full">

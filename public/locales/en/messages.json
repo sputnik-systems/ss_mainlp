@@ -1,0 +1,17 @@
+{
+  "search": {
+    "empty": "Nothing found"
+  },
+  "content": {
+    "empty": "Nothing here yet",
+    "loading": "Loading..."
+  },
+  "action": {
+    "confirm": "Would you really like to",
+    "undone": "This action cannot be undone"
+  },
+  "helper": {
+    "recommended": "Recommended",
+    "unknown": "Unknown"
+  }
+}

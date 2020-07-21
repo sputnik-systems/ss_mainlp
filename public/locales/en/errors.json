@@ -1,0 +1,7 @@
+{
+  "date": {
+    "format": "Invalid format",
+    "min": "Date outside of boundaries",
+    "max": "Date outside of boundaries"
+  }
+}

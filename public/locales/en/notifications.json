@@ -1,0 +1,45 @@
+{
+  "input": {
+    "name": "Notification name",
+    "placeholder": "for instance, Resident's meeting"
+  },
+  "actions": {
+    "new": "New notification",
+    "upload": "Upload sound",
+    "info": "Notification #{{notification}}"
+  },
+  "types": {
+    "type": "Notification type",
+    "informing": "Broadcast",
+    "polling": "Poll",
+    "pollingAnswersAmount": "Answers amount"
+  },
+  "time": {
+    "period": "Period",
+    "start": "Start time",
+    "end": "End time"
+  },
+  "sounds": {
+    "play": "Play",
+    "pause": "Pause",
+    "sound": "Sound"
+  },
+  "statuses": {
+    "status": "Status",
+    "in_queue": "In queue",
+    "active": "Active",
+    "failed_from_gis": "GIS Error",
+    "finished": "Finished",
+    "in_queue_on_cancel": "In queue to cancel",
+    "with_cancel_error": "Cancel error",
+    "with_cancel_success": "Cancelled"
+  },
+  "stats": {
+    "notified": "Notified",
+    "voted": "Voted",
+    "played": "Played"
+  },
+  "loading": {
+    "notification": "Loading information about notification..."
+  }
+}

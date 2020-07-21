@@ -1,21 +1,16 @@
 import React from 'react'
-import { Flex, Text } from 'rebass/styled-components'
-import Link from 'components/Link'
-
-import Globe from '@iconscout/react-unicons/icons/uil-globe'
-import IconButton from 'components/IconButton'
-import Button from 'components/Button'
-import Emoji from 'components/Emoji'
+import { useTranslation } from 'react-i18next'
 
 import Select from 'components/Select'
 
-const shoe_list = ['Prada', 'Jimmy Choos', 'Nike', 'Adidas']
 const options = [
   { value: 'ru', label: '🇷🇺 Русский' },
   { value: 'en', label: '🇬🇧 English' },
   { value: 'sp', label: '🇪🇸 Español ' },
 ]
+
 export default function LangSwitcher({ ...props }) {
+  const { i18n } = useTranslation()
   return (
     <Select
       options={options}
@@ -23,12 +18,8 @@ export default function LangSwitcher({ ...props }) {
       isClearable={false}
       isSearchable={false}
       width="200px"
-      defaultValue={{ value: 'ru', label: '🇷🇺 Русский' }}
+      value={options.find(({ value }) => value === i18n.languages[0])}
+      onChange={({ value }) => i18n.changeLanguage(value)}
     />
   )
 }
-
-// <Link variant="nav">
-/* <Emoji emote={'🇷🇺'} /> Русский */
-
-// {/* </Link> */}

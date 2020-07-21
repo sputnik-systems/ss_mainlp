@@ -67,10 +67,65 @@ export default function Footer({ ...props }) {
           column="padLeft"
           height="100%"
         >
-          <Link variant="inline" size="h1" textAlign="left" color="primary">
-            Напиши
+          <Link
+            variant="inline"
+            size="h1"
+            textAlign="left"
+            color="primary"
+            href="mailto:hello@sputnik.systems"
+          >
+            Напишите
             <br /> привет 👋
           </Link>
+
+          <Grid
+            autoFit="80px,1fr"
+            style={{ gap: 'var(--spacing-m)' }}
+            mb="6"
+            mt="6"
+            width="100%"
+          >
+            <Button
+              variant="social"
+              style={{
+                '--button-primary': 'var(--instagram)',
+                '--button-secondary': 'var(--instagram-contrast)',
+                '--button-hover': 'var(--instagram-darker)',
+              }}
+            >
+              Instagram
+            </Button>
+            <Button
+              variant="social"
+              style={{
+                '--button-primary': 'var(--tg)',
+                '--button-secondary': 'var(--tg-contrast)',
+                '--button-hover': 'var(--tg-darker)',
+              }}
+            >
+              Telegram
+            </Button>
+            <Button
+              variant="social"
+              style={{
+                '--button-primary': 'var(--yt)',
+                '--button-secondary': 'var(--yt-contrast)',
+                '--button-hover': 'var(--yt-darker)',
+              }}
+            >
+              YouTube
+            </Button>
+            <Button
+              variant="social"
+              style={{
+                '--button-primary': 'var(--sk)',
+                '--button-secondary': 'var(--sk-contrast)',
+                '--button-hover': 'var(--sk-darker)',
+              }}
+            >
+              Skolkovo
+            </Button>
+          </Grid>
         </Flex>
         <Flex
           flexDirection="column"
@@ -115,58 +170,12 @@ export default function Footer({ ...props }) {
               hello@sputnik.systems
             </Link> */}
 
-            <Grid
-              autoFit="150px,1fr"
-              style={{ gap: 'var(--spacing-m)' }}
-              mb="6"
-            >
-              <Button
-                variant="social"
-                style={{
-                  '--button-primary': 'var(--instagram)',
-                  '--button-secondary': 'var(--instagram-contrast)',
-                  '--button-hover': 'var(--instagram-darker)',
-                }}
-              >
-                Instagram
-              </Button>
-              <Button
-                variant="social"
-                style={{
-                  '--button-primary': 'var(--tg)',
-                  '--button-secondary': 'var(--tg-contrast)',
-                  '--button-hover': 'var(--tg-darker)',
-                }}
-              >
-                Telegram
-              </Button>
-              <Button
-                variant="social"
-                style={{
-                  '--button-primary': 'var(--yt)',
-                  '--button-secondary': 'var(--yt-contrast)',
-                  '--button-hover': 'var(--yt-darker)',
-                }}
-              >
-                YouTube
-              </Button>
-              <Button
-                variant="social"
-                style={{
-                  '--button-primary': 'var(--sk)',
-                  '--button-secondary': 'var(--sk-contrast)',
-                  '--button-hover': 'var(--sk-darker)',
-                }}
-              >
-                Skolkovo
-              </Button>
-            </Grid>
             <Text color="textSecondary" mb="3">
-              🏠 г. Москва, тер. Инновационного центра Сколково, ул. Луговая, д.
-              4, строение 8, пом. 3
+              г. Москва, тер. Инновационного центра Сколково, ул. Луговая, д. 4,
+              строение 8, пом. 3
             </Text>
             <Text color="textSecondary">
-              📭 421 001, г. Казань, ул. А. Козина, 3а — 207
+              421 001, г. Казань, ул. А. Козина, 3а — 207
             </Text>
             <Flex>
               <Link pl="0">Использование cookies </Link>

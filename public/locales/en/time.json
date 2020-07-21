@@ -1,0 +1,14 @@
+{
+  "expiry_date": "Expiry date",
+  "expiration_time": "Expiration time",
+  "timeless": "Timeless",
+  "until": "Until",
+  "units": {
+    "sec": "second",
+    "sec_plural": "seconds",
+    "min": "minute",
+    "min_plural": "minutes",
+    "hour": "hour",
+    "hour_plural": "hours"
+  }
+}

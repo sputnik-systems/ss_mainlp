@@ -1,0 +1,12 @@
+{
+  "action": {},
+  "title": "Please fill in the profile form",
+  "subheader": "Desc",
+  "form": {
+    "work_from": "From",
+    "work_till": "Till",
+    "org": "Organisation name",
+    "phone": "Support phone number"
+  },
+  "work_hours": "Work hours"
+}
