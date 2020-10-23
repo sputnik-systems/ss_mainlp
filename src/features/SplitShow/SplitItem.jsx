@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { useResizeObserver } from '@asyarb/use-resize-observer'
 import { useWindowSize } from '@react-hook/window-size'
+import { space, layout } from 'styled-system'
 
 import Text from 'components/Text'
 import Video from 'components/Video'
@@ -10,32 +11,24 @@ import gridColumns from 'utils/gridColumns'
 
 const Body = styled.div`
   ${gridColumns};
+  ${layout};
+  ${space}
 `
 
 const Wrapper = styled.div`
   /* margin: 34px 17px; */
   /* background: var(--color-subtle-background); */
-  transition: transform 0.4s, -webkit-transform 0.4s, -moz-transform 0.4s,
-    -o-transform 0.4s;
+  transition: transform 0.4s;
   overflow: hidden;
+  height: 100%;
 `
 
 const SplitImg = styled(Video)`
   width: 100%;
-  object-fit: cover;
+  object-fit: ${(p) => p.fit || 'cover'};
   max-height: 100vh;
   min-height: ${(p) => p.minHeight};
   height: 100%;
-`
-
-const SplitText = styled(Text)`
-  padding: 34px 0 53px 0;
-  max-width: 284px;
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-  font-size: 24px;
 `
 
 // TODO: account for img height when its > 100vh
@@ -53,6 +46,7 @@ export default function SplitItem({
   splitItemProps = {},
   minHeight,
   type,
+  fit = 'cover',
   ...props
 }) {
   const { scrollY } = useViewportScroll()
@@ -96,9 +90,10 @@ export default function SplitItem({
           playsInline
           autoPlay
           loop
+          fit={fit}
         />
       </Wrapper>
-      {caption && <SplitText as="caption">{caption}</SplitText>}
+      {/* {caption && <SplitText as="caption">{caption}</SplitText>} */}
     </Body>
   )
 }

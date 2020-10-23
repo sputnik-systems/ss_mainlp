@@ -7,12 +7,36 @@ import Navbar from 'features/GlobalNavbar'
 import Footer from 'features/Footer'
 import useScrollToTop from 'hooks/useScrollToTop'
 
-import Home from 'pages/HomePage'
-import Sputnik from 'pages/SputnikPage'
-import AppPage from 'pages/AppPage'
 import LoadingPage from 'pages/Loading'
 
+const HomePage = lazy(() => import('pages/HomePage'))
+const SputnikPage = lazy(() => import('pages/SputnikPage'))
+const AppPage = lazy(() => import('pages/AppPage'))
 const LokiPage = lazy(() => import('pages/LokiPage'))
+
+export default function App() {
+  const location = useLocation()
+  useScrollToTop()
+  return (
+    <AppTemplate>
+      <Helmet>
+        <title>{config.title}</title>
+      </Helmet>
+      <Navbar />
+
+      <Suspense fallback={LoadingPage}>
+        <Switch location={location} key={location.pathname}>
+          <Route component={LokiPage} path="/loki" />
+          <Route component={AppPage} path="/app" />
+          <Route component={SputnikPage} path="/sputnik" />
+          <Route component={HomePage} exact path="/" />
+        </Switch>
+      </Suspense>
+
+      <Footer />
+    </AppTemplate>
+  )
+}
 
 // const pageVariants = {
 //   initial: {
@@ -55,27 +79,3 @@ const LokiPage = lazy(() => import('pages/LokiPage'))
 //     />
 //   )
 // }
-
-export default function App() {
-  const location = useLocation()
-  useScrollToTop()
-  return (
-    <AppTemplate>
-      <Helmet>
-        <title>{config.title}</title>
-      </Helmet>
-      <Navbar />
-
-      <Suspense fallback={LoadingPage}>
-        <Switch location={location} key={location.pathname}>
-          <Route component={LokiPage} path="/loki" />
-          <Route component={AppPage} path="/app" />
-          <Route component={Sputnik} path="/sputnik" />
-          <Route component={Home} exact path="/" />
-        </Switch>
-      </Suspense>
-
-      <Footer />
-    </AppTemplate>
-  )
-}

@@ -21,9 +21,10 @@ export default styled.div`
   grid-column-gap: 60px;
   grid-row-gap: var(--spacing-xxl);
   grid-column-gap: var(--spacing-l);
+  align-items: ${(p) => p.alignItems || 'unset'};
 
   ${(p) => p.contained && ifContained};
-  ${(p) => p.autoFit && ifAutoFit}
+  ${(p) => p.autoFit && ifAutoFit};
   ${space};
   ${layout};
   ${color};

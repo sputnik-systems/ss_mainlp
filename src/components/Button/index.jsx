@@ -7,6 +7,8 @@ import buttonSizes from 'utils/buttonSizes'
 
 import gridColumns from 'utils/gridColumns'
 
+import { scaleOnHover } from './scale'
+
 const nav = css`
   --bug: fix;
   position: relative;
@@ -44,6 +46,11 @@ const nav = css`
       color: var(--color-text);
     }
   }
+
+  & > svg,
+  & > img {
+    margin-left: var(--spacing-xs);
+  }
 `
 
 const store = css`
@@ -56,7 +63,7 @@ const store = css`
   border-radius: var(--br-m);
   border: 1px solid var(--color-subtle-background);
   padding: var(--spacing-m) var(--spacing-l);
-  width: 190px;
+  width: 200px;
   color: var(--color-text);
   border-color: var(--color-subtle-background-darker);
   transition: var(--default-transition);
@@ -107,46 +114,11 @@ const plain = css`
 const contained = css`
   --bug: fix;
 
-  position: relative;
   color: var(--button-secondary);
   font-weight: var(--font-weight-demi);
   /* font-size: var(--font-size); */
-  display: inline-flex;
-  align-items: center;
-  cursor: none;
 
-  transition: all 0.25s ease;
-
-  background: transparent;
-  border: none;
-
-  &::before {
-    transition: var(--hover-transition);
-    content: ' ';
-    background: var(--button-primary);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    border-radius: var(--br-m);
-    left: 0;
-    top: 0;
-  }
-
-  &:hover {
-    color: var(--button-secondary);
-
-    &::before {
-      transform: scale(var(--hover-scale));
-      background: var(--button-hover);
-    }
-  }
-
-  &:active {
-    &::before {
-      transform: scale(var(--scale-active));
-    }
-  }
+  ${scaleOnHover};
 `
 
 const text = css`
@@ -166,7 +138,7 @@ const card = css`
   border-radius: var(--br-m);
   font-size: inherit;
   font-weight: 500;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 
   &:hover {
     /* color: var(--color-primary-contrast); */
@@ -198,6 +170,10 @@ const inline = css`
   --bug: fix;
 
   color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
   border-bottom: 2px solid;
   padding: 0 0 2px 0;
   border-radius: unset;
@@ -207,25 +183,22 @@ const inline = css`
   }
 `
 
-// const footer = css`
-//   --bug: fix;
-
-//   text-align: left;
-//   line-height: 2;
-// `
-
 const social = css`
   --bug: fix;
+  ${scaleOnHover};
+  color: var(--color-background);
 
-  background: var(--button-primary);
-  color: var(--button-secondary);
-  filter: grayscale(0.9);
+  &::before {
+    background: var(--button-primary);
+    filter: grayscale(1) brightness(0.5);
+  }
 
   &:hover {
-    background: var(--button-primary);
-    color: var(--button-secondary);
-
-    filter: grayscale(0);
+    &::before {
+      background: var(--button-primary);
+      filter: grayscale(0) brightness(1);
+      color: var(--button-secondary);
+    }
   }
 `
 

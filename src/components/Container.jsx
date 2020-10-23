@@ -7,6 +7,7 @@ export default styled.div`
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 var(--spacing-m);
+  /* overflow-x: hidden; */
   ${space};
   ${color};
   ${gridColumns};

@@ -7,82 +7,58 @@ import Container from 'components/Container'
 import Text from 'components/Text'
 import Button from 'components/Button'
 
-import vsem from 'assets/img/vsem.png'
 import Emoji from 'components/Emoji'
 
+import { UilArrowRight } from '@iconscout/react-unicons'
+
 const FooterBody = styled(Grid)`
-  height: var(--footer-height);
+  /* height: var(--footer-height); */
   background: var(--color-background);
-  /* color: var(--color-sputnik-pink-dark); */
-  /* box-shadow: inset rgba(0, 0, 0, 0.2) 0px 35px 50px -30px; */
-  /* box-shadow: inset 0px 10px 50px rgba(0, 0, 0, 0.1); */
-  /* position: fixed; */
   bottom: 0;
   z-index: 1;
   width: 100%;
-  /* padding-top: var(--spacing-l);
-  padding-bottom: var(--spacing-l); */
-  align-items: start;
   grid-template-rows: 1fr max-content;
   grid-row-gap: 0;
+  align-items: center;
+  /* min-height: 65vh; */
+  min-height: 900px;
 `
 
 export default function Footer({ ...props }) {
   return (
     <FooterBody as="footer">
-      {/* <Grid contained style={{ gridColumn: '1/17' }}>
-        <Flex flexDirection="column" style={{ gridColumn: '1/4' }}>
-          <Text variant="h3" pb="3">
-            About
-          </Text>
-          <Link variant="footer">О Компании</Link>
-          <Link variant="footer">Обратная связь</Link>
-          <Link variant="footer">Идеи функций</Link>
-        </Flex>
-        <Flex flexDirection="column" style={{ gridColumn: '5/9' }}>
-          <Text variant="h3" pb="3">
-            Contact us
-          </Text>
-          <Link variant="footer">О Компании</Link>
-          <Link variant="footer">Обратная связь</Link>
-          <Link variant="footer">Идеи функций</Link>
-        </Flex>
-        <Flex flexDirection="column" style={{ gridColumn: '10/13' }}>
-          <Text variant="h3" pb="3">
-            Skolkovo
-          </Text>
-        </Flex>
-
-        <img
-          src={vsem}
-          alt=""
-          style={{ gridColumn: '13/17', width: '100%', objectFit: 'contain' }}
-        />
-      </Grid> */}
-      <Grid contained column="full" height="100%">
+      <Grid contained column="full" alignContent="center" py="7">
         <Flex
           flexDirection="column"
           alignItems="flex-start"
           justifyContent="center"
           column="padLeft"
-          height="100%"
+          height="fit-content"
         >
-          <Link
-            variant="inline"
-            size="h1"
+          <Text
+            variant="h1"
             textAlign="left"
-            color="primary"
-            href="mailto:hello@sputnik.systems"
+            mb="6"
+            style={{ filter: 'grayscale(1)' }}
           >
-            Напишите
-            <br /> привет 👋
+            Напишите нам 🖖
+          </Text>
+          <Link
+            href="mailto:hello@sputnik.systems"
+            size="h3"
+            p="0"
+            mt="6"
+            style={{
+              justifyContent: 'flex-start',
+            }}
+          >
+            privet@sputnik.direct
           </Link>
-
           <Grid
             autoFit="80px,1fr"
             style={{ gap: 'var(--spacing-m)' }}
-            mb="6"
             mt="6"
+            pb="3"
             width="100%"
           >
             <Button
@@ -90,7 +66,6 @@ export default function Footer({ ...props }) {
               style={{
                 '--button-primary': 'var(--instagram)',
                 '--button-secondary': 'var(--instagram-contrast)',
-                '--button-hover': 'var(--instagram-darker)',
               }}
             >
               Instagram
@@ -100,7 +75,6 @@ export default function Footer({ ...props }) {
               style={{
                 '--button-primary': 'var(--tg)',
                 '--button-secondary': 'var(--tg-contrast)',
-                '--button-hover': 'var(--tg-darker)',
               }}
             >
               Telegram
@@ -110,7 +84,6 @@ export default function Footer({ ...props }) {
               style={{
                 '--button-primary': 'var(--yt)',
                 '--button-secondary': 'var(--yt-contrast)',
-                '--button-hover': 'var(--yt-darker)',
               }}
             >
               YouTube
@@ -120,7 +93,6 @@ export default function Footer({ ...props }) {
               style={{
                 '--button-primary': 'var(--sk)',
                 '--button-secondary': 'var(--sk-contrast)',
-                '--button-hover': 'var(--sk-darker)',
               }}
             >
               Skolkovo
@@ -130,9 +102,8 @@ export default function Footer({ ...props }) {
         <Flex
           flexDirection="column"
           alignItems="flex-start"
-          justifyContent="center"
+          justifyContent="flex-start"
           column="right"
-          height="100%"
           style={{
             fontSize: 24,
             borderLeft: '1px solid var(--color-subtle-background)',
@@ -141,9 +112,11 @@ export default function Footer({ ...props }) {
         >
           <Link variant="nav" fontSize="inherit">
             Идеи функций
+            <UilArrowRight />
           </Link>
           <Link variant="nav" fontSize="inherit">
             Продажи и возврат
+            <UilArrowRight />
           </Link>
         </Flex>
       </Grid>
@@ -158,18 +131,6 @@ export default function Footer({ ...props }) {
       >
         <Container>
           <Flex flexDirection="column">
-            {/* <Link
-              href="mailto:hello@sputnik.systems"
-              size="h3"
-              p="0"
-              mb="5"
-              style={{
-                justifyContent: 'flex-start',
-              }}
-            >
-              hello@sputnik.systems
-            </Link> */}
-
             <Text color="textSecondary" mb="3">
               г. Москва, тер. Инновационного центра Сколково, ул. Луговая, д. 4,
               строение 8, пом. 3
@@ -177,7 +138,7 @@ export default function Footer({ ...props }) {
             <Text color="textSecondary">
               421 001, г. Казань, ул. А. Козина, 3а — 207
             </Text>
-            <Flex>
+            <Flex flexWrap="wrap">
               <Link pl="0">Использование cookies </Link>
               <Link pl="0">Политика конфиденциальности</Link>
               <Link pl="0">Условия использования</Link>

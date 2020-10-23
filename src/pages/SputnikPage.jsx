@@ -1,28 +1,22 @@
 import React from 'react'
 import ProductPageTemplate from 'templates/ProductPageTemplate'
 import ProductNav from 'features/Product/Nav'
-import ParallaxItem from 'components/ParallaxItem'
 import Text from 'components/Text'
 import Button from 'components/Button'
-
 import Image from 'components/Image'
 import Flex from 'components/Flex'
 import Grid from 'components/Grid'
 import Fade from 'components/Fade'
-import heroVideo from 'assets/herovideo_web.mp4'
 import { UilArrowRight } from '@iconscout/react-unicons'
 
 import Container from 'components/Container'
-import Video from 'components/Video'
 import FeedbackWrapper from 'features/Feedback/FeedbackWrapper'
 import DayNightSection from 'features/Sputnik/DayNightSection'
 import SplitItem from 'features/SplitShow/SplitItem'
 
 import appShowreel from 'assets/img/app_showreel.jpg'
 // import sk from 'assets/img/sputnik_cropped.png'
-import sk from 'assets/img/sk.jpg'
 import zeus from 'assets/img/zeus.png'
-import { ReactComponent as IntercomLogo } from 'assets/intercomLogo.svg'
 import { ReactComponent as SputnikIcon } from 'assets/svg/sputnikIcon.svg'
 import coverVideo from 'assets/videos/speakphone-cover.mp4'
 
@@ -92,32 +86,51 @@ const categories = [
   {
     title: 'Криптозащищенным ключом',
     src: 'draft',
-    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+    subtitle: 'Безотказный способ открыть домофон за доли секунд.',
   },
   {
     title: 'Индивидуальным кодом доступа',
     src: 'draft',
-    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
-  },
-  {
-    title: 'Мобильным приложением',
-    src: 'draft',
-    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+    subtitle:
+      'Скачайте бесплатно и открывайте домофон простым нажатием кнопки.',
   },
   {
     title: 'Виджетом на смартфоне',
     src: 'draft',
-    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+    subtitle: 'Открывайте дверь телефоном не открывая мобильное приложение.',
+  },
+  {
+    title: 'Мобильным телефоном',
+    src: 'draft',
+    subtitle:
+      'Домофон откроется как только мобильный телефон приблизится к двери.',
+  },
+  {
+    title: 'Индивидуальным кодом',
+    src: 'draft',
+    subtitle: 'На случай если вы забыли ключ а ваш мобильный телефон сел.',
   },
   {
     title: 'Умными часами',
     src: 'draft',
-    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+    subtitle: 'Они всегда под рукой, домофон откроется в одно касание.',
   },
   {
-    title: 'Просто улыбнувшись домофону',
+    title: 'Улыбнувшись домофону',
     src: 'draft',
-    subtitle: 'Создавайте коды открытия двери, принимайте звонки ',
+    subtitle:
+      'Камера в домофоне с радостью узнать вас и откроет дверь.\nКонечно только если вы ей это разрешите.',
+  },
+  {
+    title: 'Звонком в квартиру',
+    src: 'draft',
+    subtitle:
+      'Просто позвоните в домофон, на том конце вам обязательно кто то ответит.',
+  },
+  {
+    title: 'Добрым соседом',
+    src: 'draft',
+    subtitle: 'Если вы забыли ключи и ни настроили ни один из других способов.',
   },
 ]
 
@@ -166,7 +179,7 @@ export default function SputnikPage({ ...props }) {
             <Fade>
               <Text variant="h1" textAlign="left">
                 Разработан
-                <br /> для людей 👨‍🔬👩‍💼👨‍💻🧖‍♀️
+                <br /> для людей 👨‍🔬👩‍💼👨‍💻
               </Text>
               <Text variant="h4" color="textSecondary">
                 Специально спроектирован для работы в обычных многоквартирных
@@ -241,7 +254,7 @@ export default function SputnikPage({ ...props }) {
         >
           Лайфхак
           <br />{' '}
-          <Text variant="h3">Как открыть домофон 6 разными способами</Text>
+          <Text variant="h3">Как открыть домофон 9 разными способами</Text>
         </Text>
 
         <Grid
@@ -250,7 +263,7 @@ export default function SputnikPage({ ...props }) {
           // p="7"
           style={{
             // gridTemplateColumns: 'repeat(auto-fit, minmax(150px, min-content))',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 'var(--spacing-xxxl) var(--spacing-xxl)',
           }}
           // backgroundColor="subtleBackground"
@@ -268,7 +281,7 @@ export default function SputnikPage({ ...props }) {
               <Text mt="6" mb="4" variant="h6">
                 {cat.title}
               </Text>
-              <Text mt="auto" color="textSecondary">
+              <Text mt="0" color="textSecondary">
                 {cat.subtitle}
               </Text>
             </Flex>
@@ -340,38 +353,17 @@ export default function SputnikPage({ ...props }) {
         />
       </Grid>
 
-      {/* <Container column="full">
-        <Grid>
-          <Text column="padLeft" variant="h3">
-            Береги <br /> автомобиль <Emoji emote={'🚙'} />
-          </Text>
-          <Text column="padRight" variant="h4">
-            Мы научили дворовые видеокамеры охранять твой автомобиль все время
-            пока он припаркован во дворе. Система сможет заметить любую
-            подозрительную активность возле твоей машины и незамедлительно
-            сообщить об этом.
-            <Text variant="h4">
-              Если в твоем доме не установлены умные камеры,{' '}
-              <Link variant="inline">закажи их установку</Link> у наших
-              партнеров или <Link variant="inline">подключи свою</Link>, мы
-              будем только рады.
-            </Text>
-          </Text>
-        </Grid>
-      </Container> */}
-
       <Container column="full">
         <Grid>
-          <Text variant="h1" column="padLeft" textAlign="left">
-            Зевс ⚡️
+          <Text variant="h1" column="center" textAlign="left">
+            Заботиться о вас даже в чрезвычайных ситуациях 👀
           </Text>
           <Flex flexDirection="column" column="center">
             <Text variant="h4">
-              Звучит невероятно, но факт. «Спутник» это не просто домофон.
-              <br /> «Спутник» — часть системы экстренного информирования
-              населения о чрезвычайных ситуациях. <br />
-              Во время ЧС вы сможете услышать четкий план действий в подобной
-              ситуации через вашу обычную квартирную трубку от домофона.
+              Спутник часть системы экстренного информирования населения о
+              чрезвычайных ситуациях. Во время ЧС вы сможете услышать четкий
+              план действий в подобной ситуации через вашу обычную квартирную
+              трубку от домофона.
             </Text>{' '}
             <Button
               mt="6"

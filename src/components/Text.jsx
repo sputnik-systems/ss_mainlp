@@ -6,23 +6,28 @@ import gridColumns from 'utils/gridColumns'
 export const h1 = css`
   --bug: fix;
   color: var(--color-text);
-  font-size: 80px;
-  letter-spacing: -3px;
+
   line-height: 1;
   font-weight: var(--font-weight-demi);
   text-align: center;
   font-family: var(--font-family);
+  font-size: 5rem;
+  letter-spacing: -0.2rem;
 `
 
 export const h2 = css`
   --bug: fix;
   color: var(--color-text);
-  font-size: 72px;
-  letter-spacing: -2px;
   line-height: 1;
   font-weight: var(--font-weight-demi);
   text-align: left;
   font-family: var(--font-family);
+
+  /* font-size: 10vh; */
+  font-size: 10vh;
+  letter-spacing: -0.15rem;
+  /* font-size: 3.125rem;
+  letter-spacing: -0.15rem; */
 `
 
 export const hero = css`
@@ -41,13 +46,11 @@ export const h3 = css`
 
 export const h4 = css`
   --bug: fix;
-
-  font-size: 28px;
-  padding-top: 24px;
+  font-size: 1.25rem;
   line-height: 1.5;
   color: var(--color-text-secondary);
   font-family: var(--font-family-secondary);
-  font-size: 22px;
+  padding-top: var(--spacing-xl);
 `
 
 export const h5 = css`
@@ -59,7 +62,8 @@ export const h5 = css`
   font-family: var(--font-family-secondary);
   font-size: 1.25rem;
   line-height: 1.75rem;
-  padding-top: 16px;
+  /* padding-top: 16px; */
+  padding-top: var(--spacing-xl);
 `
 
 export const h6 = css`
@@ -73,6 +77,7 @@ export const h6 = css`
 export default styled('p')`
   margin: 0;
   text-align: left;
+  white-space: pre-line;
 
   ${variant({
     variants: {
@@ -85,7 +90,7 @@ export default styled('p')`
       hero,
     },
   })}
-
+  ${layout};
   ${space};
   ${typography};
   ${color};

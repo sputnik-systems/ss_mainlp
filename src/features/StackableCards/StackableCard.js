@@ -32,8 +32,11 @@ const Content = styled(Container)`
   flex-direction: column;
   will-change: transform;
 
-  border-radius: 3rem;
-  padding: 3rem 1.6em;
+  /* border-radius: 3rem;
+  padding: 3rem 1.6em; */
+
+  border-radius: var(--br-l);
+  padding: var(--spacing-xxl) var(--spacing-xl);
 `
 
 // 1 -> 0.9 scale

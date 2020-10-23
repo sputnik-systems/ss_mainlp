@@ -7,6 +7,7 @@ import Text from 'components/Text'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link as RouterLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import { UilArrowRight } from '@iconscout/react-unicons'
 
@@ -88,6 +89,8 @@ export default function ProductCard({
     }
   }, [controls, inView])
 
+  const { t } = useTranslation(['common', 'messages'])
+
   return (
     <RouterLink
       style={{
@@ -117,12 +120,12 @@ export default function ProductCard({
           <CtaLinks mt="6" alignItems="center" justifyContent="center">
             {disabled ? (
               <Link disabled variant="cta" mr="5" href={ctaSecondary}>
-                Скоро ⏱
+                {t('messages:content.soon')}
               </Link>
             ) : (
               <>
                 <Link variant="cta" mr="5" href={ctaSecondary}>
-                  Подробнее
+                  {t('common:button.learn_more')}
                   <UilArrowRight />
                 </Link>
                 <Link variant="cta" href={ctaPrimary}>

@@ -11,30 +11,6 @@ import appWidget from 'assets/img/app_widget.png'
 import appWatch from 'assets/img/app_watch.png'
 import appCodes from 'assets/img/app_phonereel.png'
 
-const splitLeft = [
-  {
-    src: appCodes,
-    caption: 'Создавайте коды доступа.',
-  },
-  {
-    src: appCodes,
-    caption: '...ключом «Локки»...',
-  },
-  {
-    src: appWidget,
-    caption: '... а также через виджет.',
-  },
-]
-
-const splitRight = [
-  {
-    src: appCodes,
-    caption: 'Открывайте дверь через мобильное приложение...',
-  },
-
-  { src: appWatch, caption: '...с помощью умных часов...' },
-]
-
 const SplitContainer = styled(Container)`
   /* position: relative;
   &::after {
@@ -47,6 +23,24 @@ const SplitContainer = styled(Container)`
   } */
 `
 
+const items = [
+  {
+    src: appCodes,
+    caption: 'Создавайте коды доступа.',
+  },
+  { src: appCodes, caption: 'Открывайте дверь через мобильное приложение...' },
+  {
+    src: appCodes,
+    caption: '...ключом «Локки»...',
+  },
+
+  { src: appWatch, caption: '...с помощью умных часов...' },
+  {
+    src: appWidget,
+    caption: '... а также через виджет.',
+  },
+]
+
 export default function KeysSection({ ...props }) {
   return (
     <>
@@ -58,9 +52,9 @@ export default function KeysSection({ ...props }) {
         </Grid>
       </Container>
 
-      <SplitContainer column="full" as="section">
-        <SplitShow left={splitLeft} right={splitRight} />
-      </SplitContainer>
+      {/* <SplitContainer column="full" as="section"> */}
+      <SplitShow column="full" left={items} />
+      {/* </SplitContainer> */}
     </>
   )
 }

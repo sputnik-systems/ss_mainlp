@@ -58,14 +58,14 @@ const cards = [
     sub: (
       <>
         <Flex alignItems="center">
-          <Text variant="h4" color="inherit">
+          <Text variant="h4" color="inherit" pt="3">
             <Emoji
               emote="🎁"
               fontSize="200%"
               style={{ marginRight: 'var(--spacing-m)' }}
             />{' '}
           </Text>
-          <Text variant="h4" color="inherit">
+          <Text variant="h4" color="inherit" pt="3">
             Ценные идеи мы обмениваем на подарки и призы.{' '}
           </Text>
         </Flex>
@@ -97,14 +97,14 @@ const cards = [
     sub: (
       <>
         <Flex alignItems="center">
-          <Text variant="h4" color="inherit">
+          <Text variant="h4" color="inherit" pt="3">
             <Emoji
               emote="😇"
               fontSize="200%"
               style={{ marginRight: 'var(--spacing-m)' }}
             />{' '}
           </Text>
-          <Text variant="h4" color="inherit">
+          <Text variant="h4" color="inherit" pt="3">
             и +100500 к карме
           </Text>
         </Flex>

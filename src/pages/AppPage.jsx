@@ -172,7 +172,7 @@ export default function AppPage({ ...props }) {
         </Grid>
       </Container>
 
-      <SplitItem column="full" src={appShowreel} height="98vh" />
+      <SplitItem column="full" src={appShowreel} height="100vh" />
 
       <PhoneSection slides={slidesOne} as="section" column="full" />
 
@@ -193,7 +193,7 @@ export default function AppPage({ ...props }) {
         src={
           'https://images.unsplash.com/photo-1513206139743-d812fb597a1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=647&q=80'
         }
-        minHeight="70vh"
+        height="70vh"
       />
 
       <Container column="full">
