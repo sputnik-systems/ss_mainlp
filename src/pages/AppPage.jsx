@@ -35,6 +35,7 @@ import telegram from 'assets/svg/telegram.svg'
 import viber from 'assets/svg/viber.svg'
 import appGallery from 'assets/icons/appgallery.png'
 import { ReactComponent as AppLogo } from 'assets/svg/mobileAppLogo.svg'
+import ResArea from 'components/ResArea'
 
 const slidesOne = [
   {
@@ -140,14 +141,17 @@ export default function AppPage({ ...props }) {
                 Управляй <br /> умным домом
               </Text>
               <Flex mt="7">
-                <Button variant="store" mr="4">
-                  <Apple />
-                  <span>App Store</span>
-                </Button>
-                <Button variant="store" mr="4">
-                  <GooglePlay />
-                  <span>Google Play</span>
-                </Button>
+                <ResArea>
+                  <Button variant="store" mr="4">
+                    <Apple />
+                    <span>App Store</span>
+                  </Button>
+                  <Button variant="store" mr="4">
+                    <GooglePlay />
+                    <span>Google Play</span>
+                  </Button>
+                </ResArea>
+
                 <IconButton onClick={toggleDownloadModal}>
                   <UilEllipsisV />
                   {/* <Image src={appGallery} style={{ width: 20 }} /> */}

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Nav from 'components/Nav'
-
+import device from '../../components/Device'
 import Text from 'components/Text'
 import { motion, useViewportScroll, useAnimation } from 'framer-motion'
 
@@ -9,15 +9,20 @@ const Sticky = styled(motion.nav)`
   background: var(--color-blurred-background);
   backdrop-filter: blur(20px) saturate(180%);
   position: fixed;
-  top: 0;
+  top: auto;
+  bottom: 0;
   grid-column: 1/9;
   z-index: 888;
   width: 100%;
+  @media ${device.mobileL} {
+    top: 0;
+    bottom: auto;
+  }
 `
 
 const LeftText = styled(Text)`
   display: flex;
-  alignitems: center;
+  align-items: center;
   height: 100%;
   font-size: 28px;
   cursor: pointer;

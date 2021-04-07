@@ -53,6 +53,7 @@ const StyledGrid = styled(Grid)`
   z-index: 1;
   position: relative;
   grid-row-gap: var(--gap);
+
 `
 
 function ProductPageTemplate({

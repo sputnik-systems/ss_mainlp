@@ -81,7 +81,7 @@ export default function LokiPage({ ...props }) {
               style={{
                 height: '100%',
                 position: 'absolute',
-                transform: 'scale(1.4)',
+                // transform: 'scale(1.4)',
                 left: '-10%',
               }}
               src={keyShadow}

@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next'
 import { UilArrowRight } from '@iconscout/react-unicons'
 
 import iphone from 'assets/img/iphone.jpg'
+import ResArea from 'components/ResArea'
 
 const Card = styled(motion.section)`
   --color-subtle-background: #fafafa;
@@ -123,7 +124,7 @@ export default function ProductCard({
                 {t('messages:content.soon')}
               </Link>
             ) : (
-              <>
+              <ResArea>
                 <Link variant="cta" mr="5" href={ctaSecondary}>
                   {t('common:button.learn_more')}
                   <UilArrowRight />
@@ -132,7 +133,7 @@ export default function ProductCard({
                   {cta}
                   <UilArrowRight />
                 </Link>
-              </>
+              </ResArea>
             )}
           </CtaLinks>
         </Fade>

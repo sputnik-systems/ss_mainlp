@@ -7,6 +7,7 @@ import Image from 'components/Image'
 import Flex from 'components/Flex'
 import Grid from 'components/Grid'
 import Fade from 'components/Fade'
+import { size } from '../components/Device'
 import { UilArrowRight } from '@iconscout/react-unicons'
 
 import Container from 'components/Container'
@@ -136,6 +137,14 @@ const categories = [
 
 //  height: 'calc(100vh - (48px + 64px + var(--spacing-s) * 2))',
 
+const personFilter = (arr) => {
+    if(window.innerWidth >= size.tablet){
+        return arr
+    } else {
+        return arr.filter(el => el.top < '25%'|| el.top > '70%')
+    }
+}
+
 export default function SputnikPage({ ...props }) {
   return (
     <ProductPageTemplate
@@ -152,7 +161,9 @@ export default function SputnikPage({ ...props }) {
                   padding: 'var(--spacing-s)',
                 }}
               />
-              Спутник Óдин
+              {window.innerWidth >= size.laptop ? (
+                <span>Спутник Óдин</span>
+              ) : null}
             </>
           }
           right={
@@ -165,7 +176,7 @@ export default function SputnikPage({ ...props }) {
     >
       <Container column="full" style={{ zIndex: 999, position: 'relative' }}>
         <Grid style={{ position: 'relative', alignItems: 'center' }}>
-          <FeedbackWrapper persons={persons} />
+          <FeedbackWrapper persons={personFilter(persons)} />
           <Flex
             flexDirection="column"
             justifyContent="center"
@@ -263,7 +274,7 @@ export default function SputnikPage({ ...props }) {
           // p="7"
           style={{
             // gridTemplateColumns: 'repeat(auto-fit, minmax(150px, min-content))',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(303px,1fr))',
             gap: 'var(--spacing-xxxl) var(--spacing-xxl)',
           }}
           // backgroundColor="subtleBackground"
@@ -384,16 +395,20 @@ export default function SputnikPage({ ...props }) {
         style={{ display: 'flex', justifyContent: 'center', height: '80vh' }}
         backgroundColor="yellow"
       >
-        <Grid column="full" height="100%%" style={{ alignItems: 'center' }}>
-          <Image
-            src={zeus}
-            column="center"
-            style={{
-              height: '96%',
-              objectPosition: 'bottom',
-              objectFit: 'contain',
-            }}
-          />
+        <Grid column="full" height="100%" style={{ alignItems: 'center' }}>
+          {window.innerWidth >= size.laptop ? (
+            <Image
+              src={zeus}
+              column="center"
+              style={{
+                height: '96%',
+                objectPosition: 'bottom',
+                objectFit: 'contain',
+              }}
+            />
+          ) : (
+            <SplitItem minHeight="70vh" src={zeus} column="center" />
+          )}
         </Grid>
       </Container>
 

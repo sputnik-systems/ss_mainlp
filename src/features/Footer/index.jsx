@@ -10,6 +10,7 @@ import Button from 'components/Button'
 import Emoji from 'components/Emoji'
 
 import { UilArrowRight } from '@iconscout/react-unicons'
+import Device from 'components/Device'
 
 const FooterBody = styled(Grid)`
   /* height: var(--footer-height); */
@@ -24,6 +25,12 @@ const FooterBody = styled(Grid)`
   min-height: 900px;
 `
 
+const NavPoket = styled.div`
+  padding-bottom: 50px;
+  @media ${Device.mobileL} {
+    padding-bottom: 0;
+  }
+`
 export default function Footer({ ...props }) {
   return (
     <FooterBody as="footer">
@@ -139,10 +146,12 @@ export default function Footer({ ...props }) {
               421 001, г. Казань, ул. А. Козина, 3а — 207
             </Text>
             <Flex flexWrap="wrap">
-              <Link pl="0">Использование cookies </Link>
-              <Link pl="0">Политика конфиденциальности</Link>
-              <Link pl="0">Условия использования</Link>
-              <Link pl="0">Юридическая информация</Link>
+              <NavPoket>
+                <Link pl="0">Использование cookies </Link>
+                <Link pl="0">Политика конфиденциальности</Link>
+                <Link pl="0">Условия использования</Link>
+                <Link pl="0">Юридическая информация</Link>
+              </NavPoket>
             </Flex>
           </Flex>
         </Container>

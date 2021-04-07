@@ -2,6 +2,7 @@ import { Text } from 'rebass/styled-components'
 import styled, { css } from 'styled-components'
 import { space, color, layout, variant, typography } from 'styled-system'
 import gridColumns from 'utils/gridColumns'
+import device from './Device'
 
 export const h1 = css`
   --bug: fix;
@@ -11,11 +12,23 @@ export const h1 = css`
   font-weight: var(--font-weight-demi);
   text-align: center;
   font-family: var(--font-family);
-  font-size: 5rem;
+  font-size: 2.9rem;
   letter-spacing: -0.2rem;
+  @media (min-width: 425px) {
+    font-size: 4rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 5rem;
+  }
 `
 
 export const h2 = css`
+  @media (min-width: 1024px) {
+    font-size: 10vh;
+  }
+  @media (min-width: 425px) {
+    font-size: 2.8rem;
+  }
   --bug: fix;
   color: var(--color-text);
   line-height: 1;
@@ -24,7 +37,7 @@ export const h2 = css`
   font-family: var(--font-family);
 
   /* font-size: 10vh; */
-  font-size: 10vh;
+  font-size: 2.3rem;
   letter-spacing: -0.15rem;
   /* font-size: 3.125rem;
   letter-spacing: -0.15rem; */
@@ -37,9 +50,14 @@ export const hero = css`
 `
 
 export const h3 = css`
+  @media (min-width: 768px) {
+    font-size: 3.2rem;
+  }
+  @media (min-width: 425px) {
+    font-size: 2.8rem;
+  }
   --bug: fix;
-
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   line-height: 3.6rem;
   font-weight: var(--font-weight-regular);
 `
